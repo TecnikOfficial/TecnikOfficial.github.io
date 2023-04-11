@@ -1,1 +1,1 @@
-# tecnik.pages.dev alternate domain hosting wp static site 
+# https://tecnik.pages.dev alternate domain hosting wp static site 
