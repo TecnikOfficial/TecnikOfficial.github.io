@@ -1415,6 +1415,9 @@ extarea {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0);
+    border: none;
 }
 
 a {
