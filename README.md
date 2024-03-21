@@ -1,1 +1,1 @@
-# https://tecnik.pages.dev alternate domain hosting wp static site 
+# https://tecnik.pages.dev Official Site for https://www.youtube.com/@TecnikOfficial 
