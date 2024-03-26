@@ -1793,10 +1793,11 @@ audio:nth-child(6) {
         background-color: cornflowerblue;
     }
 }
-:root {
-  --dark-background: #1a1a1a;
-  --dark-text: #ffffff;
+body {
+  background-color: var(--dark-background);
+  color: var(--dark-text);
 }
+
 
 
 /* Start https://www.cursors-4u.com */
