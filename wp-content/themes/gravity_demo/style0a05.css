@@ -1793,10 +1793,14 @@ audio:nth-child(6) {
         background-color: cornflowerblue;
     }
 }
-body {
-  background-color: var(--dark-background);
-  color: var(--dark-text);
+@media (prefers-color-scheme: dark) {
+  /* Apply dark mode styles here */
+  body {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+  }
 }
+
 
 
 
