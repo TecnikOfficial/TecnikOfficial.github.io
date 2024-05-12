@@ -1,10 +1,1 @@
-function setClipboard(value) {
-    var tempInput = document.createElement("input");
-    tempInput.style = "position: absolute; left: -1000px; top: -1000px";
-    tempInput.value = value;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
-	alert ("Discord Username Copied");
-}
+function setClipboard(e){var o=document.createElement("input");o.style="position: absolute; left: -1000px; top: -1000px",o.value=e,document.body.appendChild(o),o.select(),document.execCommand("copy"),document.body.removeChild(o),alert("Discord Username Copied")}
