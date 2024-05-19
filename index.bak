@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="robots" content="noodp">
+  <link rel="preload" as="script" href=".\wp-content\plugins\script.js">
+  <meta http-equiv="Cache-Control" content="public">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <link rel="pingback" href="xmlrpc.php">
+  <title>TecNik - Official Site</title>
+  <meta name="robots" content="max-image-preview:large">
+  <link rel="icon" type="image/webp" href=".\wp-content\themes\gravity_demo\assets\images\favicon.webp">
+  <meta name="description" content="Official site for youtube channel https://www.youtube.com/@TecnikOfficial &lt;br&gt; We provide safe/ reversible tips and tricks for anyone to follow without worry tecnik.pages.dev">
+  <meta name="keywords" content="tecnik.pages.dev,tecnikofficial,techtips tecnik,https://www.youtube.com/@TecnikOfficial">
+  <meta name="author" content="TecNik">
+  <link rel="dns-prefetch" href="../../../s.w.org/index.html">
+  <meta property="og:image" content="https://yt3.googleusercontent.com/vgfPAHeosXyCt2oXcafqujgKx1yGtxH3nMV5w7wxS1mTPEHStLWnIvij7LFy5c5RTgVpg7Q4sqk=s176-c-k-c0x00ffffff-no-rj">
+  <meta property="og:image:secure_url" content="https://cdn.bio.link/uploads/profile_pictures/2023-11-01/PzH4tqUy2X5lQ9XX5bsIHD9W4yL4YJto.png">
+  <link rel="preload" as="image" href="https://cdn.bio.link/uploads/profile_pictures/2023-11-01/PzH4tqUy2X5lQ9XX5bsIHD9W4yL4YJto.png">
+  <link rel="alternate" type="application/rss+xml" title="Gravity » Feed" href="feed/index.html">
+  <link rel="alternate" type="application/rss+xml" title="Gravity » Comments Feed" href="comments/feed/index.html">
+  <script type="text/javascript" async>
+  window._wpemojiSettings={baseUrl:"https://s.w.org/images/core/emoji/13.0.1/72x72/",ext:".png",svgUrl:"https://s.w.org/images/core/emoji/13.0.1/svg/",svgExt:".svg",source:{concatemoji:"/gravity_wp/demo/wp-includes/js/wp-emoji-release.min.js?ver=5.7.8"}},function(e,a,t){var r,n,o,i=a.createElement("canvas"),s=i.getContext&&i.getContext("2d");function p(e,t){var a=String.fromCharCode;return s.clearRect(0,0,i.width,i.height),s.fillText(a.apply(this,e),0,0),e=i.toDataURL(),s.clearRect(0,0,i.width,i.height),s.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},n=0;n<o.length;n++)t.supports[o[n]]=function(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!p([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!p([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!p([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!p([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[n]),t.supports.everything=t.supports.everything&&t.supports[o[n]],"flag"!==o[n]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[n]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(r=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",r,!1),e.addEventListener("load",r,!1)):(e.attachEvent("onload",r),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?c(r.concatemoji):r.wpemoji&&r.twemoji&&(c(r.twemoji),c(r.wpemoji)))}(window,document,window._wpemojiSettings)
+  </script>
+  <style type="text/css" async>
+  img.emoji,img.wp-smiley{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-.1em!important;background:0 0!important;padding:0!important}
+  </style>
+  <link rel="stylesheet" id="wp-block-library-css" href="wp-includes/css/dist/block-library/style.mind988.css?ver=5.7.8" type="text/css" media="all">
+  <link rel="stylesheet" id="grcs-plugins-css-css" href="wp-content/themes/gravity_demo/assets/css/plugins0a05.css?ver=20170620" type="text/css" media="all">
+  <link rel="stylesheet" id="grcs-style-css-css" href="wp-content/themes/gravity_demo/style0a05.css?ver=20170620" type="text/css" media="all">
+  <link rel="stylesheet" id="grcs-main-css-css" href="wp-content/themes/gravity_demo/assets/css/main0a05.css?ver=20170620" type="text/css" media="all">
+  <link rel="stylesheet" id="grcs-elements-css-css" href="wp-content/themes/gravity_demo/assets/css/elements0a05.css?ver=20170620" type="text/css" media="all">
+  <link rel="stylesheet" id="showcase_css-css" href="wp-content/themes/gravity_demo/showcase_extension/style3469.css?ver=20170318" type="text/css" media="all">
+  <link rel="stylesheet" id="js_composer_front-css" href="wp-content/plugins/js_composer/assets/css/js_composer.min31dc.css?ver=6.6.0" type="text/css" media="all">
+  <script type="text/javascript" src="wp-includes/js/jquery/jquery.min9d52.js?ver=3.5.1" id="jquery-core-js"async></script>
+  <script type="text/javascript" src="wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2" id="jquery-migrate-js"async></script>
+  <link rel="https://api.w.org/" href="wp-json/index.html">
+  <link rel="alternate" type="application/json" href="wp-json/wp/v2/pages/5018.json">
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd">
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml">
+  <meta name="generator" content="WordPress 5.7.8">
+  <link rel="canonical" href="index.html">
+  <link rel="shortlink" href="index.html">
+  <meta name="framework" content="Redux 4.1.24">
+  <script type="text/javascript" async>
+  var background_mode="glitch",background_glitch_image="wp-content/themes/gravity_demo/assets/images/3ncrypt3d.webp",background_glitch_scale_toggle="1",background_parallax_effect_toggle="1",background_parallax_effect_friction_x=.86,background_parallax_effect_friction_y=.86,background_parallax_effect_invert="1",background_particle_effect_toggle="1",background_particle_effect_activation_radius=200,background_particle_effect_particle_amount=180,background_particle_effect_particle_speed=10,background_particle_effect_particle_color="rgba(255,255,255,0.65)",background_particle_effect_line_color="rgba(255,255,255,0.65)"
+  </script>
+  <style type="text/css">
+  .recentcomments a{display:inline!important;padding:0!important;margin:0!important}
+  </style>
+  <meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress.">
+  <style type="text/css" data-type="vc_shortcodes-custom-css">
+  .vc_custom_1488338033512{margin-bottom:2.3vmin!important}.vc_custom_1488070902082{margin-bottom:3.69em!important}.vc_custom_1487141191697{margin-bottom:4.3em!important}.vc_custom_1486415771672{padding-top:5vh!important;padding-bottom:5vh!important}.vc_custom_1518593837635{margin-bottom:2.3em!important}.vc_custom_1487141325748{margin-bottom:2.92em!important}.vc_custom_1487154012127{margin-bottom:2.76em!important}.vc_custom_1486415780895{padding-top:5vh!important;padding-bottom:5vh!important}.vc_custom_1518593848620{margin-bottom:2.19em!important}.vc_custom_1487141660066{margin-bottom:2.3em!important}
+  </style><noscript>
+  <style>
+
+  .wpb_animate_when_almost_visible{opacity:1}
+  </style></noscript>
+</head>
+<body class="home page-template page-template-template-coming-soon page-template-template-coming-soon-php page page-id-5018 grcs_coming_soon_mode wpb-js-composer js-comp-ver-6.6.0 vc_responsive">
+  <div id="page-loader" class="slideUp" data-delay="13500">
+    <div class="container-mid">
+      <img src="wp-content/themes/gravity_demo/assets/images/tecnik1-2.gif" style="max-width:27.5vh;margin-bottom:24px" class="img-responsive" alt="logo">
+      <div class="spinner-container">
+        <div class="css-spinner indicator-1" style="border-top-color:#f10000;border-left-color:#f10000"></div>
+      </div>
+    </div>
+  </div>
+  <div class="grcs-header">
+    <h1 class="site-title"><a href="index.html" rel="home">TecNik</a></h1>
+  </div>
+  <div class="grcs_background_content">
+    <div class="level-1">
+      <div class="bg-overlay" style="opacity:.5;background-color:#000"></div>
+      <div id="canvas">
+        <canvas class="bg-effect layer" data-depth="0.2"></canvas>
+      </div>
+    </div>
+    <div class="level-2">
+      <div class="bg-image layer" data-depth="0.04"></div>
+      <div class="bg-video layer" data-depth="0.04"></div>
+      <div class="bg-color layer" data-depth="0.04"></div>
+    </div>
+  </div>
+  <div class="vc_row wpb_row vc_row-fluid">
+    <div class="wpb_column vc_column_container vc_col-sm-12">
+      <div class="vc_column-inner">
+        <div class="wpb_wrapper">
+          <div class="grcs_hero_container">
+            <div class="front-content page-enter-animated">
+              <div class="container-mid">
+                <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                  <div class="wpb_column vc_column_container vc_col-sm-12">
+                    <div class="vc_column-inner">
+                      <div class="wpb_wrapper" style="font-family:'Allerta Stencil',sans-serif">
+                        <div class="enter-animation" data-animation="fadeInDown" data-delay="500">
+                          <div class="wpb_single_image wpb_content_element vc_align_center vc_custom_1488338033512 logo">
+                            <figure class="wpb_wrapper vc_figure" style="max-width:65vmin!important">
+                              <div class="vc_single_image-wrapper vc_box_border_grey">
+                                <button onclick='setClipboard("tecnik.gg")'><img width="300" height="100" src="wp-content/themes/gravity_demo/assets/images/tecnikmain4.webp" class="attachment-full vc_single_image-img" alt="Add me on discord" title="Click To Copy!" loading="lazy"></button> 
+                                <script src="./wp-content/plugins/script.js" async></script>
+                              </div>
+                            </figure>
+                          </div>
+                        </div>
+                        <div class="enter-animation" data-animation="fadeInUp" data-delay="500">
+                          <div class="grcs_text_slider te-center co-center vc_custom_1488070902082" data-duration="700" data-timeout="3500" data-fx="scrollVert">
+                            <div class="slide">
+                              <h1>COMPUTER ENTHUSIAST<span style="color:#f10000">&</span><br>
+                              INTERNET SECURITY<br>
+                              ADVISER</h1>
+                            </div>
+                            <div class="slide">
+                              <h1>WEBSITE DESIGNER<span style="color:#f10000">&</span><br>
+                              FREELANCE VIDEO EDITOR.</h1>
+                            </div>
+                            <div class="slide">
+                              <h1>WINDOWS TWEAKER <span style="color:#f10000">&</span><br>
+                              CASUAL GAMER.</h1>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="enter-animation" data-animation="fadeInUp" data-delay="500">
+                          <div class="wpb_text_column wpb_content_element vc_custom_1487141191697 grcs_subline">
+                            <div class="wpb_wrapper" style="margin-left:auto;margin-right:auto">
+                              <p>▼ CHECK OUT MY BIO LINK BELOW ▼</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="enter-animation" data-animation="fadeInUp" data-delay="500"></div>
+                      </div>
+                    </div>
+                    <div class="enter-animation" data-animation="fadeInUp" data-delay="500">
+                      <button style="width:120px;height:40px;background-color:#050302;font-size:20px;border-top-style:none;border-left-style:solid;border-right-style:none;border-bottom-style:none;border-top-color:#5865f2;border-left-color:red;border-right-color:red;border-bottom-color:red" onclick='window.location.href="https://tecnik.bio.link"'><b>Bio Link</b></button> &nbsp; <button style="font-size:20px;width:135px;height:40px;background-color:#050302;border-left-color:#5865f2;border-left-style:solid;border-right-color:red;border-right-style:none;border-bottom-width:0;border-top-color:#5865f2;border-top-style:none;color:#5865f2" onclick='window.location.href="https://bouncyballs.org"'><b style="font-size:19px;color:#5865f2">Play A Game</b></button>
+                    </div><br>
+                    <div class="enter-animation" data-animation="fadeInUp" data-delay="500">
+                      <div class="container-audio" style="width:auto;margin:auto;height:auto;min-width:200px;min-height:80px;max-height:80px;padding:0;opacity:.6;background-color:rgba(0,0,0,0);max-width:330px">
+                        <audio loop="" autoplay="" controls="" src="./wp-content/themes/gravity_demo/assets/music/nf.aac" type="audio/aac">Your browser dose not Support the audio Tag</audio>
+                      </div>
+                      <div class="container-audio" style="width:auto;margin:auto;height:auto;max-width:75%;max-height:60px;min-width:40%;min-height:60px;padding:0">
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                        <div class="colum1">
+                          <div class="row"></div>
+                        </div>
+                      </div>
+                      <h6>song credit:<a href="https://youtu.be/tsmPCi7NKrg" target="_blank">@nfrealmusic - hope</a></h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="controls"></div>
+            </div>
+          </div>
+          <div class="grcs_overlay overlay-fade-in section-slide-from-bottom" data-bullet-nav="no">
+            <div class="up-button go-up"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/html" id="wpb-modifications" async></script> 
+  <script type="text/javascript" src="wp-content/themes/gravity_demo/assets/js/plugins0a05.js?ver=20170620" id="grcs-plugins-js-js"async></script> 
+  <script type="text/javascript" src="wp-content/themes/gravity_demo/assets/js/main0a05.js?ver=20170620" id="grcs-main-js-js" async></script> 
+  <script type="text/javascript" src="wp-content/themes/gravity_demo/assets/js/three.min3469.js?ver=20170318" id="three-js-js"async></script> 
+  <script type="text/javascript" src="wp-content/themes/gravity_demo/assets/js/fss.min3469.js?ver=20170318" id="fss-js-js"async></script> 
+  <script type="text/javascript" src="wp-content/themes/gravity_demo/assets/js/hero0a05.js?ver=20170620" id="grcs-hero-js-js"async></script> 
+  <script type="text/javascript" src="wp-content/themes/gravity_demo/showcase_extension/script3469.js?ver=20170318" id="showcase_js-js"async></script> 
+  <script type="text/javascript" src="wp-includes/js/wp-embed.mind988.js?ver=5.7.8" id="wp-embed-js"async></script> 
+  <script type="text/javascript" src="wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min31dc.js?ver=6.6.0" id="wpb_composer_front_js-js"async></script> 
+  <script type="text/javascript" src="wp-content/themes/gravity_demo/assets/js/elements0a05.js?ver=20170620" id="grcs-elements-js-js"async></script> 
+  <script src="./wp-content/themes/gravity_demo/assets/js/oneko.js"></script>
+</body>
+</html>
+<!--thanks to creazione.avanzare.co for design template :) -->
