@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     width: 100%;
     height: 100% !important;
     overflow-x: hidden;
@@ -14,7 +15,12 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: Raleway, sans-serif;
     font-weight: 400;
     margin-top: 0;
@@ -75,7 +81,8 @@ a {
     text-decoration: none;
 }
 
-a:focus, a:hover {
+a:focus,
+a:hover {
     text-decoration: none;
 }
 
@@ -329,7 +336,9 @@ a:focus, a:hover {
 }
 
 @keyframes sk-bouncedelay {
-    0%, 100%, 80% {
+    0%,
+    100%,
+    80% {
         transform: scale(0);
     }
 
@@ -339,7 +348,9 @@ a:focus, a:hover {
 }
 
 @keyframes sk-bouncedelay {
-    0%, 100%, 80% {
+    0%,
+    100%,
+    80% {
         transform: scale(0);
         transform: scale(0);
     }
@@ -351,19 +362,22 @@ a:focus, a:hover {
 }
 
 @keyframes sk-foldCubeAngle {
-    0%, 10% {
+    0%,
+    10% {
         transform: perspective(140px) rotateX(-180deg);
         transform: perspective(140px) rotateX(-180deg);
         opacity: 0;
     }
 
-    25%, 75% {
+    25%,
+    75% {
         transform: perspective(140px) rotateX(0);
         transform: perspective(140px) rotateX(0);
         opacity: 1;
     }
 
-    100%, 90% {
+    100%,
+    90% {
         transform: perspective(140px) rotateY(180deg);
         transform: perspective(140px) rotateY(180deg);
         opacity: 0;
@@ -371,19 +385,22 @@ a:focus, a:hover {
 }
 
 @keyframes sk-foldCubeAngle {
-    0%, 10% {
+    0%,
+    10% {
         transform: perspective(140px) rotateX(-180deg);
         transform: perspective(140px) rotateX(-180deg);
         opacity: 0;
     }
 
-    25%, 75% {
+    25%,
+    75% {
         transform: perspective(140px) rotateX(0);
         transform: perspective(140px) rotateX(0);
         opacity: 1;
     }
 
-    100%, 90% {
+    100%,
+    90% {
         transform: perspective(140px) rotateY(180deg);
         transform: perspective(140px) rotateY(180deg);
         opacity: 0;
@@ -391,7 +408,9 @@ a:focus, a:hover {
 }
 
 @keyframes sk-stretchdelay {
-    0%, 100%, 40% {
+    0%,
+    100%,
+    40% {
         transform: scaleY(.4);
     }
 
@@ -401,7 +420,9 @@ a:focus, a:hover {
 }
 
 @keyframes sk-stretchdelay {
-    0%, 100%, 40% {
+    0%,
+    100%,
+    40% {
         transform: scaleY(.4);
         transform: scaleY(.4);
     }
@@ -483,7 +504,8 @@ a:focus, a:hover {
     text-align: center;
 }
 
-.container-mid.block-overflow, .movement-in-progress .container-mid {
+.container-mid.block-overflow,
+.movement-in-progress .container-mid {
     overflow: hidden;
 }
 
@@ -495,7 +517,8 @@ a:focus, a:hover {
     height: 100%;
 }
 
-.grcs_background_content .level-1, .grcs_background_content .level-2 {
+.grcs_background_content .level-1,
+.grcs_background_content .level-2 {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -518,7 +541,13 @@ a:focus, a:hover {
 }
 
 /* noinspection CssUnusedSymbol */
-.grcs_background_content #canvas, .grcs_background_content .bg-color, .grcs_background_content .bg-image, .grcs_background_content .bg-overlay, .grcs_background_content .bg-pattern, .grcs_background_content .bg-video, .grcs_background_content .glitch-img {
+.grcs_background_content #canvas,
+.grcs_background_content .bg-color,
+.grcs_background_content .bg-image,
+.grcs_background_content .bg-overlay,
+.grcs_background_content .bg-pattern,
+.grcs_background_content .bg-video,
+.grcs_background_content .glitch-img {
     position: absolute !important;
     width: 100%;
     height: 100% !important;
@@ -573,7 +602,8 @@ a:focus, a:hover {
     z-index: 90;
 }
 
-.grcs_youtube_controls .pause-button, .grcs_youtube_controls .volume-button {
+.grcs_youtube_controls .pause-button,
+.grcs_youtube_controls .volume-button {
     font-size: 20px;
     position: absolute;
     z-index: 101;
@@ -585,7 +615,8 @@ a:focus, a:hover {
     transition: .2s ease;
 }
 
-.grcs_youtube_controls.show .pause-button, .grcs_youtube_controls.show .volume-button {
+.grcs_youtube_controls.show .pause-button,
+.grcs_youtube_controls.show .volume-button {
     bottom: 22px;
     transition: .8s ease;
     transition: .8s ease;
@@ -752,36 +783,52 @@ a:focus, a:hover {
 
 .popup {
     display: none;
-    position: fixed;
     top: 50%;
-    right: -300px; /* Start off-screen */
+    right: -300px;
+
+    /* Start off-screen */
     transform: translateY(-50%);
-    background-color: rgb(0 0 0);
+    background-color: rgba(255, 255, 255, 0);
     padding: 20px;
     box-shadow: 0 2px 5px rgb(0 0 0 / 0%);
     animation: slideIn 0.5s forwards;
+    position: sticky;
 }
 
 .popup p {
-    font-size: 12px; /* Increase text size */
+    font-size: 12px;
+
+    /* Increase text size */
 }
 
 #subscribeBtn {
-    background-color: rgb(255 0 0); /* Red background color */
+    background-color: rgb(255 0 0);
+
+    /* Red background color */
     color: rgb(255 255 255);
-    border: 2px solid rgb(255 0 0); /* Red border */
+    border: 2px solid rgb(255 0 0);
+
+    /* Red border */
     padding: 5px 10px;
     cursor: pointer;
-    font-size: 16px; /* Increase button text size */
+    font-size: 16px;
+
+    /* Increase button text size */
 }
 
 #closeBtn {
-    background-color: rgb(88 101 242); /* Blue background color */
+    background-color: rgb(88 101 242);
+
+    /* Blue background color */
     color: rgb(255 255 255);
-    border: 2px solid rgb(88 101 242); /* Blue border */
+    border: 2px solid rgb(88 101 242);
+
+    /* Blue border */
     padding: 5px 10px;
     cursor: pointer;
-    font-size: 16px; /* Increase button text size */
+    font-size: 16px;
+
+    /* Increase button text size */
 }
 
 @keyframes slideIn {
