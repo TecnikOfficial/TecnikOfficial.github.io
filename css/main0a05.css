@@ -74,13 +74,6 @@ p {
     font-family: Raleway, sans-serif;
 }
 
-a {
-    font-family: 'Open Sans', sans-serif;
-    cursor: pointer;
-    transition: all .3s ease;
-    text-decoration: none;
-}
-
 a:focus,
 a:hover {
     text-decoration: none;
