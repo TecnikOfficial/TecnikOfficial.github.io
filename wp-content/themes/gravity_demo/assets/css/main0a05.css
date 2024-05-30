@@ -12,7 +12,7 @@ body,html{width:100%;height:100%!important;overflow-x:hidden}body{font-size:1.37
 }
 
 .popup p {
-  font-size: 18px; /* Increase text size */
+  font-size: 12px; /* Increase text size */
 }
 
 #subscribeBtn {
@@ -21,6 +21,7 @@ body,html{width:100%;height:100%!important;overflow-x:hidden}body{font-size:1.37
   border: 2px solid #ff0000; /* Red border */
   padding: 5px 10px;
   cursor: pointer;
+  font-size: 16px; /* Increase button text size */
 }
 #closeBtn {
   background-color: #5865f2; /* Blue background color */
@@ -28,6 +29,7 @@ body,html{width:100%;height:100%!important;overflow-x:hidden}body{font-size:1.37
   border: 2px solid #5865f2; /* Blue border */
   padding: 5px 10px;
   cursor: pointer;
+  font-size: 16px; /* Increase button text size */
 }
 
 @keyframes slideIn {
