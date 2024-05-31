@@ -3,7 +3,7 @@
 }
 
 * {
-    font-family: Allerta, arial, Tahoma;
+    font-family: sans-serif;
     box-sizing: border-box
 }
 
@@ -49,6 +49,7 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
     margin: 0
 }
 
+/*noinspection ALL*/
 .container-audio .colum1 .row {
     width: 100%;
     height: 100%;
@@ -267,10 +268,15 @@ audio:nth-child(2), audio:nth-child(4), audio:nth-child(6) {
     }
 }
 
+:root {
+    --dark-text: #333333; /* Define the value for --dark-text */
+    --dark-background: #333333; /* Define the value for --dark-background */
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: var(--dark-background);
-        color: var(--dark-text)
+        color: var(--dark-text);
     }
 }
 

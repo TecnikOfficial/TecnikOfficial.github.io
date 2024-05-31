@@ -73,7 +73,7 @@ button {
 }
 
 button {
-    appearance: button;
+
     appearance: none;
     cursor: pointer
 }
@@ -280,7 +280,7 @@ visible-sm-inline {
 
 
 [class*="ti-"], [class^="ti-"] {
-    font-family: themify;
+    font-family: sans-serif;
     font-style: normal;
     font-weight: 400;
     font-variant: normal;
