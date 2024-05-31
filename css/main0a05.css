@@ -484,7 +484,7 @@ a:hover {
     transform: scale(1.02);
 }
 
-/*noinspection ALL,CssUnusedSymbol*/
+/* noinspection ALL,CssUnusedSymbol */
 .grcs_background_content #canvas,
 .grcs_background_content .bg-color,
 .grcs_background_content .bg-image,
@@ -497,7 +497,7 @@ a:hover {
     height: 100% !important;
 }
 
-/*noinspection ALL,CssUnusedSymbol*/
+/* noinspection ALL,CssUnusedSymbol */
 .grcs_background_content .glitch-img {
     background-size: cover;
 }
@@ -532,9 +532,9 @@ a:hover {
     opacity: .52;
 }
 
-/*noinspection ALL,CssUnusedSymbol*/
+/* noinspection ALL,CssUnusedSymbol */
 .grcs_background_content .bg-pattern {
-    background: url("images/pattern.png") repeat;
+    background: url("src/images/pattern.png") repeat;
     opacity: .5;
 }
 
