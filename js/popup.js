@@ -1,4 +1,4 @@
-const POPUP_TIMEOUT_MS = 10000;
+const POPUP_TIMEOUT_MS = 8000;
 
 var timeout = setTimeout(function () {
     document.getElementById('popup').style.display = 'block';
