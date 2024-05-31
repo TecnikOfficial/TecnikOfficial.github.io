@@ -1,6 +1,6 @@
 const POPUP_TIMEOUT_MS = 8000;
 
-var timeout = setTimeout(function () {
+const timeout = setTimeout(function () {
     document.getElementById('popup').style.display = 'block';
 
     document.getElementById('subscribeBtn').addEventListener('click', function () {
