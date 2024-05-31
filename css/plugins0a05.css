@@ -39,13 +39,6 @@ h1 {
     font-size: 2em
 }
 
-up {
-    position: relative;
-    font-size: 75%;
-    line-height: 0;
-    vertical-align: baseline
-}
-
 img {
     border: 0
 }
@@ -85,10 +78,6 @@ button[disabled] {
 button::-moz-focus-inner {
     padding: 0;
     border: 0
-}
-
-h {
-    padding: 0
 }
 
 @media print {
@@ -309,10 +298,6 @@ visible-sm-inline {
     100% {
         transform: rotate(359deg)
     }
-}
-
-:full-page-media, :future {
-    bottom: -76px
 }
 
 @keyframes kenburns {
