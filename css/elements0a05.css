@@ -148,55 +148,10 @@
     opacity: 0
 }
 
-.grcs_overlay.overlay-slide-from-top {
-    bottom: 100vh
-}
-
-.grcs_overlay.overlay-slide-from-bottom {
-    top: 100vh
-}
-
-.grcs_overlay.overlay-slide-from-left {
-    right: 100vw
-}
-
-.grcs_overlay.overlay-slide-from-right {
-    left: 100vw
-}
-
-.grcs_overlay_section {
-    position: absolute;
-    z-index: 1;
-    width: 100vw;
-    height: 100vh;
-    transition: all .8s ease;
-    pointer-events: none
-}
-
 .grcs_overlay_section .container-mid::after {
     content: "";
     display: block;
     padding-bottom: 50px !important
-}
-
-.grcs_overlay.section-fade-in .grcs_overlay_section {
-    opacity: 0
-}
-
-.grcs_overlay.section-slide-from-top .grcs_overlay_section {
-    bottom: 100vh
-}
-
-.grcs_overlay.section-slide-from-bottom .grcs_overlay_section {
-    top: 100vh
-}
-
-.grcs_overlay.section-slide-from-left .grcs_overlay_section {
-    right: 100vw
-}
-
-.grcs_overlay.section-slide-from-right .grcs_overlay_section {
-    left: 100vw
 }
 
 .grcs_overlay_section h1, .grcs_overlay_section h2, .grcs_overlay_section h3, .grcs_overlay_section h4, .grcs_overlay_section h5, .grcs_overlay_section h6 {
