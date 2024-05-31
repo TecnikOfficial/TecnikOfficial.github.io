@@ -152,8 +152,6 @@ a:hover {
     z-index: 2000;
     left: 50%;
     transform: translateX(-50%);
-    transform: translateX(-50%);
-    transform: translateX(-50%);
 }
 
 #page-loader .spinner-container .css-spinner {
@@ -170,7 +168,6 @@ a:hover {
     width: 34px;
     height: 34px;
     animation: spinner .4s linear infinite;
-    animation: spinner .4s linear infinite;
     border: solid 2px transparent;
     border-top-color: rgb(31 184 178);
     border-left-color: rgb(31 184 178);
@@ -184,7 +181,6 @@ a:hover {
     margin-right: 2px;
     margin-left: 2px;
     animation: sk-stretchdelay 1.2s infinite ease-in-out;
-    animation: sk-stretchdelay 1.2s infinite ease-in-out;
     background-color: rgb(31 184 178);
 }
 
@@ -196,25 +192,19 @@ a:hover {
     height: 100%;
     content: '';
     transform-origin: 100% 100%;
-    transform-origin: 100% 100%;
-    transform-origin: 100% 100%;
-    animation: sk-foldCubeAngle 2.4s infinite linear both;
     animation: sk-foldCubeAngle 2.4s infinite linear both;
     background-color: rgb(31 184 178);
 }
 
 #page-loader .spinner-container .css-spinner.indicator-4 .sk-cube2 span {
     animation-delay: .3s;
-    animation-delay: .3s;
 }
 
 #page-loader .spinner-container .css-spinner.indicator-4 .sk-cube3 span {
     animation-delay: .6s;
-    animation-delay: .6s;
 }
 
 #page-loader .spinner-container .css-spinner.indicator-4 .sk-cube4 span {
-    animation-delay: .9s;
     animation-delay: .9s;
 }
 
@@ -224,7 +214,6 @@ a:hover {
     height: 10px;
     margin-bottom: 16px;
     animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
     border-radius: 100%;
     background-color: rgb(31 184 178);
 }
@@ -232,26 +221,21 @@ a:hover {
 @keyframes loader {
     0% {
         transform: rotate(0);
-        transform: rotate(0);
     }
 
     25% {
-        transform: rotate(180deg);
         transform: rotate(180deg);
     }
 
     50% {
         transform: rotate(180deg);
-        transform: rotate(180deg);
     }
 
     75% {
         transform: rotate(360deg);
-        transform: rotate(360deg);
     }
 
     100% {
-        transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
@@ -259,26 +243,21 @@ a:hover {
 @keyframes loader {
     0% {
         transform: rotate(0);
-        transform: rotate(0);
     }
 
     25% {
-        transform: rotate(180deg);
         transform: rotate(180deg);
     }
 
     50% {
         transform: rotate(180deg);
-        transform: rotate(180deg);
     }
 
     75% {
         transform: rotate(360deg);
-        transform: rotate(360deg);
     }
 
     100% {
-        transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
@@ -344,12 +323,10 @@ a:hover {
     100%,
     80% {
         transform: scale(0);
-        transform: scale(0);
     }
 
     40% {
         transform: scale(1);
-        transform: scale(1);
     }
 }
 
@@ -357,20 +334,17 @@ a:hover {
     0%,
     10% {
         transform: perspective(140px) rotateX(-180deg);
-        transform: perspective(140px) rotateX(-180deg);
         opacity: 0;
     }
 
     25%,
     75% {
         transform: perspective(140px) rotateX(0);
-        transform: perspective(140px) rotateX(0);
         opacity: 1;
     }
 
     100%,
     90% {
-        transform: perspective(140px) rotateY(180deg);
         transform: perspective(140px) rotateY(180deg);
         opacity: 0;
     }
@@ -380,20 +354,17 @@ a:hover {
     0%,
     10% {
         transform: perspective(140px) rotateX(-180deg);
-        transform: perspective(140px) rotateX(-180deg);
         opacity: 0;
     }
 
     25%,
     75% {
         transform: perspective(140px) rotateX(0);
-        transform: perspective(140px) rotateX(0);
         opacity: 1;
     }
 
     100%,
     90% {
-        transform: perspective(140px) rotateY(180deg);
         transform: perspective(140px) rotateY(180deg);
         opacity: 0;
     }
@@ -416,12 +387,10 @@ a:hover {
     100%,
     40% {
         transform: scaleY(.4);
-        transform: scaleY(.4);
     }
 
     20% {
         transform: scaleY(1);
-        transform: scaleY(1);
     }
 }
 
@@ -439,11 +408,9 @@ a:hover {
 @keyframes sk-scaleout {
     0% {
         transform: scale(0);
-        transform: scale(0);
     }
 
     100% {
-        transform: scale(1);
         transform: scale(1);
         opacity: 0;
     }
@@ -452,11 +419,9 @@ a:hover {
 @keyframes spinner {
     0% {
         transform: rotate(0);
-        transform: rotate(0);
     }
 
     100% {
-        transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
@@ -464,11 +429,9 @@ a:hover {
 @keyframes spinner {
     0% {
         transform: rotate(0);
-        transform: rotate(0);
     }
 
     100% {
-        transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
@@ -491,7 +454,6 @@ a:hover {
     width: 100%;
     padding: 60px 30px;
     max-height: 100%;
-    transform: translateY(-50%);
     transform: translateY(-50%);
     text-align: center;
 }
@@ -523,12 +485,10 @@ a:hover {
     width: 110%;
     height: 110%;
     transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
 }
 
 .grcs_background_content .level-2 {
     z-index: 1;
-    transform: scale(1.02);
     transform: scale(1.02);
 }
 
@@ -564,7 +524,6 @@ a:hover {
 
 .grcs_background_content #canvas {
     top: 100% !important;
-    transition: all .8s ease;
     transition: all .8s ease;
 }
 
@@ -604,13 +563,11 @@ a:hover {
     cursor: pointer;
     color: rgb(255 255 255);
     transition: .2s ease;
-    transition: .2s ease;
 }
 
 .grcs_youtube_controls.show .pause-button,
 .grcs_youtube_controls.show .volume-button {
     bottom: 22px;
-    transition: .8s ease;
     transition: .8s ease;
 }
 
@@ -649,7 +606,6 @@ a:hover {
     height: 100%;
     content: '';
     transition: .3s ease;
-    transition: .3s ease;
     background: rgb(31 184 178);
 }
 
@@ -674,7 +630,6 @@ a:hover {
     overflow: hidden;
     margin: 0;
     padding: 9px 30px;
-    transition: .1s ease;
     transition: .1s ease;
     letter-spacing: 2px;
     color: rgb(255 255 255);
@@ -780,7 +735,7 @@ a:hover {
 
     /* Start off-screen */
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgb(255 255 255 / 0%);
     padding: 20px;
     box-shadow: 0 2px 5px rgb(0 0 0 / 0%);
     animation: slideIn 0.5s forwards;

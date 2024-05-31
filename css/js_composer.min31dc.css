@@ -26,8 +26,6 @@
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
-    box-sizing: border-box;
-    box-sizing: border-box;
     box-sizing: border-box
 }
 
@@ -254,8 +252,6 @@
 
 .vc_row[data-vc-full-width] {
     transition: opacity .5s ease;
-    transition: opacity .5s ease;
-    transition: opacity .5s ease;
     overflow: hidden
 }
 
@@ -313,9 +309,6 @@
     padding: 0;
     position: relative;
     user-select: none;
-    user-select: none;
-    user-select: none;
-    user-select: none;
     font-weight: 400
 }
 
@@ -341,6 +334,7 @@ a.wpb_button_a:hover {
     from {
         background-position: 40px 0
     }
+
     to {
         background-position: 0 0
     }
@@ -350,6 +344,7 @@ a.wpb_button_a:hover {
     from {
         background-position: 40px 0
     }
+
     to {
         background-position: 0 0
     }
@@ -359,6 +354,7 @@ a.wpb_button_a:hover {
     from {
         background-position: 40px 0
     }
+
     to {
         background-position: 0 0
     }
@@ -368,6 +364,7 @@ a.wpb_button_a:hover {
     from {
         background-position: 0 0
     }
+
     to {
         background-position: 40px 0
     }
@@ -377,6 +374,7 @@ a.wpb_button_a:hover {
     from {
         background-position: 40px 0
     }
+
     to {
         background-position: 0 0
     }
@@ -401,7 +399,6 @@ a.wpb_button_a:hover {
 
 .wpb_single_image .vc_single_image-wrapper.vc_box_border img {
     border-radius: 0;
-    box-shadow: none;
     box-shadow: none;
     border: none
 }

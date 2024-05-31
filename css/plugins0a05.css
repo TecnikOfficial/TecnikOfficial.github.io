@@ -1,6 +1,5 @@
 html {
     font-family: sans-serif;
-    text-size-adjust: 100%;
     text-size-adjust: 100%
 }
 
@@ -97,7 +96,6 @@ h {
         color: #000 !important;
         text-shadow: none !important;
         background: 0 0 !important;
-        box-shadow: none !important;
         box-shadow: none !important
     }
 
@@ -131,21 +129,11 @@ h {
     }
 }
 
-@font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url("../glyphicons-halflings-regular.html");
-    src: url("../glyphicons-halflings-regulard41d.html#iefix") format('embedded-opentype'), url("../glyphicons-halflings-regular-2.html") format('woff2'), url("../glyphicons-halflings-regular-3.html") format('woff'), url("../glyphicons-halflings-regular-4.html") format('truetype'), url("../glyphicons-halflings-regular-5.html#glyphicons_halflingsregular") format('svg')
-}
-
 * {
-    box-sizing: border-box;
-    box-sizing: border-box;
     box-sizing: border-box
 }
 
 ::after {
-    box-sizing: border-box;
-    box-sizing: border-box;
     box-sizing: border-box
 }
 
@@ -371,8 +359,6 @@ col-sm-1, col-sm-10, col-sm-11, col-sm-12, col-sm-2, col-sm-3, col-sm-4, col-sm-
 
 .fade {
     opacity: 0;
-    transition: opacity .15s linear;
-    transition: opacity .15s linear;
     transition: opacity .15s linear
 }
 
@@ -390,6 +376,7 @@ col-sm-1, col-sm-10, col-sm-11, col-sm-12, col-sm-2, col-sm-3, col-sm-4, col-sm-
     from {
         background-position: 40px 0
     }
+
     to {
         background-position: 0 0
     }
@@ -399,6 +386,7 @@ col-sm-1, col-sm-10, col-sm-11, col-sm-12, col-sm-2, col-sm-3, col-sm-4, col-sm-
     from {
         background-position: 40px 0
     }
+
     to {
         background-position: 0 0
     }
@@ -408,6 +396,7 @@ col-sm-1, col-sm-10, col-sm-11, col-sm-12, col-sm-2, col-sm-3, col-sm-4, col-sm-
     from {
         background-position: 40px 0
     }
+
     to {
         background-position: 0 0
     }
@@ -476,13 +465,7 @@ visible-sm-inline {
     }
 }
 
-@font-face {
-    font-family: themify;
-    src: url("fonts/themify.eot");
-    src: url("fonts/themifyd41d.eot?#iefix-fvbane") format('embedded-opentype'), url("../themify.html") format('woff'), url("../themify-2.html") format('truetype'), url("fonts/themify9f24.svg?-fvbane#themify") format('svg');
-    font-weight: 400;
-    font-style: normal
-}
+
 
 [class*="ti-"], [class^="ti-"] {
     font-family: themify;
@@ -495,234 +478,208 @@ visible-sm-inline {
     -moz-osx-font-smoothing: grayscale
 }
 
-@font-face {
-    font-family: FontAwesome;
-    src: url("fonts/fontawesome-webfont3e6e.eot?v=4.7.0");
-    src: url("fonts/fontawesome-webfontd41d.eot?#iefix&v=4.7.0") format('embedded-opentype'), url("../fontawesome-webfont3e6e.html") format('woff2'), url("../fontawesome-webfont3e6e-2.html") format('woff'), url("../fontawesome-webfont3e6e-3.html") format('truetype'), url("fonts/fontawesome-webfont3e6e.svg?v=4.7.0#fontawesomeregular") format('svg');
-    font-weight: 400;
-    font-style: normal
-}
+
 
 @keyframes fa-spin {
     0% {
-        transform: rotate(0);
         transform: rotate(0)
     }
+
     100% {
-        transform: rotate(359deg);
         transform: rotate(359deg)
     }
 }
 
 @keyframes fa-spin {
     0% {
-        transform: rotate(0);
         transform: rotate(0)
     }
+
     100% {
-        transform: rotate(359deg);
         transform: rotate(359deg)
     }
 }
 
-::full-page-media, :future {
+:full-page-media, :future {
     bottom: -76px
 }
 
 @keyframes kenburns {
     0% {
-        transform: scale(1.5);
         transform: scale(1.5)
     }
+
     100% {
-        transform: scale(1);
         transform: scale(1)
     }
 }
 
 @keyframes kenburns {
     0% {
-        transform: scale(1.5);
         transform: scale(1.5)
     }
+
     100% {
-        transform: scale(1);
         transform: scale(1)
     }
 }
 
 @keyframes kenburnsDownLeft {
     0% {
-        transform: scale(1.5) translate(10%, -10%);
         transform: scale(1.5) translate(10%, -10%)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
 
 @keyframes kenburnsDownLeft {
     0% {
-        transform: scale(1.5) translate(10%, -10%);
         transform: scale(1.5) translate(10%, -10%)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
 
 @keyframes kenburnsDownRight {
     0% {
-        transform: scale(1.5) translate(-10%, -10%);
         transform: scale(1.5) translate(-10%, -10%)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
 
 @keyframes kenburnsDownRight {
     0% {
-        transform: scale(1.5) translate(-10%, -10%);
         transform: scale(1.5) translate(-10%, -10%)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
 
 @keyframes kenburnsDown {
     0% {
-        transform: scale(1.5) translate(0, -10%);
         transform: scale(1.5) translate(0, -10%)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
 
 @keyframes kenburnsDown {
     0% {
-        transform: scale(1.5) translate(0, -10%);
         transform: scale(1.5) translate(0, -10%)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
 
 @keyframes kenburnsLeft {
     0% {
-        transform: scale(1.5) translate(10%, 0);
         transform: scale(1.5) translate(10%, 0)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
 
 @keyframes kenburnsLeft {
     0% {
-        transform: scale(1.5) translate(10%, 0);
         transform: scale(1.5) translate(10%, 0)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
 
 @keyframes kenburnsRight {
     0% {
-        transform: scale(1.5) translate(-10%, 0);
         transform: scale(1.5) translate(-10%, 0)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
 
 @keyframes kenburnsRight {
     0% {
-        transform: scale(1.5) translate(-10%, 0);
         transform: scale(1.5) translate(-10%, 0)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
 
 @keyframes kenburnsUpLeft {
     0% {
-        transform: scale(1.5) translate(10%, 10%);
         transform: scale(1.5) translate(10%, 10%)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
 
 @keyframes kenburnsUpLeft {
     0% {
-        transform: scale(1.5) translate(10%, 10%);
         transform: scale(1.5) translate(10%, 10%)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
 
 @keyframes kenburnsUpRight {
     0% {
-        transform: scale(1.5) translate(-10%, 10%);
         transform: scale(1.5) translate(-10%, 10%)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
 
 @keyframes kenburnsUpRight {
     0% {
-        transform: scale(1.5) translate(-10%, 10%);
         transform: scale(1.5) translate(-10%, 10%)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
 
 @keyframes kenburnsUp {
     0% {
-        transform: scale(1.5) translate(0, 10%);
         transform: scale(1.5) translate(0, 10%)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
 
 @keyframes kenburnsUp {
     0% {
-        transform: scale(1.5) translate(0, 10%);
         transform: scale(1.5) translate(0, 10%)
     }
+
     100% {
-        transform: scale(1) translate(0, 0);
         transform: scale(1) translate(0, 0)
     }
 }
