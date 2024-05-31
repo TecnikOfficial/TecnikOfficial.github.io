@@ -534,7 +534,7 @@ a:hover {
 
 /* noinspection ALL,CssUnusedSymbol */
 .grcs_background_content .bg-pattern {
-    background: url("src/images/pattern.png") repeat;
+    background: url("../images/pattern.png") repeat;
     opacity: .5;
 }
 
