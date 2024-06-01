@@ -1,4 +1,4 @@
-# TecNik Official YouTube Channel
+# TecNik Official Site
 
 Official Site: [TecNik](https://tecnik.pages.dev)  
 YouTube Channel: [TecNikOfficial](https://www.youtube.com/@TecnikOfficial)
