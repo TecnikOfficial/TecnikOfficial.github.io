@@ -6,13 +6,12 @@
 Welcome to the TecNik Official repository! TecNik is a YouTube channel that provides safe and reversible tips and tricks related to technology. Whether you're a tech enthusiast or just looking to get the most out of your devices, TecNik offers practical advice without any worries. They cover topics such as switching from default settings to Tecformed, ensuring you optimize your tech experience.
 
 So, if you’re curious about tech tips, give TecNik a visit! 🚀🔧
-
-## About TecNik
-TecNik is a YouTube channel dedicated to helping users make the most of their technology. From software tweaks to hardware recommendations, TecNik provides valuable insights for tech enthusiasts.
+be channel dedicated to helping users make the most of their technology. From software tweaks to hardware recommendations, TecNik provides valuable insights for tech enthusiasts.
 
 ## Quick Overview
 - Safe and reversible tips
 - Practical advice for optimizing your tech experience
+- Gaming/Windows/Internet Tweaks
 - Regularly updated content
 
 ## What you can do to support!
