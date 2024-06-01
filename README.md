@@ -30,9 +30,8 @@ Disclaimer: Some of the code and icons used on this site belong to their respect
 This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. You are free to share and adapt the content, but not for commercial purposes.Dont just directly copy/paste be creative.
 
 ## Credits
-bootstrap<br>
-creazione.avanzare.co<br>
-jsquery<br>
-wordpress<br>
+[bootstrap](https://getbootstrap.com)<br>
+[creazione.avanzare.co](https://themeforest.net/user/avanzare)👑<br>
+[wordpress](https://wordpress.org/)<br>
 
 Happy exploring with TecNik! 🚀🔧
