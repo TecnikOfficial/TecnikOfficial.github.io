@@ -26,7 +26,7 @@ Contributions to TecNik are welcome! If you have tech tips or tricks to share, c
 - Collaborate on TecNik's GitHub projects (if applicable).
 
 ## License
-Disclaimer: Some of the code and icons used on this site belong to their respective creators and owners. We are using them for personal use only and not for commercial purposes. Credits for the code and icons used can be found at the end of the file.
+Disclaimer: Some of the code and icons/images used on this site belong to their respective creators and owners. We are using them for personal use only and not for commercial purposes. Credits for the code and icons used can be found at the end of the file.
 This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. You are free to share and adapt the content, but not for commercial purposes.Dont just directly copy/paste be creative.
 
 ## Credits
