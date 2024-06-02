@@ -23,7 +23,7 @@ We are dedicated to helping users make the most of their technology. From softwa
 Contributions to TecNik are welcome! If you have tech tips or tricks to share, consider contributing to the channel. Here's how:
 - Submit ideas for future videos.
 - Provide feedback on existing content.
-- Collaborate on TecNik's GitHub projects (if applicable).
+- Collaborate on TecNik's GitHub projects.
 
 ## License
 Disclaimer: Some of the code and icons/images used on this site belong to their respective creators and owners. We are using them for personal use only and not for commercial purposes. Credits for the code and icons used can be found at the end of the file.
