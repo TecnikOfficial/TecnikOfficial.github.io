@@ -3,6 +3,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: '/<REPO>/',
   build: {
     outDir: 'dist', // Output directory for the build
     minify: 'terser', // Use Terser for minification
@@ -10,3 +11,4 @@ export default defineConfig({
     // Add any other optimization options as needed
   },
 });
+
