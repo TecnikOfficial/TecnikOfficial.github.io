@@ -1,3 +1,6 @@
-export default {
-  base: '/', // or '/<REPO>/' if your repository is at https://github.com/<USERNAME>/<REPO>
-}
+// vite.config.js
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  base: '/',
+});
