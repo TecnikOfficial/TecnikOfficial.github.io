@@ -1,0 +1,36 @@
+name: Integrate Vite and Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Vite Project
+        run: npm run build
+
+      - name: Copy Optimized Output to Root Directory
+        run: cp -r dist/* .
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git add .
+          git commit -m "Integrate Vite optimizations"
+          git push
