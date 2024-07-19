@@ -24,11 +24,14 @@ jobs:
     - name: Build Vite project
       run: npm run build
 
-    - name: Copy static files
-      run: cp -r ./dist/* .
+    - name: Create dist folder
+      run: mkdir dist
+
+    - name: Copy files to dist folder
+      run: cp -r ./dist/* dist/
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: .
+        publish_dir: dist
