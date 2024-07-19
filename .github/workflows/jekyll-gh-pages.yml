@@ -37,7 +37,7 @@ jobs:
       - name: Optimize Assets
         run: |
           # Add commands here to optimize CSS, JavaScript, images, and other assets
-          # Example: Minify CSS and JavaScript, optimize images, etc.
+          # Example: Minify CSS, optimize images, etc.
 
   # Deployment job
   deploy:
@@ -49,10 +49,6 @@ jobs:
     steps:
       - name: Remove Unused CSS
         run: npx purify-css ./_site/css/*.css ./_site/**/*.html --min --out ./_site/css/purified.css
-      - name: Install UglifyJS
-        run: npm install uglify-js
-      - name: Remove Unused JavaScript
-        run: npx uglifyjs ./_site/js/*.js --compress --mangle --output ./_site/js/minified.js
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
