@@ -48,7 +48,9 @@ jobs:
     needs: build
     steps:
       - name: Remove Unused CSS
-        run: npx purifycss ./_site/css/*.css ./_site/**/*.html --min --out ./_site/css/purified.css
+        run: npx purify-css ./_site/css/*.css ./_site/**/*.html --min --out ./_site/css/purified.css
+      - name: Install UglifyJS
+        run: npm install uglify-js
       - name: Remove Unused JavaScript
         run: npx uglifyjs ./_site/js/*.js --compress --mangle --output ./_site/js/minified.js
       - name: Deploy to GitHub Pages
