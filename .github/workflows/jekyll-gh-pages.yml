@@ -49,6 +49,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Remove Unused CSS
+        run: npx purifycss ./_site/css/*.css ./_site/**/*.html --min --out ./_site/css/purified.css
+      - name: Remove Unused JavaScript
+        run: npx uglifyjs ./_site/js/*.js --compress --mangle --output ./_site/js/minified.js
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
