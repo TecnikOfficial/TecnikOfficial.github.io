@@ -52,7 +52,7 @@ jobs:
       - name: Install UglifyJS
         run: npm install uglify-js
       - name: Remove Unused JavaScript
-        run: npx uglifyjs ./_site/js/file1.js ./_site/js/file2.js --compress --mangle --output ./_site/js/minified.js
+        run: npx uglifyjs ./_site/js/*.js --compress --mangle --output ./_site/js/minified.js
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
