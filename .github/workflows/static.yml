@@ -1,5 +1,8 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+To tweak the GitHub Actions workflow for caching to improve performance, you can utilize caching actions to cache dependencies or build artifacts. Here's an updated version of your workflow that includes caching to improve performance:
+
+```yaml
+# Simple workflow for deploying static content to GitHub Pages with caching
+name: Deploy static content to Pages with caching
 
 on:
   # Runs on pushes targeting the default branch
@@ -31,13 +34,32 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            npm-${{ runner.os }}-
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
           path: '.'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+```
+
+In this updated workflow:
+- A caching step is added before deploying to cache npm dependencies to improve build performance. Adjust the path and keys based on your specific dependencies.
+- The caching action helps speed up the workflow by storing dependencies between workflow runs.
+- The rest of the workflow remains the same, deploying the static content to GitHub Pages.
+
+By incorporating caching in your workflow, you can optimize the build process and reduce the time it takes to deploy your static content to GitHub Pages. If you have any more questions or need further assistance, feel free to ask!
