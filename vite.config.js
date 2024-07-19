@@ -3,7 +3,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/<REPO>/',
+  base: '/TecnikOfficial.github.io/',
   build: {
     outDir: 'dist', // Output directory for the build
     minify: 'terser', // Use Terser for minification
