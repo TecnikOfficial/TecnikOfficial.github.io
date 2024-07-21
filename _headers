@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://instant.page https://chromedino.com/ chrome://dino https://static.cloudflareinsights.com https://tecnik.bio.link; style-src 'self' 'unsafe-inline'; connect-src 'self' https://cloudflareinsights.com; media-src 'self' data: blob:;
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://instant.page https://chromedino.com https://static.cloudflareinsights.com https://tecnik.bio.link; style-src 'self' 'unsafe-inline'; connect-src 'self' https://cloudflareinsights.com https://chromedino.com ; media-src 'self' data: blob:;
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
