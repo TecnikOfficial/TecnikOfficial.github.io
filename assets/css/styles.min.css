@@ -182,7 +182,7 @@ to{right:0}
 .wpb_single_image img{height:auto;max-width:100%;vertical-align:top}
 .wpb_single_image .vc_single_image-wrapper{display:inline-block;vertical-align:top;max-width:100%}
 .wpb_single_image .vc_figure{display:inline-block;vertical-align:top;margin:0;max-width:100%}
-/* custom */img:hover,button:hover{filter:drop-shadow(0 0 10px red)}
+/*custom*/img:hover,button:hover{filter:drop-shadow(0 0 10px red)}
 .widget-button:hover{filter:invert(100%)}
 .text:hover,p:hover,h1:hover,h2:hover,h3:hover,h4:hover,h5:hover,h6:hover{text-decoration:underline}
 /*rgb*/.color-switch{-webkit-animation:switchColors 2s infinite alternate;animation:switchColors 2s infinite alternate}
