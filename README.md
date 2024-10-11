@@ -35,5 +35,7 @@ This project is licensed under the Creative Commons Attribution-NonCommercial-Sh
 [creazione.avanzare.co](https://themeforest.net/user/avanzare)👑<br>
 [wordpress](https://wordpress.org/)<br>
 [wallpaper: Watch Dogs](https://www.ubisoft.com/en-us/game/watch-dogs/watch-dogs)<br>
+[catjs](https://github.com/glreno/oneko)<br>
+[w3schools](https://www.w3schools.com/)<br>
 
 Happy exploring with TecNik! 🚀🔧
