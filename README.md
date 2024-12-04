@@ -18,7 +18,7 @@ We are dedicated to helping users make the most of their technology. From softwa
 - Copyright Free Songs/Music
 
 ## What you can do to support!
-1. Support us on [CoinDrop](https://coindrop.to/tecnik).
+1. 💲upport us on [CoinDrop](https://coindrop.to/tecnik).
 2. Explore the playlists to find topics that interest you.
 3. Subscribe to stay up-to-date with Tech and Music related content.
 
@@ -46,6 +46,6 @@ This project is licensed under the Creative Commons Attribution-NonCommercial-Sh
 
 
 ## Credits
-A.i 
+A.i : [Blackbox](https://www.blackbox.ai) and [Duck](https://duck.ai)  
 
 Happy exploring with TecNik! 🚀🔧
