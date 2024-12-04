@@ -596,7 +596,6 @@ function createHeart() {
 
 // Function to handle mouse movement for drawing
 let isDrawing = false;
-let drawingTimeout;
 function handleMouseMove(event) {
     if (isDrawing) {
         const drawingDot = document.createElement('div');
@@ -618,26 +617,29 @@ function handleMouseMove(event) {
 // Function to start drawing
 function startDrawing() {
     isDrawing = true;
-    document.addEventListener('mousemove', handleMouseMove);
-    // Reset the timeout to stop drawing after inactivity
-    clearTimeout(drawingTimeout);
-    drawingTimeout = setTimeout(stopDrawing, 5000); // Stop drawing after 5 seconds of inactivity
 }
 
 // Function to stop drawing
 function stopDrawing() {
     isDrawing = false;
-    document.removeEventListener('mousemove', handleMouseMove);
 }
 
 // Add event listener for mouse down to start drawing
-document.addEventListener('mousedown', startDrawing);
-document.addEventListener('mouseup', stopDrawing);
+document.addEventListener('mousedown', (event) => {
+    startDrawing(); // Start drawing on click
+    handleMouseMove(event); // Call handleMouseMove to draw at the click position
+});
+
+// Add event listener for mouse move to draw
+document.addEventListener('mousemove', handleMouseMove); // Start drawing on mouse move
+
+// Add event listener for mouse up to stop drawing
+document.addEventListener('mouseup', stopDrawing); // Stop drawing on mouse up
+
 // Function to open the overlay for services
 function openOverlay() {
     document.getElementById("table-overlay").style.display = "flex"; // Show overlay
 }
-
 // Function to close the overlay for services
 function closeOverlay() {
     document.getElementById("table-overlay").style.display = "none"; // Hide overlay
