@@ -17,7 +17,6 @@ body, html {
     overflow: hidden; /* Show scrollbars only when necessary */
     cursor: url('https://play.vsthemes.org/t-cursors/12251/25a255ea88403b8c79e2bb1b03efd2a5.webp'), auto; 
 }
-
 /* Custom cursor for buttons and specific classes */
 button, .hover-image, .notification-bell, .widget-image, a {
     cursor: url('https://play.vsthemes.org/t-cursors/12251/b455a062e7b24797cc26a84981f31797.webp'), pointer !important;
@@ -27,20 +26,27 @@ a {
     color: green; /* Set link color to green */
     text-decoration: none; /* Remove underline */
 }
-
 /* Optional: Change link color on hover and remove underline */
 a:hover {
     color: lightgreen; /* Change to a darker green on hover for better visibility */
     text-decoration: none; /* Ensure underline is still removed on hover */
 }
-
+.drawing {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none; /* Prevent interference with mouse events */
+    width: 10px; /* Size of the drawing dot */
+    height: 10px; /* Size of the drawing dot */
+    background-color: rgba(0, 255, 0, 0.7); /* Neon green color */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 255, 0, 0.5); /* Neon glow */
+    transition: opacity 0.5s ease; /* Smooth transition for disappearing */
+}
 .video-background {
     position: relative;
     height: 100vh;
     overflow: hidden;
 	background-color: black;
 }
-
 .video-background::before {
     content: "";
     position: absolute;
@@ -51,7 +57,6 @@ a:hover {
     background-color: rgba(0, 0, 0, 0.3); /* Dark overlay with reduced opacity (30%) */
     z-index: 1; /* Place the overlay behind the text */
 }
-
 video {
     width: 100%;
     height: 100%;
@@ -78,7 +83,6 @@ video {
     color: white; /* Text color */
     font-size: 3rem; /* Font size for the year */
 }
-
 .unblur {
     backdrop-filter: blur(0); /* Remove blur */
     transition: backdrop-filter 5s ease; /* Transition for unblur effect */
@@ -581,6 +585,45 @@ function createHeart() {
     });
 }
 
+// Function to handle mouse movement for drawing
+let isDrawing = false;
+let drawingTimeout;
+function handleMouseMove(event) {
+    if (isDrawing) {
+        const drawingDot = document.createElement('div');
+        drawingDot.classList.add('drawing');
+        drawingDot.style.left = `${event.pageX}px`;
+        drawingDot.style.top = `${event.pageY}px`;
+        document.body.appendChild(drawingDot);
+
+        // Remove the dot after 5 seconds
+        setTimeout(() => {
+            drawingDot.style.opacity = 0; // Fade out
+            setTimeout(() => {
+                drawingDot.remove(); // Remove from DOM
+            }, 500); // Match this duration with the CSS transition duration
+        }, 5000);
+    }
+}
+
+// Function to start drawing
+function startDrawing() {
+    isDrawing = true;
+    document.addEventListener('mousemove', handleMouseMove);
+    // Reset the timeout to stop drawing after inactivity
+    clearTimeout(drawingTimeout);
+    drawingTimeout = setTimeout(stopDrawing, 5000); // Stop drawing after 5 seconds of inactivity
+}
+
+// Function to stop drawing
+function stopDrawing() {
+    isDrawing = false;
+    document.removeEventListener('mousemove', handleMouseMove);
+}
+
+// Add event listener for mouse down to start drawing
+document.addEventListener('mousedown', startDrawing);
+document.addEventListener('mouseup', stopDrawing);
 // Function to open the overlay for services
 function openOverlay() {
     document.getElementById("table-overlay").style.display = "flex"; // Show overlay
@@ -653,6 +696,10 @@ document.addEventListener('click', function(event) {
         notificationPanel.style.display = "none"; // Close the notification panel
     }
 });
+// Function to disable right-click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
 </script>
 </body>
 </html>
