@@ -124,17 +124,7 @@ video {
     position: relative; /* Allow the text to be positioned without affecting siblings */
     z-index: 1; /* Ensure it is above the background */
 }
-/* Media query for mobile devices */
-@media only screen and (max-width: 767px) {
-    .slider {
-        top: 37%; /* Adjust position for mobile devices */
-        width: 95%; /* Increase width for mobile */
-    }
-    
-    .text.three-d {
-        font-size: 2.5rem; /* Adjust font size for mobile */
-    }
-}
+
 
 .hover-image {
     width: 80%; /* Adjusted to be responsive */
@@ -167,13 +157,6 @@ video {
     transition: color 0.3s ease; /* Transition for color change */
     position: relative; /* Allow the text to be positioned without affecting siblings */
     z-index: 1; /* Ensure it is above the background */
-}
-
-/* Media query for mobile devices */
-@media only screen and (max-width: 767px) {
-    .three-d {
-        font-size: 2rem; /* Adjust font size for mobile */
-    }
 }
 
 .three-d:hover {
@@ -256,15 +239,6 @@ iframe {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
-}
-@media (max-width: 768px) { /* Adjust the max-width as needed */
-    .widget {
-        position: relative; /* Ensure the widget can be positioned */
-        top: -20px; /* Move it up */
-        left: 30px; /* Move it to the right */
-        width: 50%; /* Make it smaller */
-        height: auto; /* Adjust height as needed */
-    }
 }
 
 .heart {
@@ -410,6 +384,24 @@ th {
     th, td {
         padding: 5px; /* Adjust padding for mobile devices */
     }
+  .slider {
+        top: 37%; /* Adjust position for mobile devices */
+        width: 95%; /* Increase width for mobile */
+    }
+    .text.three-d {
+        font-size: 2.5rem; /* Adjust font size for mobile */
+    }
+    .three-d {
+        font-size: 2rem; /* Adjust font size for mobile */
+    }
+    .widget {
+        position: relative; /* Ensure the widget can be positioned */
+        top: -20px; /* Move it up */
+        left: 10px; /* Move it to the right */
+        width: 60%; /* Make it smaller */
+        height: auto; /* Adjust height as needed */
+    }
+  
 }
 
 /* Tablet devices (portrait and landscape) */
