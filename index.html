@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Official site- @TecNikOfficial on YouTube is dedicated to bringing you the safe/tested tips and tricks for Windows, gaming, and internet-related technologies.🚀
+🎵SyncKing channel we are dedicated to provide you when quality music and songs generated with the help of A.i❤️">
+        <meta name="robots" content="index, follow">
+        <meta name="msvalidate.01" content="64DD8D6892380686ECBC2B2AB639F756"/>
+        <meta name="google-site-verification" content="ebIZ0CJJW0rZZjBOIn0btfrn2vYjA9IDo3GLpBlNYQQ"/>
+        <meta name="author" content="TecNik">
+        <meta name="generator" content="TecNik">
+        <meta property="og:title" content="TecNik - Official Site"> 
+        <meta property="og:description" content="Official site- @TecNikOfficial on YouTube bringing safe tech tips for everyone to follow.🚀🎵SyncKing channel is dedicated to provide free high quality music/songs">
+        <meta property="og:url" content="https://tecnik.pages.dev">
+        <meta property="og:image" content="https://yt3.ggpht.com/vgfPAHeosXyCt2oXcafqujgKx1yGtxH3nMV5w7wxS1mTPEHStLWnIvij7LFy5c5RTgVpg7Q4sqk=s128-c-k-c0x00ffffff-no-rj-mo">
+        <link rel="canonical" href="https://tecnik.pages.dev">
+	<link rel="icon" href="favicon.webp" type="image/webp">
+    <title>Tecnik - Official Site</title>
+<style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Show scrollbars only when necessary */
+    cursor: url('https://play.vsthemes.org/t-cursors/12251/25a255ea88403b8c79e2bb1b03efd2a5.webp'), auto; 
+}
+
+/* Custom cursor for buttons and specific classes */
+button, .hover-image, .notification-bell, .widget-image, a {
+    cursor: url('https://play.vsthemes.org/t-cursors/12251/b455a062e7b24797cc26a84981f31797.webp'), pointer !important;
+}
+/* Change link color to green and remove underline */
+a {
+    color: green; /* Set link color to green */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Optional: Change link color on hover and remove underline */
+a:hover {
+    color: lightgreen; /* Change to a darker green on hover for better visibility */
+    text-decoration: none; /* Ensure underline is still removed on hover */
+}
+
+.video-background {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+	background-color: black;
+}
+
+.video-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Dark overlay with reduced opacity (30%) */
+    z-index: 1; /* Place the overlay behind the text */
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; /* Place the video behind the overlay */
+}
+#loading-screen {
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Initial blur effect */
+    display: flex; /* Center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 100; /* Ensure it's above other elements */
+    opacity: 1; /* Initial opacity */
+    transition: opacity 5s ease; /* Transition for fading out */
+}
+
+.loading-content {
+    color: white; /* Text color */
+    font-size: 3rem; /* Font size for the year */
+}
+
+.unblur {
+    backdrop-filter: blur(0); /* Remove blur */
+    transition: backdrop-filter 5s ease; /* Transition for unblur effect */
+}
+.slider {
+    position: absolute;
+    top: 38%; /* Adjust this value to move the content upwards */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2; /* Place the text on top of the overlay */
+    height: 400px; /* Set a fixed height */
+    pointer-events: auto; /* Allow pointer events for slider */
+}
+.text.three-d {
+    font-size: 4rem; /* Default font size */
+    color: white; /* Default color */
+    text-shadow: 
+        1px 1px 0 rgba(0, 0, 0, 0.5), 
+        2px 2px 0 rgba(0, 0, 0, 0.5), 
+        3px 3px 0 rgba(0, 0, 0, 0.5), 
+        4px 4px 0 rgba(0, 0, 0, 0.5), 
+        5px 5px 0 rgba(0, 0, 0, 0.5); /* Creates the 3D effect */
+    -webkit-text-stroke: 1px black; /* Optional: adds an outline */
+    animation: float 3s ease-in-out infinite; /* Floating animation */
+    transition: color 0.3s ease; /* Transition for color change */
+    position: relative; /* Allow the text to be positioned without affecting siblings */
+    z-index: 1; /* Ensure it is above the background */
+}
+/* Media query for mobile devices */
+@media only screen and (max-width: 767px) {
+    .slider {
+        top: 40%; /* Adjust position for mobile devices */
+        width: 95%; /* Increase width for mobile */
+    }
+    
+    .text.three-d {
+        font-size: 2.5rem; /* Adjust font size for mobile */
+    }
+}
+
+.hover-image {
+    width: 80%; /* Adjusted to be responsive */
+    max-width: 300px; /* Maximum width to maintain size on larger screens */
+    margin-bottom: 20px; /* Space between image and text */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
+    cursor: pointer; /* Change cursor to pointer */
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* Initial state without shadow */
+    pointer-events: auto; /* Ensure the image is clickable */
+}
+
+.hover-image:hover {
+    transform: scale(1.1); /* Zoom in effect on hover */
+    filter: drop-shadow(0 0 15px rgba(0, 255, 0, 0.7)) /* Green glow effect */
+            drop-shadow(0 0 25px rgba(0, 255, 0, 0.5))
+            drop-shadow(0 0 35px rgba(0, 255, 0, 0.3));
+}
+
+.three-d {
+    font-size: 4rem; /* Default font size */
+    color: white; /* Default color */
+    text-shadow: 
+        1px 1px 0 rgba(0, 0, 0, 0.5), 
+        2px 2px 0 rgba(0, 0, 0, 0.5), 
+        3px 3px 0 rgba(0, 0, 0, 0.5), 
+        4px 4px 0 rgba(0, 0, 0, 0.5), 
+        5px 5px 0 rgba(0, 0, 0, 0.5); /* Creates the 3D effect */
+    -webkit-text-stroke: 1px black; /* Optional: adds an outline */
+    animation: float 3s ease-in-out infinite; /* Floating animation */
+    transition: color 0.3s ease; /* Transition for color change */
+    position: relative; /* Allow the text to be positioned without affecting siblings */
+    z-index: 1; /* Ensure it is above the background */
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 767px) {
+    .three-d {
+        font-size: 2rem; /* Adjust font size for mobile */
+    }
+}
+
+.three-d:hover {
+    color: green; /* Change text color to green on hover */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin: 5px 0; /* gap up and down */
+    position: relative; /* Ensure it is positioned correctly */
+    pointer-events: auto; /* Allow pointer events for buttons */
+}
+
+.glow-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Darker transparent background */
+    border: 2px solid white;
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.glow-button:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), /* Green glow */
+                0 0 30px rgba(0, 255, 0, 0.5), 
+                0 0 40px rgba(0, 255 , 0, 0.5), 
+                0 0 50px rgba(0, 255, 0, 0.5);
+    transform: scale(1.05); /* Add zoom effect on hover */
+}
+
+.iframe-container {
+    position: relative; /* Position relative to allow absolute positioning of the iframe */
+    width: 100%; /* Full width of the container */
+	height: 80%; /* Full height of the container */
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (height/width * 100%) */
+    margin-top: 20px; /* Space between the buttons and the iframe */
+}
+
+iframe {
+    position: absolute; /* Position absolute to fill the container */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the iframe */
+    height: 100%; /* Full height of the iframe */
+    border: none; /* Remove border */
+    pointer-events: auto; /* Allow pointer events for iframe */
+}
+
+.widget-container {
+    position: absolute;
+    bottom: 20px; 
+    right: 20px; /* Position the widget to the right */
+    z-index: 10; /* Ensure it is above other elements */
+    display: flex; /* Use flexbox for positioning */
+    align-items: center; /* Center items vertically */
+    pointer-events: auto; /* Allow pointer events for the container */
+}
+
+.widget-image {
+    width: 100px; /* Set a fixed size for the widget image */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for hover effect */
+    position: relative; /* Ensure the widget image is positioned relative to its container */
+    z-index: 11; /* Ensure it is above other elements */
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+}
+.widget-image:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+    filter: drop-shadow(0 0 8px rgba(0, 255, 0, 0.5)) /* Reduced green glow effect */
+            drop-shadow(0 0 15px rgba(0, 255, 0, 0.3))
+            drop-shadow(0 0 25px rgba(0, 255, 0, 0.2));
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.heart {
+    position: absolute;
+    font-size: 30px; /* Size of the heart emoji */
+    animation: fall 2s forwards; /* Animation for falling effect */
+}
+
+@keyframes fall {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; } /* Fall to the bottom of the viewport */
+}
+/* Notification Bell Styles */
+.notification-bell {
+    position: absolute;
+    top: 20px; /* Position at the top */
+    right: 20px; /* Position to the right */
+    cursor: pointer; /* Change cursor to pointer */
+    width: 50px; /* Set width of the bell icon */
+    height: 50px; /* Set height of the bell icon */
+    z-index: 3; /* Ensure it is above other elements */
+}
+
+#notification-panel {
+    position: absolute; /* Keep it absolute */
+    top: 60px; /* Adjust this value to position it just below the bell icon */
+    right: 0; /* Align it with the right edge of the bell icon */
+    width: 300px; /* Set a fixed width */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Prevent overflow of content */
+    display: none; /* Initially hidden */
+    z-index: 6; /* Ensure it is above other elements */
+    background-color: rgba(0, 0, 0, 0.7); /* Darker transparent background */
+}
+
+#notification-panel::before {
+    content: ""; /* Create a pseudo-element */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    right: 0; /* Align it to the right */
+    bottom: 0; /* Align it to the bottom */
+    z-index: 1; /* Place it behind the content */
+}
+
+#notification-panel .overlay-content {
+    position: relative; /* Position relative to the panel */
+    color: white; /* Text color */
+    padding: 20px; /* Padding inside the panel */
+    border-radius: 10px; /* Rounded corners */
+    background-color: transparent; /* Make the background transparent */
+    z-index: 2; /* Place it above the dark background */
+}
+
+.footer {
+    position: fixed; /* Change to fixed to stick to the bottom */
+    bottom: 0; /* Stick to the bottom of the viewport */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    color: white; /* Text color */
+    font-size: 1rem; /* Reduced font size */
+    text-align: center; /* Center text */
+    z-index: 4; /* Ensure it is above other elements */
+    background-color: rgba(0, 0, 0, 0.6); /* Optional: dark background for readability */
+    padding: 5px; /* Reduced padding for smaller appearance */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.overlay {
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Lighter transparent background */
+    display: none; /* Initially hidden */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    z-index: 5; /* Ensure it is above other elements */
+}
+
+.overlay-content {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker transparent background for content */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Padding inside the overlay */
+    box-shadow: 0 0 20px rgba(0,  0, 0, 0.5); /* Shadow for depth */
+    border: 2px solid green; /* Green outline */
+    max-width: 800px; /* Max width of the overlay */
+    width: 90%; /* Responsive width */
+    text-align: left; /* Align text to the left */
+    color: white; /* White text for overlay content */
+    position: relative; /* Position relative to allow absolute positioning of the close button */
+}
+
+.close-overlay {
+    position: absolute;
+    top: 10px; /* Position from the top */
+    right: 10px; /* Position from the right */
+    font-size: 24px; /* Size of the close button */
+    cursor: pointer; /* Change cursor to pointer */
+    color: white; /* Close button color */
+    background: none; /* No background */
+    border: none; /* No border */
+    z-index: 6; /* Ensure it is above other elements */
+}
+
+.close-overlay:hover {
+    color: green; /* Change text color to green on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.table-scroll {
+    max-height: 300px; /* Set a maximum height for the table container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-top: 10px; /* Space between the title and the table */
+}
+
+table {
+    width: 100%; /* Full width of the table */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+th, td {
+    padding: 10px; /* Padding for table cells */
+    border: 1px solid white; /* Border for table cells */
+    text-align: left; /* Align text to the left */
+}
+
+th {
+    background-color: rgba(0, 255, 0, 0.5); /* Light green background for headers */
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 767px) {
+    /* Styles for mobile devices */
+    .overlay-content {
+        width: 90%; /* Adjust width for mobile devices */
+        padding: 10px; /* Adjust padding for mobile devices */
+    }
+    .table-scroll {
+        max-height: 200px; /* Adjust max height for mobile devices */
+    }
+    th, td {
+        padding: 5px; /* Adjust padding for mobile devices */
+    }
+}
+
+/* Tablet devices (portrait and landscape) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Styles for tablet devices */
+    .overlay-content {
+        width: 80%; /* Adjust width for tablet devices */
+        padding: 15px; /* Adjust padding for tablet devices */
+    }
+    .table-scroll {
+        max-height: 250px; /* Adjust max height for tablet devices */
+    }
+    th, td {
+        padding: 10px; /* Adjust padding for tablet devices */
+    }
+}
+</style>
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div id="year-timer">1999</div>
+        </div>
+    </div>
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="https://videos.pexels.com/video-files/3130284/3130284-hd_1920_1080_30fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="slider">
+            <img src="https://tecnik.pages.dev/assets/img/tecnikmain4.avif" class="hover-image" title="Click To Copy!" alt="Main Image">
+            <div class="text three-d" id="slider-text" onclick="changeText()">Welcome Thanks for Visiting!</div>    <div class="button-container">
+                <button class="glow-button" onclick="window.location.href='https://tecnik.bio.link/'" title="Contact Us">Connect</button>
+                <button class="glow-button" id="button2" title="💲">Services</button>
+            </div>
+            <!-- Iframe-->
+            <div class="iframe-container">
+                <iframe scrolling="no" id="hearthis_at_user_syncking" width="100%" height="350" src="https://app.hearthis.at/syncking/embed/?hcolor=ba1010&css=&skin=black" frameborder="0" allowtransparency></iframe>
+            </div>
+        </div>
+        <div class="widget-container">
+            <img src="https://tecnik.pages.dev/assets/img/donate.gif" class="widget-image" title="TYSM🤗" alt="Donate" onclick="yourWidgetClickFunction()">
+        </div> 
+
+        <!-- Overlay for Table -->
+        <div id="table-overlay" class="overlay">
+            <div class="overlay-content">
+                <span class="close-overlay" onclick="closeOverlay()">✖</span>
+                <h2>Freelance Services</h2>
+                <div class="table-scroll">
+                    <table>
+                        <tr>
+                            <th>Service</th>
+                            <th>Description</th>
+                            <th>Price Range in (INR)</th>
+                        </tr>
+                        <tr>
+                            <td>Graphic Design</td>
+                            <td>A.I Photo editing, Logo/Banner/Thumbnails/Product label Design</td>
+                            <td>200 - 800</td>
+                        </tr>
+                        <tr>
+                            <td>Video Editing</td>
+                            <td>Youtube video editing and intro/outro design or cover song mix</td>
+                            <td>449 - 1500</td>
+                        </tr>
+                        <tr>
+                            <td>Web Development</td>
+                            <td>Building Static Portfolio Sites with Html5,CSS,JS.with Hosting Advice and Site Optimisation</td>
+                            <td>749 - 4999</td>
+                        </tr>
+                        <tr>
+                            <td>Resume Making</td>
+                            <td>ats compatible or modern design resume</td>
+                            <td>175 - 240</td>
+                        </tr>
+                        <tr>
+                            <td>Computer Troubleshoot</td>
+                            <td>Diagnose computer related problem and try to find solution, pc build advice</td>
+                            <td>FREE</td>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+                <h5>Contact using discord or email: TecnikOfficial@Outlook.com</h5>
+                <br>
+                <p style="font-size: 15px;">Please note that the preferred payment method is UPI. Full refunds are only available for Indian users who made payments via UPI. Payments made through PayPal or Stripe are not eligible for refunds.<br>Give us feedback <a href="https://tellonym.me/tecnik">here😃</a></p>
+            </div>
+        </div>
+        <img src="https://raw.githubusercontent.com/TecnikOfficial/tempnew/refs/heads/main/noti.webp" class="notification-bell" alt="Notification Bell" onclick="openNotificationPanel()"> 
+    </div>
+    <!-- Notification Panel Overlay -->
+    <div id="notification-panel">
+        <div class="overlay-content">
+            <p>1: Are you subscribed to <a href="https://www.youtube.com/channel/UCXucwi4swKyTmCUB9RrFaQw?sub_confirmation=1" target="_blank">Tecnik Official</a> on YouTube?💻</p><br>
+<p>2: Are you subscribed to <a href="https://www.youtube.com/channel/UC35TPNUnNegZq4mBWvU0o7g?sub_confirmation=1" target="_blank">Syncking</a> on YouTube?🎵</p><br>
+<p>3: <a href="https://www.youtube-nocookie.com/embed/videoseries?list=PLzXDhbvRPJ1A33piKX-ss1zjNAVdqu4mM&loop=1&autoplay=1&modestbranding=1" target="_blank">CSGO Montage</a></p><br>
+<p>4: <a href="./oldtheme/oldtheme.html">Old Site</a></p>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <footer class="footer">
+    Made with ❤️ using A.I | Source Code 
+    <a href="https://github.com/TecnikOfficial/TecnikOfficial.github.io" target="_blank">
+    <img src="https://www.svgrepo.com/download/503359/github.svg" alt="GitHub" width="22" height="22" style="vertical-align: bottom;">
+</a>
+</footer>
+    <script>// Array of text options
+const textOptions = [
+    "COMPUTER ENTHUSIAST",
+    "WEBSITE DESIGNER A.I EXPLORER",
+    "WINDOWS TWEAKER CASUAL GAMER",
+    "DIGITAL MUSIC CREATOR",
+    "FREELANCE VIDEO EDITOR"    
+];
+
+// Function to change the text
+function changeText() {
+    const textElement = document.getElementById("slider-text");
+    const randomIndex = Math.floor(Math.random() * textOptions.length);
+    textElement.textContent = textOptions[randomIndex];
+}
+
+// Change text every 4 seconds
+setInterval(changeText, 4000);
+
+// Initial call to set the first text
+changeText();
+
+// Year timer functionality
+let currentYear = 1999;
+const yearTimerElement = document.getElementById('year-timer');
+const totalYears = 2025 - 1999 + 1; // Include both 1999 and 2025
+const durationPerYear = 4000 / totalYears; // Total duration divided by number of years
+const increasedDurationFor1999 = 900; // Increased duration for 1999 (1 seconds)
+
+function fadeOutLoadingScreen() {
+    const loadingScreen = document.getElementById('loading-screen');
+    loadingScreen.style.opacity = 0; // Start fading out
+    setTimeout(() => {
+        loadingScreen.style.display = 'none'; // Hide after fade out
+    }, 1900); // Match this duration with the CSS transition duration
+}
+
+function updateYear() {
+    yearTimerElement.textContent = currentYear;
+
+    // Smooth transition effect
+    yearTimerElement.style.opacity = 1; // Fade in
+    setTimeout(() => {
+        yearTimerElement.style.opacity = 0; // Fade out
+    }, (currentYear === 1999 ? increasedDurationFor1999 : durationPerYear) - 30); // Fade out just before the year changes
+
+    // Increment the year
+    if (currentYear < 2025) {
+        // Schedule the next update
+        setTimeout(() => {
+            currentYear++; // Move to the next year
+            updateYear(); // Call the function recursively for the next year
+        }, currentYear === 1999 ? increasedDurationFor1999 : durationPerYear); // Use increased duration for 1999
+    } else {
+        // Ensure the last year is displayed without going blank
+        yearTimerElement.textContent = 2025;
+        yearTimerElement.style.opacity = 1; // Ensure it is fully visible
+        fadeOutLoadingScreen(); // Call fade out function
+    }
+}
+
+// Start the year update animation
+updateYear();
+
+// Heart emoji functionality
+const widgetImage = document.querySelector('.widget-image');
+
+widgetImage.addEventListener('mouseover', () => {
+    for (let i = 0; i < 10; i++) { // Create 10 heart emojis
+        createHeart();
+    }
+});
+
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerText = '❤️'; // Heart emoji
+    heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+    heart.style.top = '0'; // Start from the top
+    document.body.appendChild(heart);
+
+    // Remove heart after animation
+    heart.addEventListener('animationend', () => {
+        heart.remove();
+    });
+}
+
+// Function to open the overlay for services
+function openOverlay() {
+    document.getElementById("table-overlay").style.display = "flex"; // Show overlay
+}
+
+// Function to close the overlay for services
+function closeOverlay() {
+    document.getElementById("table-overlay").style.display = "none"; // Hide overlay
+}
+
+// Add event listener to Button 2
+document.getElementById("button2").addEventListener("click", openOverlay);
+
+// Add event listener to the overlay to close it when clicking outside the content
+document.getElementById("table-overlay").addEventListener("click", function(event) {
+    // Check if the clicked target is the overlay itself
+    if (event.target === this) {
+        closeOverlay(); // Close the overlay
+    }
+});
+
+// Function to copy text to clipboard
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        alert("Discord username copied to clipboard!"); // Show prompt
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
+
+// Add event listener for the main image click
+document.addEventListener('DOMContentLoaded', function() {
+    const mainImage = document.querySelector('.hover-image');
+    
+    if (mainImage) {
+        mainImage.addEventListener('click', function() {
+            console.log('Main image clicked'); // Log to console for debugging
+            copyToClipboard('tecnik.gg'); // Copy text to clipboard
+        });
+    } else {
+        console.error('Main image not found');
+    }
+});
+
+// Update the widget image click functionality to redirect
+document.querySelector('.widget-image').onclick = function() {
+    window.location.href = "https://coindrop.to/tecnik"; // Redirect to the specified site
+};
+
+// Function to open or close the notification panel
+function toggleNotificationPanel() {
+    const notificationPanel = document.getElementById("notification-panel");
+    if (notificationPanel.style.display === "flex") {
+        notificationPanel.style.display = "none"; // Hide notification panel
+    } else {
+        notificationPanel.style.display = "flex"; // Show notification panel
+    }
+}
+
+// Add event listener to the notification bell
+document.querySelector('.notification-bell').addEventListener('click', toggleNotificationPanel);
+
+// Close the notification panel when clicking outside of it
+document.addEventListener('click', function(event) {
+    const notificationPanel = document.getElementById("notification-panel");
+    const bellIcon = document.querySelector('.notification-bell');
+    
+    // Check if the click was outside the notification panel and the bell icon
+    if (!notificationPanel.contains(event.target) && !bellIcon.contains(event.target)) {
+        notificationPanel.style.display = "none"; // Close the notification panel
+    }
+});
+</script>
+</body>
+</html>
+
+
