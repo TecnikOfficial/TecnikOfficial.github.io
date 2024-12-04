@@ -5,7 +5,8 @@
 [<img width="24" height="24" src="https://img.icons8.com/color/24/youtube-play.png" alt="youtube-play"/>](https://www.youtube.com/@TecnikOfficial) Tech Channel: [TecNik](https://www.youtube.com/@TecnikOfficial) <br>
 [<img width="24" height="24" src="https://img.icons8.com/color/24/youtube-play.png" alt="youtube-play"/>](https://www.youtube.com/@SyncKingEdits) Music Channel: [SyncKing](https://www.youtube.com/@SyncKingEdits)
 
-Welcome to the TecNik Official repository! TecNik is a YouTube channel that provides safe and reversible tips and tricks related to technology. Whether you're a tech enthusiast or just looking to get the most out of your devices, TecNik offers practical advice without any worries. They cover topics such as switching from default settings to Tecformed, ensuring you optimize your tech experience.🎵SyncKing channel we are dedicated to provide you with quality copyright-free music and songs generated with the help of A.i❤️
+Welcome to the TecNik Official repository! TecNik is a YouTube channel that provides safe and reversible tips and tricks related to technology. Whether you're a tech enthusiast or just looking to get the most out of your devices, TecNik offers practical advice without any worries.
+🎵SyncKing channel we are dedicated to provide you with quality copyright-free music and songs generated with the help of A.i❤️
 
 So, if you’re curious about tech tips, give TecNik a visit! 🚀🔧
 We are dedicated to helping users make the most of their technology. From software tweaks to Increase Privacy, TecNik provides valuable insights for tech enthusiasts.
