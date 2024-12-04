@@ -257,6 +257,15 @@ iframe {
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
+@media (max-width: 768px) { /* Adjust the max-width as needed */
+    .widget {
+        position: relative; /* Ensure the widget can be positioned */
+        top: -10px; /* Move it up */
+        left: 10px; /* Move it to the right */
+        width: 90%; /* Make it smaller */
+        height: auto; /* Adjust height as needed */
+    }
+}
 
 .heart {
     position: absolute;
@@ -714,4 +723,3 @@ document.addEventListener('click', function(event) {
 </script>
 </body>
 </html>
-
