@@ -2,7 +2,9 @@ const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [
     '/',
     '/index.html',
-    '/404.html',
+    '/404.html', // Ensure this is included
+     // Include this if you have a separate script file
+    // Add other assets you want to cache
 ];
 
 // Install event: Cache the necessary files
@@ -17,20 +19,24 @@ self.addEventListener('install', event => {
 
 // Fetch event: Serve cached content or fallback to 404.html
 self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-        event.respondWith(
-            fetch(event.request).catch(() => {
-                return caches.match('/404.html');
+    event.respondWith(
+        caches.match(event.request)
+            .then(response => {
+                // If the request is in the cache, return it
+                if (response) {
+                    return response;
+                }
+                // If the request is not in the cache, try to fetch it
+                return fetch(event.request).catch(() => {
+                    // If the fetch fails (e.g., offline), check if the request is for index.html
+                    if (event.request.mode === 'navigate' && event.request.destination === 'document') {
+                        return caches.match('/404.html'); // Serve 404.html for navigation requests
+                    }
+                    // For other requests, return a fallback or nothing
+                    return new Response('Offline', { status: 503, statusText: 'Service Unavailable' });
+                });
             })
-        );
-    } else {
-        event.respondWith(
-            caches.match(event.request)
-                .then(response => {
-                    return response || fetch(event.request);
-                })
-        );
-    }
+    );
 });
 
 // Activate event: Clean up old caches if necessary
