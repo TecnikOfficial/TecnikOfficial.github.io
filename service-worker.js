@@ -3,6 +3,7 @@ const urlsToCache = [
     '/',
     '/index.html',
     '/404.html', // Ensure this is included
+     // Include this if you have a separate script file
     // Add other assets you want to cache
 ];
 
@@ -27,8 +28,12 @@ self.addEventListener('fetch', event => {
                 }
                 // If the request is not in the cache, try to fetch it
                 return fetch(event.request).catch(() => {
-                    // If the fetch fails (e.g., offline), return the 404 page
-                    return caches.match('/404.html');
+                    // If the fetch fails (e.g., offline), check if the request is for index.html
+                    if (event.request.mode === 'navigate' && event.request.destination === 'document') {
+                        return caches.match('/404.html'); // Serve 404.html for navigation requests
+                    }
+                    // For other requests, return a fallback or nothing
+                    return new Response('Offline', { status: 503, statusText: 'Service Unavailable' });
                 });
             })
     );
