@@ -370,6 +370,16 @@ th, td {
 th {
     background-color: rgba(0, 255, 0, 0.5); /* Light green background for headers */
 }
+  .expertise-text {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Center text */
+    margin: 20px 0; /* Add some margin for spacing */
+    word-wrap: break-word; /* Allow long words to break to the next line */
+    overflow-wrap: break-word; /* Ensure text wraps correctly */
+    width: 100%; /* Ensure it takes full width */
+}
 /* Media query for mobile devices */
 @media only screen and (max-width: 767px) {
     /* Styles for mobile devices */
@@ -394,7 +404,7 @@ th {
         font-size: 2rem; /* Adjust font size for mobile */
     }
     .widget-container {
-      	bottom: 90px; /* Higher values means more to up*/
+      	bottom: 85px; /* Higher values means more to up*/
     	right: 5px; /* Position the widget to the right , lower values means more to right*/
     }
 
@@ -531,7 +541,9 @@ th {
 <div id="projects-overlay" class="overlay">
     <div class="overlay-content">
         <span class="close-overlay" onclick="closeProjectsOverlay()">✖</span>
+      <br>
         <h2>Worked as Lead:</h2>
+      <br>
         <div class="scrolling-text">
         <span>
             Automotive (Social Media Marketing) | Agro Pvt Ltd (Product Label Design / Logo Design) | Music Distributor (Website Desgin) | Resume Design (Multiple Clients)
@@ -542,11 +554,14 @@ th {
       </div>
       <br>
         <h2>Collaborations:</h2>
+      <br>
       <div class="scrolling-text">
         <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase) , Gaming Channel (Montage Edits)</span>
         <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase) , Gaming Channel (Montage Edits)</span>
 		<br><br>
-		<span style="display: block; text-align: center; font-weight: bold;">Expertise in Efficiency | Provides Value for Money Solutions</span>
+		</div>
+	    <div class="expertise-text">
+    <span style="font-weight: bold;">Expertise in Efficiency | Provides Value for Money Solutions</span>
 </div>
     </div>
 </div>
