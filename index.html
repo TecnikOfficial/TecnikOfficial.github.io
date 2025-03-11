@@ -184,7 +184,6 @@ video {
     overflow: hidden;
     transition: all 0.3s ease;
     white-space: nowrap; /* Prevent text from wrapping */
-    text-overflow: ellipsis; /* Show ellipsis for overflow text */
     display: inline-block; /* Ensure the button behaves like a block element */
     max-width: 150px; /* Set a max width for the button */
 }
@@ -416,9 +415,9 @@ th {
         width: 80px; /* Make the image a bit smaller */      
     }
 	.glow-button {
-        padding: 8px 16px; /* Reduce padding */
-        font-size: 1rem; /* Adjust font size */
-	max-width: 120px; /* Adjust max width for mobile */
+        padding: 8px 10px; /* Reduce padding */
+        font-size: 0.9rem; /* Adjust font size */
+	      max-width: 120px; /* Adjust max width for mobile */
     }
 	.iframe-container {
     height: 75%; /* Full height of the container */
@@ -461,6 +460,20 @@ th {
     }
     th, td {
         padding: 10px; /* Adjust padding for tablet devices */
+    }
+}
+  @media only screen and (max-width: 1023px) {
+    .glow-button {
+        font-size: 1.2rem; /* Smallest font size */
+        padding: 10px 20px; /* Further adjust padding */
+        max-width: 150px; /* Further adjust max width for very small screens */
+    }
+}
+  @media only screen and (max-width: 376px) {
+    .glow-button {
+        font-size: 0.8rem; /* Smallest font size */
+        padding: 8px 12px; /* Further adjust padding */
+        max-width: 100px; /* Further adjust max width for very small screens */
     }
 }
 </style>
