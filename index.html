@@ -383,8 +383,33 @@ th {
     overflow-wrap: break-word; /* Ensure text wraps correctly */
     width: 100%; /* Ensure it takes full width */
 }
+	/*Projects Overlay content*/
+.scrolling-text {
+    overflow: hidden; /* Hide overflow */
+    white-space: nowrap; /* Prevent text wrapping */
+    box-sizing: border-box; /* Include padding in width */
+    width: 100%; /* Full width */
+    position: relative; /* Position relative for absolute child */
+}
+
+.scrolling-text span {
+    display: inline-block; /* Make the span inline-block */
+    margin-right: 60px; /* Add margin to create a gap between spans */
+    animation: scroll 31s linear infinite; /* Animation for scrolling (increased duration for slower effect) */
+    animation-delay: 3s; /* Delay before starting the scroll */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0); /* Start from the initial position */
+    }
+    100% {
+        transform: translateX(-100%); /* Move to the left by the full width of the text */
+    }
+}
+
 /* Media query for mobile devices */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 600px) {
     /* Styles for mobile devices */
     .overlay-content {
         width: 90%; /* Adjust width for mobile devices */
@@ -415,41 +440,20 @@ th {
         width: 80px; /* Make the image a bit smaller */      
     }
 	.glow-button {
-        padding: 8px 10px; /* Reduce padding */
-        font-size: 0.9rem; /* Adjust font size */
-	      max-width: 120px; /* Adjust max width for mobile */
+        padding: 8px 14px; /* Reduce padding */
+        font-size: 0.8rem; /* Adjust font size */
+	max-width: 100px; /* Further adjust max width for very small screens */
     }
+	.button-container {
+    gap: 10px; /* Space between buttons */
+	}
 	.iframe-container {
     height: 75%; /* Full height of the container */
 	}
 }
-/*Projects Overlay content*/
-.scrolling-text {
-    overflow: hidden; /* Hide overflow */
-    white-space: nowrap; /* Prevent text wrapping */
-    box-sizing: border-box; /* Include padding in width */
-    width: 100%; /* Full width */
-    position: relative; /* Position relative for absolute child */
-}
-
-.scrolling-text span {
-    display: inline-block; /* Make the span inline-block */
-    margin-right: 60px; /* Add margin to create a gap between spans */
-    animation: scroll 31s linear infinite; /* Animation for scrolling (increased duration for slower effect) */
-    animation-delay: 3s; /* Delay before starting the scroll */
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0); /* Start from the initial position */
-    }
-    100% {
-        transform: translateX(-100%); /* Move to the left by the full width of the text */
-    }
-}
 
 /* Tablet devices (portrait and landscape) */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
     /* Styles for tablet devices */
     .overlay-content {
         width: 80%; /* Adjust width for tablet devices */
@@ -461,20 +465,39 @@ th {
     th, td {
         padding: 10px; /* Adjust padding for tablet devices */
     }
-}
-  @media only screen and (max-width: 1023px) {
+	.text.three-d {
+        font-size: 3rem; /* Adjust font size for mobile */
+    }
+    .three-d {
+        font-size: 2.5rem; /* Adjust font size for mobile */
+    }
     .glow-button {
         font-size: 1.2rem; /* Smallest font size */
         padding: 10px 20px; /* Further adjust padding */
         max-width: 150px; /* Further adjust max width for very small screens */
     }
-}
-  @media only screen and (max-width: 376px) {
-    .glow-button {
-        font-size: 0.8rem; /* Smallest font size */
-        padding: 8px 12px; /* Further adjust padding */
-        max-width: 100px; /* Further adjust max width for very small screens */
+	  .widget-image {
+        width: 85px; /* Make the image a bit smaller */      
     }
+	.widget-container {
+      	bottom: 20px; /* Higher values means more to up*/
+    	right: 5px; /* Position the widget to the right , lower values means more to right*/
+    }
+	.iframe-container {
+    height: 85%; /* Full height of the container */
+    width: 100%;
+	}
+	  
+}
+  @media only screen and (min-width: 320px) and (max-width: 599px) {
+    .glow-button {
+        font-size: 1rem; /* Smallest font size */
+        padding: 8px 16px; /* Further adjust padding */
+        max-width: 120px; /* Further adjust max width for very small screens */
+    }
+	  .button-container {
+    gap: 10px; /* Space between buttons */
+	}
 }
 </style>
 </head>
