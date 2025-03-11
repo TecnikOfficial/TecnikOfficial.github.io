@@ -183,6 +183,10 @@ video {
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Show ellipsis for overflow text */
+    display: inline-block; /* Ensure the button behaves like a block element */
+    max-width: 150px; /* Set a max width for the button */
 }
 
 .glow-button:hover {
@@ -404,7 +408,7 @@ th {
         font-size: 2rem; /* Adjust font size for mobile */
     }
     .widget-container {
-      	bottom: 87px; /* Higher values means more to up*/
+      	bottom: 89px; /* Higher values means more to up*/
     	right: 5px; /* Position the widget to the right , lower values means more to right*/
     }
 
@@ -414,6 +418,7 @@ th {
 	.glow-button {
         padding: 8px 16px; /* Reduce padding */
         font-size: 1rem; /* Adjust font size */
+	max-width: 120px; /* Adjust max width for mobile */
     }
 	.iframe-container {
     height: 75%; /* Full height of the container */
