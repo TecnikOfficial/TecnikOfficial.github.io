@@ -1,9 +1,9 @@
 /*
 Content-Security-Policy: 
   default-src 'self'; 
-  script-src 'self' 'unsafe-inline' https://instant.page https://chromedino.com https://hearthis.at https://tecnik.bio.link; 
+  script-src 'self' 'unsafe-inline' https://instant.page https://chromedino.com https://hearthis.at https://tecnik.bio.link https://cdn.jsdelivr.net; 
   style-src 'self' 'unsafe-inline'; 
-  connect-src 'self' https://chromedino.com https://hearthis.at; 
+  connect-src 'self' https://chromedino.com https://hearthis.at https://cdn.jsdelivr.net; 
   frame-ancestors 'self' https://chromedino.com https://*.chromedino.com https://hearthis.at https://*.hearthis.at; 
   media-src 'self' data: blob:; 
   frame-src 'self' https://chromedino.com https://hearthis.at;
