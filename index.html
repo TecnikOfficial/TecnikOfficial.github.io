@@ -112,7 +112,7 @@ video {
 }
 .slider {
     position: absolute;
-    top: 37%; /* Adjust this value to move the content upwards */
+    top: 35%; /* Adjust this value to move the content upwards */
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -178,15 +178,6 @@ video {
         color: green;
     }
 
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Space between buttons */
-    margin: 5px 0; /* gap up and down */
-    position: relative; /* Ensure it is positioned correctly */
-    pointer-events: auto; /* Allow pointer events for buttons */
-}
-
 .glow-button {
     padding: 10px 20px;
     font-size: 1.2rem;
@@ -200,9 +191,20 @@ video {
     transition: all 0.3s ease;
     white-space: nowrap; /* Prevent text from wrapping */
     display: inline-block; /* Ensure the button behaves like a block element */
-    max-width: 150px; /* Set a max width for the button */
+    min-width: 100px; /* Set a minimum width for the button */
+    width: fit-content; /* Adjust the width to fit the content */
+    max-width: 200px; /* Set a maximum width for the button */
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin: 5px 0; /* gap up and down */
+    position: relative; /* Ensure it is positioned correctly */
+    pointer-events: auto; /* Allow pointer events for buttons */
+    flex-wrap: wrap; /* Wrap buttons to the next line if necessary */
+}
 .glow-button:hover {
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), /* Green glow */
                 0 0 30px rgba(0, 255, 0, 0.5), 
@@ -437,7 +439,7 @@ th {
         padding: 5px; /* Adjust padding for mobile devices */
     }
   .slider {
-        top: 37%; /* Adjust the position for mobile devices; a lower value will move the element higher up.*/
+        top: 36%; /* Adjust the position for mobile devices; a lower value will move the element higher up.*/
         width: 95%; /* Increase width for mobile */
     }
     .text.three-d {
@@ -455,9 +457,10 @@ th {
         width: 80px; /* Make the image a bit smaller */      
     }
 	.glow-button {
-        padding: 8px 14px; /* Reduce padding */
-        font-size: 0.8rem; /* Adjust font size */
-	max-width: 100px; /* Further adjust max width for very small screens */
+  
+		font-size: 1rem; /* Reduce font size on smaller screens */
+        padding: 8px 16px; /* Reduce padding on smaller screens */
+	
     }
 	.button-container {
     gap: 10px; /* Space between buttons */
@@ -528,8 +531,8 @@ th {
             Your browser does not support the video tag.
         </video>
         <div class="slider">
-            <img src="./assets/media/tecnikmain4.avif" class="hover-image" title="Click To Copy!" alt="Main Image" width="321px" 
-     height="60px">
+            <img src="./assets/media/tecnikmain4.avif" class="hover-image" title="Click To Copy!" alt="Main Image" width="autopx" 
+     height="auto">
             <div class="text three-d" id="slider-text" onclick="changeText()">Welcome Thanks for Visiting!</div>   
 		<div class="button-container">
                 <button class="glow-button" onclick="window.location.href='https://tecnik.bio.link/'" title="📧Connect with Us">Contact</button>
@@ -542,9 +545,26 @@ th {
             </div>
         </div>
         <div class="widget-container">
-            <img src="https://tecnik.pages.dev/oldtheme/assets/img/donate.gif" class="widget-image" title="TYSM❤️" alt="Donate" width="100%" 
-     height="100%" onclick="yourWidgetClickFunction()">
+            <img src="./assets/media/donate.webp" class="widget-image" title="TYSM❤️" alt="Donate" width="100%" 
+     height="100%">
         </div> 
+		<!-- Donation Overlay -->
+<div id="donation-overlay" class="overlay">
+    <div class="overlay-content">
+        <span class="close-overlay" onclick="closeDonationOverlay()">✖</span>
+        <h2 style="color: green; text-align: center; text-decoration: underline;">Choose Payment Method to Support</h2>
+		<br>
+        <div class="button-container">
+            <button class="glow-button" onclick="handleDonation('Google PAY', 'https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnikpay-1@okaxis&description=Thank+You')">Google PAY</button>
+            <button class="glow-button" onclick="handleDonation('UPI', 'https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnik@upi&description=Thank+You')">₹ UPI</button>
+            <button class="glow-button" onclick="handleDonation('PayPal', 'https://www.paypal.me/TecnikOfficial')">💲PayPal</button>
+        </div>
+        <div class="button-container">
+            <button class="glow-button" onclick="handleDonation('Buy me a coffee', 'https://buymeacoffee.com/tecnik')">Buy me a ☕</button>
+            <button class="glow-button" onclick="handleDonation('Ko-Fi', 'https://ko-fi.com/tecnik')">Ko-Fi</button>
+        </div>
+    </div>
+</div>
         <!-- Overlay for Table -->
         <div id="table-overlay" class="overlay">
             <div class="overlay-content">
@@ -598,7 +618,7 @@ th {
     <div class="overlay-content">
         <span class="close-overlay" onclick="closeProjectsOverlay()">✖</span>
       <br>
-        <h2 style="color: green;">Worked as Lead:</h2>
+        <h2 style="color: green; text-decoration: underline;">Worked as Lead:</h2>
       <br>
         <div class="scrolling-text">
         <span>
@@ -609,7 +629,7 @@ th {
         </span>
       </div>
       <br>
-        <h2 style="color: green;">Collaborations:</h2>
+        <h2 style="color: green; text-decoration: underline;">Collaborations:</h2>
       <br>
       <div class="scrolling-text">
         <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase) , Gaming Channel (Montage Edits)</span>
@@ -774,7 +794,7 @@ function closeOverlay() {
     document.getElementById("table-overlay").style.display = "none"; // Hide overlay
 }
 
-// Add event listener to Button 2
+// Add event listener to services button
 document.getElementById("button2").addEventListener("click", openOverlay);
 
 // Add event listener to the overlay to close it when clicking outside the content
@@ -794,7 +814,7 @@ function closeProjectsOverlay() {
     document.getElementById("projects-overlay").style.display = "none"; // Hide overlay
 }
 
-// Add event listener to the new button
+// Add event listener to the projects button
 document.getElementById("button3").addEventListener("click", openProjectsOverlay);
 
 // Add event listener to the projects overlay to close it when clicking outside the content
@@ -826,11 +846,64 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Main image not found');
     }
 });
+function handleDonation(method, url) {
+    alert(`Thank you for choosing ${method}! You will be redirected now.`);
+    setTimeout(() => {
+        window.open(url, '_blank'); // Open the URL in a new tab
+    }, 1000); // Delay the redirection by 1 second
+}
+function handleDonation(method, url) {
+    // Create a temporary message element
+    const messageElement = document.createElement('div');
+    messageElement.style.position = 'fixed';
+    messageElement.style.top = '40%';
+    messageElement.style.left = '50%';
+    messageElement.style.transform = 'translate(-50%, -50%)';
+    messageElement.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    messageElement.style.color = 'white';
+    messageElement.style.padding = '20px';
+    messageElement.style.borderRadius = '10px';
+    messageElement.style.zIndex = '200'; // Ensure it's above other elements
+	messageElement.style.fontSize = '1.5rem'; // Increase font size
+    messageElement.style.fontWeight = 'bold'; // Make text bold
+    messageElement.innerText = "🤗Thanks so much for your support! It means a lot❤️";
+	// Set width for mobile view
+    if (window.innerWidth < 768) {
+        messageElement.style.width = '90%'; // Set width to 90% for mobile
+    } else {
+        messageElement.style.width = '400px'; // Set a fixed width for larger screens
+    }
 
-// Update the widget image click functionality to redirect
-document.querySelector('.widget-image').onclick = function() {
-    window.location.href = "https://coindrop.to/tecnik"; // Redirect to the specified site
-};
+    // Append the message to the body
+    document.body.appendChild(messageElement);
+
+    // Redirect after 2 seconds
+    setTimeout(() => {
+        window.open(url, '_blank'); // Open the URL in a new tab
+        document.body.removeChild(messageElement); // Remove the message after redirect
+    }, 2000); // 2000 milliseconds = 2 seconds
+}
+// Function to open the donation overlay
+function openDonationOverlay() {
+    document.getElementById("donation-overlay").style.display = "flex"; // Show overlay
+}
+
+// Function to close the donation overlay
+function closeDonationOverlay() {
+    document.getElementById("donation-overlay").style.display = "none"; // Hide overlay
+}
+
+// Add event listener to the widget image to open the donation overlay
+document.querySelector('.widget-image').addEventListener('click', openDonationOverlay);
+
+// Add event listener to the donation overlay to close it when clicking outside the content
+document.getElementById("donation-overlay").addEventListener("click", function(event) {
+    // Check if the clicked target is the overlay itself
+    if (event.target === this) {
+        closeDonationOverlay(); // Close the overlay
+    }
+});
+
 
 // Function to open or close the notification panel
 function toggleNotificationPanel() {
