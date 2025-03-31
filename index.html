@@ -713,10 +713,10 @@ function fadeOutLoadingScreen() {
     loadingScreen.style.opacity = 0; // Start fading out
     setTimeout(() => {
         loadingScreen.style.display = 'none'; // Hide after fade out
-        // Start displaying the initial text for 2 seconds after unblur
+        // Start displaying the initial text for 1 seconds after unblur
         setTimeout(() => {
             startTextDisplay(); // Start displaying text options
-        }, 2000); // Keep initial text for 2 seconds after unblur
+        }, 1000); // Keep initial text for 1 seconds after unblur
     }, 1900); // Match this duration with the CSS transition duration
 }
 
