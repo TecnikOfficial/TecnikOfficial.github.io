@@ -351,7 +351,7 @@ iframe {
 .overlay-content {
     background-color: rgba(0, 0, 0, 0.8); /* Darker transparent background for content */
     border-radius: 15px; /* Rounded corners */
-    padding: 20px; /* Padding inside the overlay */
+    padding: 40px; /* Padding inside the overlay */
     box-shadow: 0 0 20px rgba(0,  0, 0, 0.5); /* Shadow for depth */
     border: 2px solid green; /* Green outline */
     max-width: 800px; /* Max width of the overlay */
@@ -567,8 +567,7 @@ th {
 <div id="donation-overlay" class="overlay">
     <div class="overlay-content">
         <span class="close-overlay" onclick="closeDonationOverlay()">✖</span>
-        <h2 style="color: green; text-align: center; text-decoration: underline;">Choose Payment Method to Support</h2>
-		<br>
+        <h2 style="color: green; text-align: center; text-decoration: underline; margin-bottom: 20px;">Choose Payment Method to Support</h2>
         <div class="button-container">
             <button class="glow-button" title="Thank" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnikpay-1@okaxis&description=Thank+You')">Google PAY</button>
             <button class="glow-button" title="you" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnik@upi&description=Thank+You')">₹ UPI</button>
