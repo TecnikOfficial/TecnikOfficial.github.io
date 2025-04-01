@@ -716,7 +716,7 @@ function fadeOutLoadingScreen() {
         setTimeout(() => {
             startTextDisplay(); // Start displaying text options
         }, 400); // Keep initial text for 1 seconds after unblur
-    }, 1900); // Match this duration with the CSS transition duration
+    }, 1500); // Match this duration with the CSS transition duration
 }
 
 // Year timer functionality
@@ -915,14 +915,14 @@ function handleDonation(url) {
     messageElement.style.padding = '20px';
     messageElement.style.borderRadius = '10px';
     messageElement.style.zIndex = '200'; // Ensure it's above other elements
-	messageElement.style.fontSize = '1.5rem'; // Increase font size
+    messageElement.style.fontSize = '1.5rem'; // Increase font size
     messageElement.style.fontWeight = 'bold'; // Make text bold
     messageElement.innerText = "🤗Thanks so much for your support! It means a lot❤️";
 	// Set width for mobile view
     if (window.innerWidth < 768) {
-        messageElement.style.width = '90%'; // Set width to 90% for mobile
+        messageElement.style.width = '80%'; // Set width to 90% for mobile
     } else {
-        messageElement.style.width = '400px'; // Set a fixed width for larger screens
+        messageElement.style.width = '450px'; // Set a fixed width for larger screens
     }
 
     // Append the message to the body
