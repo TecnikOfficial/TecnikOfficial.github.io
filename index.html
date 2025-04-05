@@ -84,7 +84,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with reduced opacity (30%) */
+    background-color: rgba(0, 0, 0, 0.35); /* Dark overlay with reduced opacity (30%) */
     z-index: 1; /* Place the overlay behind the text */
 }
 video {
@@ -542,7 +542,7 @@ th {
     </div>
     <div class="video-background">
         <video autoplay muted loop>
-            <source src="https://tecnik.pages.dev/assets/media/video.mp4" type="video/mp4"><!-- Video Credit: Pexels.com -->
+            <source src="./video.mp4" type="video/mp4"><!-- Video Credit: Pexels.com -->
             Your browser does not support the video tag.
         </video>
         <div class="slider">
@@ -760,7 +760,7 @@ updateYear();
 // Set the initial text immediately when the page loads
 document.addEventListener('DOMContentLoaded', function() {
     const textElement = document.getElementById("slider-text");
-    textElement.textContent = "Thank you for Visiting!"; // Set initial text
+    textElement.textContent = "Welcome Thanks for Visiting"; // Set initial text
 
     // Add click event listener to change text on click
     textElement.addEventListener('click', changeText);
