@@ -269,9 +269,16 @@ iframe {
 }
 
 .heart {
-    position: absolute;
-    font-size: 30px; /* Size of the heart emoji */
+    position: absolute; /* Ensure it does not affect layout */
     animation: fall 2s forwards; /* Animation for falling effect */
+    font-size: 30px; /* Default size */
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+    .heart {
+        font-size: 20px; /* Smaller size for mobile */
+    }
 }
 
 @keyframes fall {
@@ -298,7 +305,7 @@ iframe {
     overflow: hidden; /* Prevent overflow of content */
     display: none; /* Initially hidden */
     z-index: 6; /* Ensure it is above other elements */
-    background-color: rgba(0, 0, 0, 0.7); /* Darker transparent background */
+    background-color: rgba(0, 0, 0, 0.8); /* Darker transparent background */
 }
 
 #notification-panel::before {
@@ -769,6 +776,15 @@ function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
     heart.innerText = '❤️'; // Heart emoji
+
+    // Set size based on screen width
+    if (window.innerWidth < 768) { // Mobile view
+        heart.style.fontSize = '20px'; // Smaller size for mobile
+    } else {
+        heart.style.fontSize = '30px'; // Default size for larger screens
+    }
+
+    heart.style.position = 'absolute'; // Ensure it is absolutely positioned
     heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
     heart.style.top = '0'; // Start from the top
     document.body.appendChild(heart);
@@ -957,7 +973,21 @@ document.getElementById("donation-overlay").addEventListener("click", function(e
         closeDonationOverlay(); // Close the overlay
     }
 });
+// Function to close all overlays
+        function closeAllOverlays() {
+            closeOverlay(); // Close services overlay
+            closeProjectsOverlay(); // Close projects overlay
+            closeDonationOverlay(); // Close donation overlay
+        }
 
+        // Function to open the donation overlay
+        function openDonationOverlay() {
+            closeAllOverlays(); // Close any active overlays
+            document.getElementById("donation-overlay").style.display = "flex"; // Show donation overlay
+        }
+
+        // Add event listener to the donation widget
+        document.querySelector('.widget-image').addEventListener('click', openDonationOverlay);
 
 // Function to open or close the notification panel
 function toggleNotificationPanel() {
