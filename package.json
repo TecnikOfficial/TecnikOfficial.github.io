@@ -1,5 +1,5 @@
 {
-  "name": "TecnikOfficial.github.io",
+  "name": "vue-github-pages",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "vite build && gh-pages -d dist"  // Added deploy script
+    "deploy": "vite build && gh-pages -d dist"  
   },
   "dependencies": {
     "vue": "^3.3.4"
@@ -16,6 +16,6 @@
     "@vitejs/plugin-vue": "^5.2.3",
     "terser": "^5.39.0",
     "vite": "^6.3.2",
-    "gh-pages": "^3.2.3"  // Added gh-pages package
+    "gh-pages": "^3.2.3"  
   }
 }
