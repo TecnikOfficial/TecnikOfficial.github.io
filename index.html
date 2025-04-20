@@ -734,9 +734,9 @@ function fadeOutLoadingScreen() {
 let currentYear = 1999;
 const yearTimerElement = document.getElementById('year-timer');
 const totalYears = 2025 - 1999 + 1; // Include both 1999 and 2025
-const totalDuration = 1500; // Total duration in milliseconds
-const durationFor1999 = 500; // Duration for 1999
-const durationFor2025 = 500; // Duration for 2025
+const totalDuration = 2000; // Total duration in milliseconds
+const durationFor1999 = 600; // Duration for 1999
+const durationFor2025 = 600; // Duration for 2025
 const durationPerYear = (totalDuration - durationFor1999 - durationFor2025) / (totalYears - 2); // Duration for years in between
 
 function updateYear() {
