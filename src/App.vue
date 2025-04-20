@@ -16,7 +16,7 @@
       <!-- Main Content -->
       <div class="slider">
         <img 
-          src="src/assets/img/tecnikmain4.avif" 
+          src="/src/assets/img/tecnikmain4.avif" 
           class="hover-image" 
           title="Click To Copy!" 
           alt="Main Image" 
@@ -47,7 +47,7 @@
       <!-- Widget Container -->
       <div class="widget-container">
         <img 
-          src="src/assets/img/donate.webp" 
+          src="/src/assets/img/donate.webp" 
           class="widget-image" 
           title="TYSM❤️" 
           alt="Donate" 
@@ -57,7 +57,7 @@
 
       <!-- Notification Bell -->
       <img 
-        src="src/assets/img/noti.webp" 
+        src="/src/assets/img/noti.webp" 
         class="notification-bell" 
         alt="Notification Bell" 
         @click="toggleNotificationPanel"
@@ -155,11 +155,11 @@
       <div class="footer-content">
         Made with
         <a href="https://youtu.be/71qssscQqH8?feature=shared" target="_blank">
-          <img src="src/assets/img/heart.gif" alt="Heart" title="Listen💓" width="20" height="20">
+          <img src="/src/assets/img/heart.gif" alt="Heart" title="Listen💓" width="20" height="20">
         </a>
         using A.i | Source Code
         <a href="https://github.com/TecnikOfficial/TecnikOfficial.github.io" target="_blank">
-          <img src="src/assets/img/GITHUB-white.svg" alt="GitHub" title="Github" width="20" height="20">
+          <img src="/src/assets/img/GITHUB-white.svg" alt="GitHub" title="Github" width="20" height="20">
         </a>
       </div>
     </footer>
