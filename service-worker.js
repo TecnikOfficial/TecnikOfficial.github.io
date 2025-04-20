@@ -1,10 +1,8 @@
-const CACHE_NAME = 'my-site-cache-v2.90';
+const CACHE_NAME = 'my-site-cache-v3.0';
 const urlsToCache = [
     '/',
     '/index.html',
-    '/404.html', // Ensure this is included
-     // Include this if you have a separate script file
-    // Add other assets you want to cache
+    '/404.html',
 ];
 
 // Install event: Cache the necessary files
@@ -12,7 +10,11 @@ self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {
+                console.log('Opened cache');
                 return cache.addAll(urlsToCache);
+            })
+            .catch(error => {
+                console.error('Failed to cache resources during install:', error);
             })
     );
 });
@@ -27,14 +29,15 @@ self.addEventListener('fetch', event => {
                     return response;
                 }
                 // If the request is not in the cache, try to fetch it
-                return fetch(event.request).catch(() => {
-                    // If the fetch fails (e.g., offline), check if the request is for index.html
-                    if (event.request.mode === 'navigate' && event.request.destination === 'document') {
-                        return caches.match('/404.html'); // Serve 404.html for navigation requests
-                    }
-                    // For other requests, return a fallback or nothing
-                    return new Response('Offline', { status: 503, statusText: 'Service Unavailable' });
-                });
+                return fetch(event.request)
+                    .catch(() => {
+                        // If the fetch fails (e.g., offline), check if the request is for index.html
+                        if (event.request.mode === 'navigate' && event.request.destination === 'document') {
+                            return caches.match('/404.html'); // Serve 404.html for navigation requests
+                        }
+                        // Fallback for other requests, return an offline response
+                        return new Response('Offline', { status: 503, statusText: 'Service Unavailable' });
+                    });
             })
     );
 });
@@ -47,6 +50,7 @@ self.addEventListener('activate', event => {
             return Promise.all(
                 cacheNames.map(cacheName => {
                     if (cacheWhitelist.indexOf(cacheName) === -1) {
+                        console.log('Deleting old cache:', cacheName);
                         return caches.delete(cacheName);
                     }
                 })
