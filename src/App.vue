@@ -9,14 +9,14 @@
 
     <div class="video-background">
       <video autoplay muted loop playsinline>
-        <source src="/src/assets/img/video.webm" type="video/webm">
+        <source src="src/assets/img/video.webm" type="video/webm">
         Your browser does not support the video tag.
       </video>
 
       <!-- Main Content -->
       <div class="slider">
         <img 
-          src="/src/assets/img/tecnikmain4.avif" 
+          src="src/assets/img/tecnikmain4.avif" 
           class="hover-image" 
           title="Click To Copy!" 
           alt="Main Image" 
@@ -47,7 +47,7 @@
       <!-- Widget Container -->
       <div class="widget-container">
         <img 
-          src="/src/assets/img/donate.webp" 
+          src="src/assets/img/donate.webp" 
           class="widget-image" 
           title="TYSM❤️" 
           alt="Donate" 
@@ -57,7 +57,7 @@
 
       <!-- Notification Bell -->
       <img 
-        src="/src/assets/img/noti.webp" 
+        src="src/assets/img/noti.webp" 
         class="notification-bell" 
         alt="Notification Bell" 
         @click="toggleNotificationPanel"
@@ -69,7 +69,7 @@
           <p>• Are you subscribed to ▶️<a href="https://www.youtube.com/channel/UCXucwi4swKyTmCUB9RrFaQw?sub_confirmation=1" target="_blank">Tecnik Official</a>💻 ?</p><br>
           <p>• Are you subscribed to ▶️<a href="https://www.youtube.com/channel/UC35TPNUnNegZq4mBWvU0o7g?sub_confirmation=1" target="_blank">Syncking</a>🎵 ?</p><br>
           <p>• <a href="https://www.youtube-nocookie.com/embed/videoseries?list=PLzXDhbvRPJ1A33piKX-ss1zjNAVdqu4mM&loop=1&autoplay=1&modestbranding=1" target="_blank">CSGO Montage 😎</a></p><br>
-          <p>• <a href="/oldtheme/1.0.html">Old Site 🐈 </a>• <a href="https://tecnikofficial.github.io/404">4🚫4</a></p>
+          <p>• <a href="">Old Site 🐈 </a>• <a href="https://tecnikofficial.github.io/404">4🚫4</a></p>
         </div>
       </div>
     </div>
@@ -155,11 +155,11 @@
       <div class="footer-content">
         Made with
         <a href="https://youtu.be/71qssscQqH8?feature=shared" target="_blank">
-          <img src="/src/assets/img/heart.gif" alt="Heart" title="Listen💓" width="20" height="20">
+          <img src="src/assets/img/heart.gif" alt="Heart" title="Listen💓" width="20" height="20">
         </a>
         using A.i | Source Code
         <a href="https://github.com/TecnikOfficial/TecnikOfficial.github.io" target="_blank">
-          <img src="/src/assets/img/GITHUB-white.svg" alt="GitHub" title="Github" width="20" height="20">
+          <img src="src/assets/img/GITHUB-white.svg" alt="GitHub" title="Github" width="20" height="20">
         </a>
       </div>
     </footer>
