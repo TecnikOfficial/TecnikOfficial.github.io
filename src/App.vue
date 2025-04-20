@@ -9,7 +9,7 @@
 
     <div class="video-background">
       <video autoplay muted loop playsinline>
-        <source src="src/assets/img/video.webm" type="video/webm">
+        <source src="/src/assets/img/video.webm" type="video/webm">
         Your browser does not support the video tag.
       </video>
 
