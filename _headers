@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://instant.page https://chromedino.com https://*.hearthis.at https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://*.hearthis.at; connect-src 'self' https://chromedino.com https://*.hearthis.at https://cdn.jsdelivr.net https://tecnik.bio.link; img-src 'self' https://www.svgrepo.com https://play.vsthemes.org; frame-ancestors 'self' https://chromedino.com https://*.chromedino.com https://*.hearthis.at; media-src 'self' https://tecnik.pages.dev; frame-src 'self' https://chromedino.com https://*.hearthis.at;
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://instant.page https://chromedino.com https://*.hearthis.at https://cdn.jsdelivr.net; style-src 'self' https://*.hearthis.at; connect-src 'self' https://chromedino.com https://*.hearthis.at https://cdn.jsdelivr.net https://tecnik.bio.link; img-src 'self' https://www.svgrepo.com https://play.vsthemes.org; frame-ancestors 'self' https://chromedino.com https://*.chromedino.com https://*.hearthis.at; media-src 'self' https://tecnik.pages.dev; frame-src 'self' https://chromedino.com https://*.hearthis.at;
   Cross-Origin-Opener-Policy: same-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
