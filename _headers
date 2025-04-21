@@ -6,7 +6,7 @@ Content-Security-Policy:
   connect-src 'self' https://chromedino.com https://*.hearthis.at https://cdn.jsdelivr.net https://tecnik.bio.link; 
   img-src 'self' https://www.svgrepo.com https://play.vsthemes.org;
   frame-ancestors 'self' https://chromedino.com https://*.chromedino.com https://*.hearthis.at https://*.hearthis.at; 
-  media-src 'self' data: blob:; 
+  media-src 'self' 'data:' 'blob:'; 
   frame-src 'self' https://chromedino.com https://*.hearthis.at;
 Cross-Origin-Opener-Policy: same-origin
 Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
