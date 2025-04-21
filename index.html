@@ -1027,6 +1027,18 @@ document.addEventListener('click', function(event) {
                     });
             });
         }
+// Function to preload an external page
+        function preloadExternalPage(url) {
+            const link = document.createElement('link');
+            link.rel = 'prefetch'; // or 'preload'
+            link.href = url;
+            document.head.appendChild(link);
+        }
+
+        // Preload the external page after the window has fully loaded
+        window.addEventListener('load', function() {
+            preloadExternalPage('https://tecnik.bio.link'); // Replace with your external link
+        });	    
 </script>
 	<script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
 </body>
