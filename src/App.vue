@@ -9,14 +9,14 @@
 
     <div class="video-background">
       <video autoplay muted loop playsinline>
-        <source src="https://tecnik.pages.dev/assets/media/video.webm" type="video/webm">
+        <source src="/src/assets/img/video.webm" type="video/webm">
         Your browser does not support the video tag.
       </video>
 
       <!-- Main Content -->
       <div class="slider">
         <img 
-          src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" 
+          src="/src/assets/img/tecnikmain4.avif" 
           class="hover-image" 
           title="Click To Copy!" 
           alt="Main Image" 
@@ -47,7 +47,7 @@
       <!-- Widget Container -->
       <div class="widget-container">
         <img 
-          src="https://tecnik.pages.dev/assets/media/donate.webp" 
+          src="/src/assets/img/donate.webp" 
           class="widget-image" 
           title="TYSM❤️" 
           alt="Donate" 
@@ -57,7 +57,7 @@
 
       <!-- Notification Bell -->
       <img 
-        src="https://tecnik.pages.dev/assets/media/noti.webp" 
+        src="/src/assets/img/noti.webp" 
         class="notification-bell" 
         alt="Notification Bell" 
         @click="toggleNotificationPanel"
@@ -69,7 +69,7 @@
           <p>• Are you subscribed to ▶️<a href="https://www.youtube.com/channel/UCXucwi4swKyTmCUB9RrFaQw?sub_confirmation=1" target="_blank">Tecnik Official</a>💻 ?</p><br>
           <p>• Are you subscribed to ▶️<a href="https://www.youtube.com/channel/UC35TPNUnNegZq4mBWvU0o7g?sub_confirmation=1" target="_blank">Syncking</a>🎵 ?</p><br>
           <p>• <a href="https://www.youtube-nocookie.com/embed/videoseries?list=PLzXDhbvRPJ1A33piKX-ss1zjNAVdqu4mM&loop=1&autoplay=1&modestbranding=1" target="_blank">CSGO Montage 😎</a></p><br>
-          <p>• <a href="./oldtheme/1.0.html">Old Site 🐈 </a>• <a href="https://tecnikofficial.github.io/404">4🚫4</a></p>
+          <p>• <a href="">Old Site 🐈 </a>• <a href="https://tecnikofficial.github.io/404">4🚫4</a></p>
         </div>
       </div>
     </div>
@@ -109,7 +109,6 @@
       <div class="overlay-content">
         <span class="close-overlay" @click="closeOverlay">✖</span>
         <h2 style="color: green; text-decoration: underline;">Worked as Lead:</h2>
-        <br>
         <div class="scrolling-text">
           <span>
             Automotive (Social Media Marketing) | Agro Pvt Ltd (Product Label & Logo Design) | Music Distributor (Website Design) | Resume Design (Multiple Clients)
@@ -118,18 +117,16 @@
             Automotive (Social Media Marketing) | Agro Pvt Ltd (Product Label & Logo Design) | Music Distributor (Website Design) | Resume Design (Multiple Clients)
           </span>
         </div>
-        <br>
+		<br>
         <h2 style="color: green; text-decoration: underline;">Collaborations:</h2>
-        <br>
         <div class="scrolling-text">
           <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase) , Gaming Channel (Montage Edits)</span>
           <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase) , Gaming Channel (Montage Edits)</span>
         </div>
-        <br><br>
+		<br>
         <h2 style="color: green; text-decoration: underline;">Currently Working On:</h2>
-        <br>
         <span>Building WEB App (working along with doctor)</span>
-        <br><br>
+		<br><br>
         <div class="expertise-text">
           <span style="font-weight: bold;">Expertise in Efficiency | Provides Value for Money Solutions</span>
         </div>
@@ -158,11 +155,11 @@
       <div class="footer-content">
         Made with
         <a href="https://youtu.be/71qssscQqH8?feature=shared" target="_blank">
-          <img src="https://tecnik.pages.dev/assets/media/heart.gif" alt="Heart" title="Listen💓" width="20" height="20">
+          <img src="/src/assets/img/heart.gif" alt="Heart" title="Listen💓" width="20" height="20">
         </a>
         using A.i | Source Code
         <a href="https://github.com/TecnikOfficial/TecnikOfficial.github.io" target="_blank">
-          <img src="https://tecnik.pages.dev/assets/media/GITHUB-white.svg" alt="GitHub" title="Github" width="20" height="20">
+          <img src="/src/assets/img/GITHUB-white.svg" alt="GitHub" title="Github" width="20" height="20">
         </a>
       </div>
     </footer>
@@ -179,7 +176,7 @@ export default {
       loadingComplete: false,
       
       // Slider text
-      sliderText: "WELCOME!",
+      sliderText: "Welcome Thanks for Visiting!",
       textOptions: [
         "COMPUTER\nENTHUSIAST",
         "GRAPHICS DESIGNER\nVFX",
