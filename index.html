@@ -324,6 +324,10 @@ iframe {
 }
 
 .footer {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    white-space: nowrap; /* Prevent text from wrapping */
     position: fixed; /* Change to fixed to stick to the bottom */
     bottom: 0; /* Stick to the bottom of the viewport */
     left: 50%; /* Center horizontally */
@@ -335,7 +339,7 @@ iframe {
     background-color: rgba(0, 0, 0, 0.6); /* Optional: dark background for readability */
     padding: 5px; /* Reduced padding for smaller appearance */
     border-radius: 5px; /* Rounded corners */
-	max-width: 320px;
+    max-width: 100%; /* Ensure it does not exceed the viewport width */
 }
 
 .overlay {
@@ -481,9 +485,7 @@ th {
 	.iframe-container {
     height: 75%; /* Full height of the container */
 	}
-	.footer {
-	max-width: 330px;
-    }
+
 }
 
 /* Tablet devices (portrait and landscape) */
@@ -532,10 +534,17 @@ th {
 	  .button-container {
     gap: 10px; /* Space between buttons */
 	}
-	.footer {
-	max-width: 350px;
+		
+}
+/* Media Query for devices with max width less than 320px */
+@media only screen and (max-width: 320px) {
+    .footer {
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        font-size: 0.9rem; /* Adjust font size for mobile if needed */
+        padding: 10px; /* Adjust padding for mobile */
     }
 }
+
 </style>
 </head>
 <body>
