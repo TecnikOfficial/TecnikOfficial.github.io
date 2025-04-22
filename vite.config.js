@@ -5,7 +5,7 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig({
   plugins: [vue()],
   // Adjust this to your repository name
-  base: process.env.NODE_ENV === "production" ? "/" : "/",
+  base: process.env.NODE_ENV === "production" ? "/" ,
   build: {
     // Optimize build
     minify: "terser",
