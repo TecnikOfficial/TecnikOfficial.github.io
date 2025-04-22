@@ -3,7 +3,7 @@
 A minimal template for deploying a Vue.js application to GitHub Pages with automatic deployment and dependency updates.
 
 ## Setup
-
+new
 1. Clone this repository
 2. Update the `base` path in `vite.config.js` with your repository name
 3. Push to GitHub
