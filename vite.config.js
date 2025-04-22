@@ -4,7 +4,7 @@ import vue from "@vitejs/plugin-vue";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  // Adjust this to your repository name
+  // Base URL for GitHub Pages
   base: process.env.NODE_ENV === "production" ? "/" : "/",
   build: {
     // Optimize build
