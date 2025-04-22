@@ -126,20 +126,49 @@ iframe {
     filter: invert(1) hue-rotate(180deg);
 }
 
+.iframe-container {
+    position: relative;
+    width: 100%; /* Set to 80% of the parent container */
+    height: 285px; /* Default height */
+    max-height: 400px; /* Maximum height */
+    overflow: hidden; /* Hide overflow */
+    margin: 20px auto 0; /* Add top margin of 20px and center the container */
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: -150px; /* Move the iframe up to crop content from the top */
+    left: 0;
+    width: 100%; /* Full width */
+    height: calc(90% + 10px); /* Adjust height to compensate for the negative top margin */
+    border: none; /* Remove default border */
+    filter: invert(1) hue-rotate(180deg); /* Existing filter */
+}
 @media only screen and (max-width: 600px) {
-    iframe {
-        height: 60%;
-        max-height: 290px;
+.iframe {
+        top: 50%; /* Move iframe closer to the paragraph text */    
     }
+	.iframe-container { 
+    height: 385px; /* Default height */
 }
 
-@media only screen and (max-width: 768px) {
-    iframe {
-        height: 50vh;
-        max-height: 290px;
+.iframe-container iframe {
+	top: -245px; /* Move the iframe up to crop content from the top */
+}
+}
+@media only screen and (min-width: 320px) and (max-width: 599px) {
+    .iframe {
+        top: 50%; /* Move iframe closer to the paragraph text */    
     }
+	.iframe-container { 
+    height: 385px; /* Default height */
 }
 
+.iframe-container iframe {
+	top: -220px; /* Move the iframe up to crop content from the top */
+    height: calc(79% + 5px); /* Adjust height to compensate for the negative top margin */
+}
+}
 /* Hide scrollbar for desktop view */
 body::-webkit-scrollbar {
     display: none; /* Safari and Chrome */
@@ -159,9 +188,11 @@ body {
         <p class="output">You are viewing this site because this page is unavailable :(</p>
         <p class="output">Until things get fixed, you can visit <a href="https://tecnik.bio.link">Bio Link</a> or <a href="https://tecnik.pages.dev">Try Again</a>.</p>
         <p class="output">Tap on Dino and Press Space :)</p>
-        <iframe src="https://chromedino.com/color/" frameborder="0" scrolling="no" title="Tap on Dino & Press Spacebar" ></iframe>
+        <div class="iframe-container">
+    <iframe src="https://chromedino.com/color/" frameborder="0" scrolling="no" title="Tap on Dino & Press Spacebar" top=10px;></iframe>
+</div>
 		<br>
-        <footer style="position: fixed; bottom: 0; width: 100%; text-align: left;">
+        <footer style="position: fixed; bottom: 0; width: 100%; text-align: left; ">
     <a href="https://codepen.io/robinselmer/pen/vJjbOZ" target="_blank">Forked</a>
 </footer>
     </div>
