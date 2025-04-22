@@ -22,6 +22,10 @@ npm run dev
 npm run build
 \`\`\`
 
+# Deploy to Github Pages
+npm run deploy
+\`\`\`
+
 ## Features
 
 - Automatic deployment to GitHub Pages via GitHub Actions
