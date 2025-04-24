@@ -36,7 +36,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body, html {
     height: auto;
     font-family: Arial, sans-serif;
@@ -104,7 +103,6 @@ video {
     opacity: 1; /* Initial opacity */
     transition: opacity 5s ease; /* Transition for fading out */
 }
-
 .loading-content {
     color: white; /* Text color */
     font-size: 3rem; /* Font size for the year */
@@ -138,26 +136,27 @@ video {
     position: relative; /* Allow the text to be positioned without affecting siblings */
     z-index: 1; /* Ensure it is above the background */
 }
-
-
 .hover-image {
-    width: 80%; /* Adjusted to be responsive */
-    max-Height: 60px; /* Maximum width to maintain size on larger screens */
-    max-width: 300px; /* Maximum width to maintain size on larger screens */
-    margin-bottom: 20px; /* Space between image and text */
-    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
-    cursor: pointer; /* Change cursor to pointer */
-    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); /* Initial state without shadow */
-    pointer-events: auto; /* Ensure the image is clickable */
+    width: 322px; /* Default size matching HTML dimensions */
+    height: 60px; /* Default size matching HTML dimensions */
+    aspect-ratio: 322 / 60; /* Maintain original aspect ratio */
+    max-width: 100%; /* Prevent overflow on small screens */
+    width: 80%; /* Responsive width */
+    max-width: 322px; /* Match original image width */
+    max-height: 60px; /* Match original image height */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+    pointer-events: auto;
+    object-fit: contain; /* Ensure proper image scaling */
 }
-
 .hover-image:hover {
     transform: scale(1.1); /* Zoom in effect on hover */
     filter: drop-shadow(0 0 15px rgba(0, 255, 0, 0.7)) /* Green glow effect */
             drop-shadow(0 0 25px rgba(0, 255, 0, 0.5))
             drop-shadow(0 0 35px rgba(0, 255, 0, 0.3));
 }
-
 .three-d {
     font-size: 4rem; /* Default font size */
     color: white; /* Default color */
@@ -173,14 +172,12 @@ video {
     position: relative; /* Allow the text to be positioned without affecting siblings */
     z-index: 1; /* Ensure it is above the background */
 }
-
 .three-d:hover {
     color: green; /* Change text color to green on hover */
 }
 	.green-text {
         color: green;
     }
-
 .glow-button {
     padding: 10px 20px;
     font-size: 1.5rem;
@@ -198,7 +195,6 @@ video {
     width: fit-content; /* Adjust the width to fit the content */
     max-width: 250px; /* Set a maximum width for the button */
 }
-
 .button-container {
     display: flex;
     justify-content: center;
@@ -215,7 +211,6 @@ video {
                 0 0 50px rgba(0, 255, 0, 0.5);
     transform: scale(1.05); /* Add zoom effect on hover */
 }
-
 .iframe-container {
     position: relative; /* Position relative to allow absolute positioning of the iframe */
     width: 100%; /* Full width of the container */
@@ -223,7 +218,6 @@ video {
     padding-top: 56.25%; /* 16:9 Aspect Ratio (height/width * 100%) */
     margin-top: 20px; /* Space between the buttons and the iframe */
 }
-
 iframe {
     position: absolute; /* Position absolute to fill the container */
     top: 0;
@@ -233,7 +227,6 @@ iframe {
     border: none; /* Remove border */
     pointer-events: auto; /* Allow pointer events for iframe */
 }
-
 .widget-container {
     position: absolute;
     bottom: 20px; 
@@ -243,7 +236,6 @@ iframe {
     align-items: center; /* Center items vertically */
     pointer-events: auto; /* Allow pointer events for the container */
 }
-
 .widget-image {
     width: 100px; /* Set a fixed size for the widget image */
     transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for hover effect */
@@ -257,26 +249,22 @@ iframe {
             drop-shadow(0 0 15px rgba(0, 255, 0, 0.3))
             drop-shadow(0 0 25px rgba(0, 255, 0, 0.2));
 }
-
 @keyframes float {
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
-
 .heart {
     position: absolute; /* Ensure it does not affect layout */
     animation: fall 2s forwards; /* Animation for falling effect */
     font-size: 30px; /* Default size */
 }
-
 /* Media query for mobile devices */
 @media only screen and (max-width: 768px) {
     .heart {
         font-size: 20px; /* Smaller size for mobile */
     }
 }
-
 @keyframes fall {
     0% { transform: translateY(0); opacity: 1; }
     100% { transform: translateY(100vh); opacity: 0; } /* Fall to the bottom of the viewport */
@@ -291,7 +279,6 @@ iframe {
     height: 60px; /* Set height of the bell icon */
     z-index: 3; /* Ensure it is above other elements */
 }
-
 #notification-panel {
     position: absolute; /* Keep it absolute */
     top: 60px; /* Adjust this value to position it just below the bell icon */
@@ -303,7 +290,6 @@ iframe {
     z-index: 6; /* Ensure it is above other elements */
     background-color: rgba(0, 0, 0, 0.8); /* Darker transparent background */
 }
-
 #notification-panel::before {
     content: ""; /* Create a pseudo-element */
     position: absolute; /* Position it absolutely */
@@ -313,7 +299,6 @@ iframe {
     bottom: 0; /* Align it to the bottom */
     z-index: 1; /* Place it behind the content */
 }
-
 #notification-panel .overlay-content {
     position: relative; /* Position relative to the panel */
     color: white; /* Text color */
@@ -322,7 +307,6 @@ iframe {
     background-color: transparent; /* Make the background transparent */
     z-index: 2; /* Place it above the dark background */
 }
-
 .footer {
     display: flex; /* Use flexbox for layout */
     justify-content: center; /* Center items horizontally */
@@ -341,7 +325,6 @@ iframe {
     border-radius: 5px; /* Rounded corners */
     max-width: 300px; /* Ensure it does not exceed the viewport width */
 }
-
 .overlay {
     position: fixed; /* Fixed position to cover the entire viewport */
     top: 0;
@@ -355,7 +338,6 @@ iframe {
     z-index: 5; /* Ensure it is above other elements */
     overflow: hidden; /* Prevent overflow of heart animations */
 }
-
 .overlay-content {
     background-color: rgba(0, 0, 0, 0.7); /* Darker transparent background for content */
     border-radius: 15px; /* Rounded corners */
@@ -368,7 +350,6 @@ iframe {
     color: white; /* White text for overlay content */
     position: relative; /* Position relative to allow absolute positioning of the close button */
 }
-
 .close-overlay {
     position: absolute;
     top: 5px; /* Position from the top */
@@ -380,7 +361,6 @@ iframe {
     border: none; /* No border */
     z-index: 6; /* Ensure it is above other elements */
 }
-
 .close-overlay:hover {
     color: green; /* Change text color to green on hover */
     cursor: pointer; /* Change cursor to pointer on hover */
@@ -391,18 +371,15 @@ iframe {
     overflow-y: auto; /* Enable vertical scrolling */
     margin-top: 10px; /* Space between the title and the table */
 }
-
 table {
     width: 100%; /* Full width of the table */
     border-collapse: collapse; /* Collapse borders */
 }
-
 th, td {
     padding: 10px; /* Padding for table cells */
     border: 1px solid white; /* Border for table cells */
     text-align: left; /* Align text to the left */
 }
-
 th {
     background-color: rgba(0, 255, 0, 0.5); /* Light green background for headers */
 }
@@ -424,14 +401,12 @@ th {
     width: 100%; /* Full width */
     position: relative; /* Position relative for absolute child */
 }
-
 .scrolling-text span {
     display: inline-block; /* Make the span inline-block */
     margin-right: 60px; /* Add margin to create a gap between spans */
     animation: scroll 31s linear infinite; /* Animation for scrolling (increased duration for slower effect) */
     animation-delay: 3s; /* Delay before starting the scroll */
 }
-
 @keyframes scroll {
     0% {
         transform: translateX(0); /* Start from the initial position */
@@ -440,7 +415,6 @@ th {
         transform: translateX(-100%); /* Move to the left by the full width of the text */
     }
 }
-
 /* Media query for mobile devices */
 @media only screen and (max-width: 600px) {
     /* Styles for mobile devices */
@@ -477,11 +451,9 @@ th {
     right: 10px; /* Position to the right */
 }
 	.glow-button {
-  
 		font-size: 1.5rem; /* Reduce font size on smaller screens */
         padding: 8px 16px; /* Reduce padding on smaller screens */
-		max-width: 200px;
-	
+		max-width: 200px;	
     }
 	.button-container {
     gap: 10px; /* Space between buttons */
@@ -489,9 +461,7 @@ th {
 	.iframe-container {
     height: 48%; /* Full height of the container */
 	}
-
 }
-
 /* Tablet devices (portrait and landscape) */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
     /* Styles for tablet devices */
@@ -526,8 +496,7 @@ th {
 	.iframe-container {
     height: 90%; /* Full height of the container */
     width: 100%;
-	}
-	  
+	}	  
 }
   @media only screen and (min-width: 320px) and (max-width: 599px) {
     .glow-button {
@@ -537,8 +506,7 @@ th {
     }
 	  .button-container {
     gap: 10px; /* Space between buttons */
-	}
-		
+	}		
 }
 /* Media Query for devices with max width less than 300px */
 @media only screen and (max-width: 300px) {
@@ -548,7 +516,6 @@ th {
         padding: 10px; /* Adjust padding for mobile */
     }
 }
-
 </style>
 </head>
 <body>
@@ -563,8 +530,7 @@ th {
             Your browser does not support the video tag.
         </video>
         <div class="slider">
-            <img src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" class="hover-image" title="Click To Copy!" alt="Main Image" width="auto" 
-     height="auto">
+            <img src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" class="hover-image" alt="Main Image" width="322" height="60"> 
             <div class="text three-d" id="slider-text" onclick="changeText()">WELCOME!</div>   
 		<div class="button-container">
                 <button class="glow-button" onclick="window.location.href='https://tecnik.bio.link/'" title="📧Connect with Us">Contact</button>
@@ -704,13 +670,10 @@ const textOptions = [
     "CASUAL GAMER GG + OG",
     "FREELANCE VIDEO EDITOR"    
 ];
-
 let currentTextIndex = 0; // Initialize index for text options
-
 // Function to change the text
 function changeText() {
-    const textElement = document.getElementById("slider-text");
-    
+    const textElement = document.getElementById("slider-text");    
     // Check if we have more text options to display
     if (currentTextIndex < textOptions.length) {
         textElement.textContent = textOptions[currentTextIndex];
@@ -719,13 +682,11 @@ function changeText() {
         currentTextIndex = 0; // Reset index if needed
     }
 }
-
 // Function to start the text display after loading
 function startTextDisplay() {
     // Start changing text after a delay
     setInterval(changeText, 3000); // Change text every 3 seconds
 }
-
 // Modify the fadeOutLoadingScreen function to call startTextDisplay
 function fadeOutLoadingScreen() {
     const loadingScreen = document.getElementById('loading-screen');
@@ -738,7 +699,6 @@ function fadeOutLoadingScreen() {
         }, 400); // Keep initial text for 1 seconds after unblur
     }, 1500); // Match this duration with the CSS transition duration
 }
-
 // Year timer functionality
 let currentYear = 1999;
 const yearTimerElement = document.getElementById('year-timer');
@@ -747,16 +707,13 @@ const totalDuration = 2000; // Total duration in milliseconds
 const durationFor1999 = 600; // Duration for 1999
 const durationFor2025 = 600; // Duration for 2025
 const durationPerYear = (totalDuration - durationFor1999 - durationFor2025) / (totalYears - 2); // Duration for years in between
-
 function updateYear() {
     yearTimerElement.textContent = currentYear;
-
     // Smooth transition effect
     yearTimerElement.style.opacity = 1; // Fade in
     setTimeout(() => {
         yearTimerElement.style.opacity = 0; // Fade out
     }, (currentYear === 1999 || currentYear === 2025 ? 400 : durationPerYear) - 30); // Fade out just before the year changes
-
     // Increment the year
     if (currentYear < 2025) {
         // Schedule the next update
@@ -771,15 +728,12 @@ function updateYear() {
         fadeOutLoadingScreen(); // Call fade out function
     }
 }
-
 // Start the year update animation
 updateYear();
-
 // Set the initial text immediately when the page loads
 document.addEventListener('DOMContentLoaded', function() {
     const textElement = document.getElementById("slider-text");
     textElement.textContent = "Welcome Thx for Visiting!"; // Set initial text
-
     // Add click event listener to change text on click
     textElement.addEventListener('click', changeText);
 });
@@ -788,14 +742,12 @@ function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
     heart.innerText = '❤️'; // Heart emoji
-
     // Set size based on screen width
     if (window.innerWidth < 768) { // Mobile view
         heart.style.fontSize = '20px'; // Smaller size for mobile
     } else {
         heart.style.fontSize = '30px'; // Default size for larger screens
     }
-
     heart.style.position = 'fixed'; // Change to fixed to prevent layout shift
     heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
     heart.style.top = '0'; // Start from the top
@@ -816,15 +768,12 @@ function addHeartDropEffectToButtons(buttons) {
         });
     });
 }
-
 // Call this function for the donation overlay buttons
 const donationButtons = document.querySelectorAll('#donation-overlay .glow-button');
 addHeartDropEffectToButtons(donationButtons);
-
 // Call this function for the widget image button
 const widgetImage = document.querySelector('.widget-image');
 addHeartDropEffectToButtons([widgetImage]);
-
 // Function to handle mouse movement for drawing
 let isDrawing = false;
 function handleMouseMove(event) {
@@ -834,7 +783,6 @@ function handleMouseMove(event) {
         drawingDot.style.left = `${event.pageX}px`;
         drawingDot.style.top = `${event.pageY}px`;
         document.body.appendChild(drawingDot);
-
         // Remove the dot after 5 seconds
         setTimeout(() => {
             drawingDot.style.opacity = 0; // Fade out
@@ -844,29 +792,23 @@ function handleMouseMove(event) {
         }, 5000);
     }
 }
-
 // Function to start drawing
 function startDrawing() {
     isDrawing = true;
 }
-
 // Function to stop drawing
 function stopDrawing() {
     isDrawing = false;
 }
-
 // Add event listener for mouse down to start drawing
 document.addEventListener('mousedown', (event) => {
     startDrawing(); // Start drawing on click
     handleMouseMove(event); // Call handleMouseMove to draw at the click position
 });
-
 // Add event listener for mouse move to draw
 document.addEventListener('mousemove', handleMouseMove); // Start drawing on mouse move
-
 // Add event listener for mouse up to stop drawing
 document.addEventListener('mouseup', stopDrawing); // Stop drawing on mouse up
-
 // Function to open the overlay for services
 function openOverlay() {
     document.getElementById("table-overlay").style.display = "flex"; // Show overlay
@@ -875,7 +817,6 @@ function openOverlay() {
 function closeOverlay() {
     document.getElementById("table-overlay").style.display = "none"; // Hide overlay
 }
-
 // Add event listener to services button
 document.getElementById("button2").addEventListener("click", openOverlay);
 
@@ -890,15 +831,12 @@ document.getElementById("table-overlay").addEventListener("click", function(even
 function openProjectsOverlay() {
     document.getElementById("projects-overlay").style.display = "flex"; // Show overlay
 }
-
 // Function to close the projects overlay
 function closeProjectsOverlay() {
     document.getElementById("projects-overlay").style.display = "none"; // Hide overlay
 }
-
 // Add event listener to the projects button
 document.getElementById("button3").addEventListener("click", openProjectsOverlay);
-
 // Add event listener to the projects overlay to close it when clicking outside the content
 document.getElementById("projects-overlay").addEventListener("click", function(event) {
     // Check if the clicked target is the overlay itself
@@ -914,11 +852,9 @@ function copyToClipboard(text) {
         console.error('Failed to copy: ', err);
     });
 }
-
 // Add event listener for the main image click
 document.addEventListener('DOMContentLoaded', function() {
-    const mainImage = document.querySelector('.hover-image');
-    
+    const mainImage = document.querySelector('.hover-image'); 
     if (mainImage) {
         mainImage.addEventListener('click', function() {
             console.log('Main image clicked'); // Log to console for debugging
@@ -954,7 +890,6 @@ function handleDonation(url) {
     } else {
         messageElement.style.width = '450px'; // Set a fixed width for larger screens
     }
-
     // Append the message to the body
     document.body.appendChild(messageElement);
 
@@ -968,12 +903,10 @@ function handleDonation(url) {
 function openDonationOverlay() {
     document.getElementById("donation-overlay").style.display = "flex"; // Show overlay
 }
-
 // Function to close the donation overlay
 function closeDonationOverlay() {
     document.getElementById("donation-overlay").style.display = "none"; // Hide overlay
 }
-
 // Add event listener to the widget image to open the donation overlay
 document.querySelector('.widget-image').addEventListener('click', openDonationOverlay);
 
@@ -990,16 +923,13 @@ document.getElementById("donation-overlay").addEventListener("click", function(e
             closeProjectsOverlay(); // Close projects overlay
             closeDonationOverlay(); // Close donation overlay
         }
-
         // Function to open the donation overlay
         function openDonationOverlay() {
             closeAllOverlays(); // Close any active overlays
             document.getElementById("donation-overlay").style.display = "flex"; // Show donation overlay
         }
-
         // Add event listener to the donation widget
         document.querySelector('.widget-image').addEventListener('click', openDonationOverlay);
-
 // Function to open or close the notification panel
 function toggleNotificationPanel() {
     const notificationPanel = document.getElementById("notification-panel");
@@ -1009,7 +939,6 @@ function toggleNotificationPanel() {
         notificationPanel.style.display = "flex"; // Show notification panel
     }
 }
-
 // Add event listener to the notification bell
 document.querySelector('.notification-bell').addEventListener('click', toggleNotificationPanel);
 
@@ -1047,7 +976,6 @@ document.addEventListener('click', function(event) {
             link.href = url;
             document.head.appendChild(link);
         }
-
         // Preload the external page after the window has fully loaded
         window.addEventListener('load', function() {
             preloadExternalPage('https://tecnik.bio.link'); // Replace with your external link
