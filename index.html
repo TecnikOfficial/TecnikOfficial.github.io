@@ -183,7 +183,7 @@ video {
     font-size: 1.5rem;
     color: white; 
     background-color: rgba(0, 0, 0, 0.5); /* Darker transparent background */
-    border: 3px solid rgba(0, 255, 0, 0.8);
+    border: 3px solid rgba(0, 255, 0, 0.6);
     border-radius: 25px; /* Rounded corners */
     cursor: pointer;
     position: relative;
@@ -324,7 +324,7 @@ iframe {
     background-color: rgba(0, 0, 0, 0.6); /* Optional: dark background for readability */
     padding: 5px; /* Reduced padding for smaller appearance */
     border-radius: 5px; /* Rounded corners */
-    max-width: 300px; /* Ensure it does not exceed the viewport width */
+    max-width: 350px; /* Ensure it does not exceed the viewport width */
 }
 .overlay {
     position: fixed; /* Fixed position to cover the entire viewport */
@@ -435,7 +435,7 @@ th {
 .futuristic-content {
     background-color: rgba(0, 0, 0, 0.5); /* Darker but still transparent */
     backdrop-filter: blur(6px); /* Add blur effect */
-    border: 2px solid rgba(0, 255, 0, 0.7);
+    border: 2px solid rgba(0, 255, 0, 0.5);
     border-radius: 15px;
     padding: 30px;
     max-width: 800px;
@@ -478,9 +478,9 @@ th {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.5); /* Darker but still transparent */
     backdrop-filter: blur(5px); /* Add blur effect */
-    border: 2px solid rgba(0, 255, 0, 0.7);
+    border: 2px solid rgba(0, 255, 0, 0.5);
     border-radius: 15px;
-    box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
 }
 
 .connect-title, .support-title {
@@ -502,7 +502,7 @@ th {
 
 .connect-item, .support-item {
     background-color: transparent;
-    border: 3px solid rgba(0, 255, 0, 0.7);
+    border: 3px solid rgba(0, 255, 0, 0.5);
     border-radius: 10px;
     padding: 10px; /* Reduced padding */
     display: flex;
@@ -716,11 +716,12 @@ th {
 @media only screen and (max-width: 600px) {
     .futuristic-overlay, .connect-overlay, .support-overlay {
         height: auto; /* Allow height to adjust based on content */   
+		max-height: 500px;
         overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
     }  
     .connect-content, .support-content, .futuristic-content {
 	height: auto; /* Allow height to adjust based on content */
-        padding: 15px; /* Adjust padding for mobile */
+		max-height: 500px;
 		overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
     }
     
@@ -845,7 +846,7 @@ th {
                     <!-- Feedback -->
                     <a href="https://tellonym.me/tecnik" target="_blank" class="connect-item">
                         <div class="connect-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #000;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #fff;">
     <path d="M12 2C8.69 2 6 4.69 6 8c0 1.5.5 2.88 1.34 4H16.66C17.5 10.88 18 9.5 18 8c0-3.31-2.69-6-6-6z"></path>
     <path d="M4 12c0 4.42 3.58 8 8 8s8-3.58 8-8"></path>
     <path d="M9 16h6"></path>
@@ -1071,11 +1072,14 @@ th {
     </div>
     <!-- Footer Section -->
     <footer class="footer">
-    Made with <a href="https://youtu.be/71qssscQqH8?feature=shared" target="_blank"> 
-    <img src="https://tecnik.pages.dev/assets/media/heart.gif" alt="Heart" title="Listen💓" width="20" height="20" style="vertical-align: bottom;" loading="lazy">
-</a> using A.i | Source Code   
-    <a href="https://github.com/TecnikOfficial/TecnikOfficial.github.io" target="_blank"> 
-        <img src="https://tecnik.pages.dev/assets/media/GITHUB-white.svg" alt="GitHub" title="Github" width="20" height="20" style="vertical-align: bottom;" loading="lazy"></a>
+    Made with 
+    <a href="https://youtu.be/71qssscQqH8?feature=shared" target="_blank">
+        <img src="https://tecnik.pages.dev/assets/media/heart.gif" alt="Heart" title="Listen💓" width="20" height="20" style="vertical-align: bottom; margin-left: 5px; margin-right: 5px;" loading="lazy">
+    </a> 
+    using A.i | Source Code 
+    <a href="https://github.com/TecnikOfficial/TecnikOfficial.github.io" target="_blank">
+        <img src="https://tecnik.pages.dev/assets/media/GITHUB-white.svg" alt="GitHub" title="Github" width="20" height="20" style="vertical-align: bottom; margin-left: 5px; margin-right: 5px;" loading="lazy">
+    </a>
 </footer>
     <script>// Array of text options
 const textOptions = [
