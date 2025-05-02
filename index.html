@@ -580,6 +580,17 @@ th {
                 0 0 25px rgba(0, 255, 0, 0.3);
     transform: scale(1.05);
 }
+.futuristic-overlay, .connect-overlay, .support-overlay {
+        height: auto; /* Allow height to adjust based on content */   
+		top: 5%;
+		bottom: 5%;
+        overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
+    }  
+    .connect-content, .support-content, .futuristic-content {
+	height: auto; /* Allow height to adjust based on content */
+		
+		overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */		
+    }
 
 /* Media queries */
 /* Media query for mobile devices */
@@ -711,17 +722,19 @@ th {
         padding: 6px 12px;
         min-width: 70px;
     }
+	
 }
 /* Media query for mobile devices */
 @media only screen and (max-width: 600px) {
     .futuristic-overlay, .connect-overlay, .support-overlay {
         height: auto; /* Allow height to adjust based on content */   
-		max-height: 500px;
+		top: 5%;
+		bottom: 5%;
         overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
     }  
     .connect-content, .support-content, .futuristic-content {
 	height: auto; /* Allow height to adjust based on content */
-		max-height: 500px;
+		
 		overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */		
     }
     
