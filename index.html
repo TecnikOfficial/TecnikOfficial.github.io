@@ -303,6 +303,7 @@ iframe {
     position: relative; /* Position relative to the panel */
     color: white; /* Text color */
     padding: 20px; /* Padding inside the panel */
+	backdrop-filter: blur(6px); /* Add blur effect */
     border-radius: 10px; /* Rounded corners */
     background-color: rgba(0, 0, 0, 0.7); /* Make the background transparent */
     z-index: 2; /* Place it above the dark background */
@@ -512,7 +513,7 @@ th {
 .connect-item:hover, .support-item:hover {
     background-color: rgba(0, 0, 0, 0.5);
     border-color: #00ff00;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+    box-shadow: 0 0 12px rgba(0, 255, 0, 0.7);
     transform: translateY(-3px);
 }
 
@@ -710,6 +711,19 @@ th {
         padding: 6px 12px;
         min-width: 70px;
     }
+}
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+    .futuristic-overlay, .connect-overlay, .support-overlay {
+        height: auto; /* Allow height to adjust based on content */   
+        overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
+    }  
+    .connect-content, .support-content, .futuristic-content {
+	height: auto; /* Allow height to adjust based on content */
+        padding: 15px; /* Adjust padding for mobile */
+		overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
+    }
+    
 }
 </style>
 </head>
