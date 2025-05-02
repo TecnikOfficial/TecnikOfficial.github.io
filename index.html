@@ -175,15 +175,15 @@ video {
 .three-d:hover {
     color: green; /* Change text color to green on hover */
 }
-	.green-text {
-        color: green;
-    }
+.green-text {
+    color: green;
+}
 .glow-button {
     padding: 10px 20px;
     font-size: 1.5rem;
     color: white; 
     background-color: rgba(0, 0, 0, 0.5); /* Darker transparent background */
-    border: 2px solid grey;
+    border: 3px solid rgba(0, 255, 0, 0.8);
     border-radius: 25px; /* Rounded corners */
     cursor: pointer;
     position: relative;
@@ -288,7 +288,7 @@ iframe {
     overflow: hidden; /* Prevent overflow of content */
     display: none; /* Initially hidden */
     z-index: 6; /* Ensure it is above other elements */
-    background-color: rgba(0, 0, 0, 0.8); /* Darker transparent background */
+    background-color: transparent; /* Changed to transparent */
 }
 #notification-panel::before {
     content: ""; /* Create a pseudo-element */
@@ -304,7 +304,7 @@ iframe {
     color: white; /* Text color */
     padding: 20px; /* Padding inside the panel */
     border-radius: 10px; /* Rounded corners */
-    background-color: transparent; /* Make the background transparent */
+    background-color: rgba(0, 0, 0, 0.7); /* Make the background transparent */
     z-index: 2; /* Place it above the dark background */
 }
 .footer {
@@ -331,7 +331,7 @@ iframe {
     left: 0;
     width: 100%;
     height: 100%; /* Ensure it covers the full height */
-    background-color: rgba(0, 0, 0, 0.5); /* Lighter transparent background */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     display: none; /* Initially hidden */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
@@ -339,7 +339,7 @@ iframe {
     overflow: hidden; /* Prevent overflow of heart animations */
 }
 .overlay-content {
-    background-color: rgba(0, 0, 0, 0.7); /* Darker transparent background for content */
+    background-color: transparent; /* Changed to transparent */
     border-radius: 15px; /* Rounded corners */
     padding: 30px; /* Padding inside the overlay */
     box-shadow: 0 0 20px rgba(0,  0, 0, 0.5); /* Shadow for depth */
@@ -383,7 +383,7 @@ th, td {
 th {
     background-color: rgba(0, 255, 0, 0.5); /* Light green background for headers */
 }
-  .expertise-text {
+.expertise-text {
     display: flex; /* Use flexbox for centering */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
@@ -393,7 +393,7 @@ th {
     overflow-wrap: break-word; /* Ensure text wraps correctly */
     width: 100%; /* Ensure it takes full width */
 }
-	/*Projects Overlay content*/
+/*Projects Overlay content*/
 .scrolling-text {
     overflow: hidden; /* Hide overflow */
     white-space: nowrap; /* Prevent text wrapping */
@@ -415,97 +415,278 @@ th {
         transform: translateX(-100%); /* Move to the left by the full width of the text */
     }
 }
+
+/* Futuristic overlay styles - Updated */
+.futuristic-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* More transparent background */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.futuristic-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Darker but still transparent */
+    backdrop-filter: blur(6px); /* Add blur effect */
+    border: 2px solid rgba(0, 255, 0, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 800px;
+    width: 90%;
+    color: white;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
+    overflow: hidden;
+}
+
+.futuristic-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    background: linear-gradient(to right, #00ff00, #00aa00); /* Gradient green */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* New styles for Connect and Support overlays - Updated */
+.connect-overlay, .support-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* More transparent background */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.connect-content, .support-content {
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Darker but still transparent */
+    backdrop-filter: blur(5px); /* Add blur effect */
+    border: 2px solid rgba(0, 255, 0, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
+}
+
+.connect-title, .support-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #00ff00, #00aa00); /* Gradient green */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.connect-grid, .support-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Changed to 3 columns */
+    gap: 15px;
+}
+
+.connect-item, .support-item {
+    background-color: transparent;
+    border: 3px solid rgba(0, 255, 0, 0.7);
+    border-radius: 10px;
+    padding: 10px; /* Reduced padding */
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.connect-item:hover, .support-item:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+    transform: translateY(-3px);
+}
+
+.connect-icon, .support-icon {
+    width: 30px; /* Reduced size */
+    height: 30px; /* Reduced size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px; /* Reduced margin */
+    font-size: 1.2rem; /* Reduced font size */
+}
+
+.connect-info, .support-info {
+    flex: 1;
+}
+
+.connect-name, .support-name {
+    font-weight: bold;
+    font-size: 1rem; /* Reduced font size */
+    color: white;
+    margin-bottom: 2px; /* Reduced margin */
+}
+
+.connect-desc, .support-desc {
+    color: #aaa;
+    font-size: 0.75rem; /* Reduced font size */
+}
+
+.support-message {
+    text-align: center;
+    color: white;
+    margin-bottom: 15px; /* Reduced margin */
+    font-size: 0.9rem; /* Reduced font size */
+    line-height: 1.3; /* Reduced line height */
+}
+
+.support-footer {
+    text-align: center;
+    color: white;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+/* Smaller buttons for donation overlay */
+.donation-button {
+    padding: 8px 15px; /* Smaller padding */
+    font-size: 1.2rem; /* Smaller font size */
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid grey;
+    border-radius: 20px; /* Smaller rounded corners */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    display: inline-block;
+    min-width: 80px; /* Smaller minimum width */
+    width: fit-content;
+    max-width: 150px; /* Smaller maximum width */
+}
+
+.donation-button:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5),
+                0 0 25px rgba(0, 255, 0, 0.3);
+    transform: scale(1.05);
+}
+
+/* Media queries */
 /* Media query for mobile devices */
 @media only screen and (max-width: 600px) {
     /* Styles for mobile devices */
     .overlay-content {
-        width: 90%; /* Adjust width for mobile devices */
-        padding: 20px; /* Adjust padding for mobile devices */
+        width: 90%;
+        padding: 20px;
     }
     .table-scroll {
-        max-height: 200px; /* Adjust max height for mobile devices */
+        max-height: 200px;
     }
     th, td {
-        padding: 5px; /* Adjust padding for mobile devices */
+        padding: 5px;
     }
   .slider {
-        top: 36%; /* Adjust the position for mobile devices; a lower value will move the element higher up.*/
-        width: 95%; /* Increase width for mobile */
+        top: 36%;
+        width: 95%;
     }
     .text.three-d {
-        font-size: 2.5rem; /* Adjust font size for mobile */
+        font-size: 2.5rem;
     }
     .three-d {
-        font-size: 2rem; /* Adjust font size for mobile */
+        font-size: 2rem;
     }
     .widget-container {
-      	bottom: 130px; /* Higher values means more to up*/
-    	right: 5px; /* Position the widget to the right , lower values means more to right*/
+      	bottom: 130px;
+    	right: 5px;
     }
 
     .widget-image {
-        width: 85px; /* Make the image a bit smaller */      
+        width: 85px;
     }
 	.notification-bell {
-    top: 10px; /* Position at the top */
-    right: 10px; /* Position to the right */
+    top: 10px;
+    right: 10px;
 }
 	.glow-button {
-		font-size: 1.5rem; /* Reduce font size on smaller screens */
-        padding: 8px 16px; /* Reduce padding on smaller screens */
+		font-size: 1.5rem;
+        padding: 8px 16px;
 		max-width: 200px;	
     }
 	.button-container {
-    gap: 10px; /* Space between buttons */
+    gap: 10px;
 	}
 	.iframe-container {
-    height: 48%; /* Full height of the container */
+    height: 48%;
 	}
+    .futuristic-title {
+        font-size: 1.5rem;
+    }
+    
+    .connect-grid, .support-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+    
+    .connect-title, .support-title {
+        font-size: 1.8rem;
+    }
 }
 /* Tablet devices (portrait and landscape) */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
     /* Styles for tablet devices */
     .overlay-content {
-        width: 80%; /* Adjust width for tablet devices */
-        padding: 15px; /* Adjust padding for tablet devices */
+        width: 80%;
+        padding: 15px;
     }
     .table-scroll {
-        max-height: 250px; /* Adjust max height for tablet devices */
+        max-height: 250px;
     }
     th, td {
-        padding: 10px; /* Adjust padding for tablet devices */
+        padding: 10px;
     }
 	.text.three-d {
-        font-size: 3rem; /* Adjust font size for mobile */
+        font-size: 3rem;
     }
     .three-d {
-        font-size: 2.5rem; /* Adjust font size for mobile */
+        font-size: 2.5rem;
     }
     .glow-button {
-        font-size: 1.5rem; /* Smallest font size */
-        padding: 8px 16px; /* Further adjust padding */
-        max-width: 200px; /* Further adjust max width for very small screens */
+        font-size: 1.5rem;
+        padding: 8px 16px;
+        max-width: 200px;
     }
 	  .widget-image {
-        width: 90px; /* Make the image a bit smaller */      
+        width: 90px;
     }
 	.widget-container {
-      	bottom: 20px; /* Higher values means more to up*/
-    	right: 5px; /* Position the widget to the right , lower values means more to right*/
+      	bottom: 20px;
+    	right: 5px;
     }
 	.iframe-container {
-    height: 90%; /* Full height of the container */
+    height: 90%;
     width: 100%;
-	}	  
+	}
+    
+    .connect-grid, .support-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on tablet */
+    }
 }
   @media only screen and (min-width: 320px) and (max-width: 599px) {
     .glow-button {
-        font-size: 1.3rem; /* Smallest font size */
-        padding: 8px 16px; /* Further adjust padding */
-        max-width: 200px; /* Further adjust max width for very small screens */
+        font-size: 1.3rem;
+        padding: 8px 16px;
+        max-width: 200px;
     }
 	  .button-container {
-    gap: 10px; /* Space between buttons */
+    gap: 10px;
 	}		
 }
 /* Media Query for devices with max width less than 300px */
@@ -514,6 +695,20 @@ th {
         flex-wrap: wrap; /* Allow items to wrap to the next line */
         font-size: 0.9rem; /* Adjust font size for mobile if needed */
         padding: 10px; /* Adjust padding for mobile */
+    }
+    
+    .connect-item, .support-item {
+        padding: 8px;
+    }
+    
+    .connect-name, .support-name {
+        font-size: 0.9rem;
+    }
+    
+    .donation-button {
+        font-size: 1rem;
+        padding: 6px 12px;
+        min-width: 70px;
     }
 }
 </style>
@@ -530,12 +725,12 @@ th {
             Your browser does not support the video tag.
         </video>
         <div class="slider">
-            <img src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" class="hover-image" alt="Main Image" width="322" height="60"> 
+            <img src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" onclick="copyDiscord(); return false;" class="hover-image" alt="Main Image" width="322" height="60"> 
             <div class="text three-d" id="slider-text" onclick="changeText()">WELCOME!</div>   
 		<div class="button-container">
-                <button class="glow-button" onclick="window.location.href='https://tecnik.bio.link/'" title="📧Connect with Us">Contact</button>
+                <button class="glow-button" id="contactButton" title="📧Connect with Us">Contact</button>
                 <button class="glow-button" id="button2" title="💲Freelance">Services</button>
-      <button class="glow-button" id="button3" title="✔️Completed & Delivered">Projects</button>
+                <button class="glow-button" id="button3" title="✔️Completed & Delivered">Projects</button>
             </div>
             <!-- Iframe-->
             <div class="iframe-container">
@@ -546,27 +741,224 @@ th {
             <img src="https://tecnik.pages.dev/assets/media/donate.webp" class="widget-image" title="TYSM❤️" alt="Donate" width="100%" 
      height="100%" loading="lazy">
         </div> 
+		
+        <!-- Connect with TecNik Overlay -->
+        <div id="connect-overlay" class="connect-overlay">
+            <div class="connect-content">
+                <span class="close-overlay" onclick="closeConnectOverlay()">✖</span>
+                <h2 class="connect-title">Connect with TecNik</h2>
+				<div class="support-message">
+                    Explore my Youtube channels and other ways to get in touch.
+                </div>      
+                <div class="connect-grid">
+                    <!-- YouTube -->
+                    <a href="https://www.youtube.com/channel/UCXucwi4swKyTmCUB9RrFaQw" target="_blank" class="connect-item">
+                        <div class="connect-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ff0000;"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </div>
+                        <div class="connect-info">
+                            <div class="connect-name">TecNik Official</div>
+                            <div class="connect-desc">Tech tips & tutorials</div>
+                        </div>
+                    </a>
+                    
+                    <!-- SyncKing -->
+                    <a href="https://www.youtube.com/channel/UC35TPNUnNegZq4mBWvU0o7g" target="_blank" class="connect-item">
+                        <div class="connect-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #1db954;"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                        </div>
+                        <div class="connect-info">
+                            <div class="connect-name">SyncKing</div>
+                            <div class="connect-desc">A.i Music & Songs</div>
+                        </div>
+                    </a>
+                    
+                    <!-- GitHub -->
+                    <a href="https://github.com/TecnikOfficial" target="_blank" class="connect-item">
+                        <div class="connect-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #fff;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </div>
+                        <div class="connect-info">
+                            <div class="connect-name">GitHub</div>
+                            <div class="connect-desc">Open source projects</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Email -->
+                    <a href="mailto:TecnikOfficial@Outlook.com" class="connect-item">
+                        <div class="connect-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #00a4ef;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </div>
+                        <div class="connect-info">
+                            <div class="connect-name">Email</div>
+                            <div class="connect-desc">TecnikOfficial@Outlook.com</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Twitch 
+                    <a href="https://www.twitch.tv/tecnikofficial" target="_blank" class="connect-item">
+                        <div class="connect-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #6441a5;"><path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path></svg>
+                        </div>
+                        <div class="connect-info">
+                            <div class="connect-name">Twitch</div>
+                            <div class="connect-desc">Live streams</div>
+                        </div>
+                    </a> -->
+                    
+                    <!-- LinkedIn
+                    <a href="https://www.linkedin.com/in/tecnikofficial" target="_blank" class="connect-item">
+                        <div class="connect-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #0077b5;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </div>
+                        <div class="connect-info">
+                            <div class="connect-name">LinkedIn</div>
+                            <div class="connect-desc">Professional profile</div>
+                        </div>
+                    </a> -->
+                    
+                    <!-- Discord -->
+                    <a href="https://discord.com/invite/uFMJ6xZbDz"  class="connect-item">
+                        <div class="connect-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #7289da;"><path d="M21 18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12Z"></path><path d="m9 10 2 2 4-4"></path></svg>
+                        </div>
+                        <div class="connect-info">
+                            <div class="connect-name">Discord</div>
+                            <div class="connect-desc">50 slots left</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Feedback -->
+                    <a href="https://tellonym.me/tecnik" target="_blank" class="connect-item">
+                        <div class="connect-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #000;">
+    <path d="M12 2C8.69 2 6 4.69 6 8c0 1.5.5 2.88 1.34 4H16.66C17.5 10.88 18 9.5 18 8c0-3.31-2.69-6-6-6z"></path>
+    <path d="M4 12c0 4.42 3.58 8 8 8s8-3.58 8-8"></path>
+    <path d="M9 16h6"></path>
+</svg>
+                        </div>
+                        <div class="connect-info">
+                            <div class="connect-name">Feedback</div>
+                            <div class="connect-desc">Send Text Anonymously</div>
+                        </div>
+                    </a>
+                </div>				
+				<div class="support-footer">
+                    Whether you want to follow my latest updates, collaborate on projects, or just say hello, feel free to reach out!👋 
+                </div>
+            </div>
+        </div>
+        
+        <!-- Support TecNik Overlay -->
+        <div id="support-overlay" class="support-overlay">
+            <div class="support-content">
+                <span class="close-overlay" onclick="closeSupportOverlay()">✖</span>
+                <h2 class="support-title">Support TecNik</h2>
+                
+                <div class="support-message">
+                    Your support helps me continue creating content and developing new projects.<br>
+                    Choose a payment method below:
+                </div>
+                
+                <div class="support-grid">
+                    <!-- Google Pay -->
+                    <a href="#" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnikpay-1@okaxis&description=Thank+You'); return false;" class="support-item">
+                        <div class="support-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #4285f4;"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M12 12h.01"></path><path d="M17 12h.01"></path><path d="M7 12h.01"></path></svg>
+                        </div>
+                        <div class="support-info">
+                            <div class="support-name">Google Pay</div>
+                            <div class="support-desc">Fast & secure payment</div>
+                        </div>
+                    </a>
+                    
+                    <!-- UPI -->
+                    <a href="#" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnik@upi&description=Thank+You'); return false;" class="support-item">
+                        <div class="support-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #00baf2;"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                        </div>
+                        <div class="support-info">
+                            <div class="support-name">UPI</div>
+                            <div class="support-desc">Indian payment system</div>
+                        </div>
+                    </a>
+                    
+                    <!-- PayPal -->
+                    <a href="#" onclick="handleDonation('https://www.paypal.me/TecnikOfficial'); return false;" class="support-item">
+                        <div class="support-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #00457c;"><path d="M17.4 7.8C16.6 5.7 14.5 4 12 4H6.5C5.7 4 5 4.7 5 5.5c0 0 0 0 0 0L3 18c0 .5.4 1 1 1h4l1-5h2c3.9 0 6-2.2 6-5.5 0-.3 0-.5-.1-.7z"></path><path d="M15.8 12c.7-2.5 0-4-2.4-4H9l-1.8 9h4l.6-3h1c1.1 0 1.8-.4 2-2z"></path></svg>
+                        </div>
+                        <div class="support-info">
+                            <div class="support-name">PayPal</div>
+                            <div class="support-desc">International payments</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Buy me a Coffee -->
+                    <a href="#" onclick="handleDonation('https://buymeacoffee.com/tecnik'); return false;" class="support-item">
+                        <div class="support-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #fd0;"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                        </div>
+                        <div class="support-info">
+                            <div class="support-name">Buy me a Coffee</div>
+                            <div class="support-desc">Support my work</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Ko-Fi -->
+                    <a href="#" onclick="handleDonation('https://ko-fi.com/tecnik'); return false;" class="support-item">
+                        <div class="support-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #29abe0;"><path d="M5 8h14"></path><path d="M5 12h14"></path><path d="M5 16h14"></path><path d="M3 20h18"></path><path d="M17 4h1a2 2 0 0 1 2 2v1"></path><path d="M16 6H8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"></path></svg>
+                        </div>
+                        <div class="support-info">
+                            <div class="support-name">Ko-Fi</div>
+                            <div class="support-desc">Buy me a coffee</div>
+                        </div>
+                    </a>
+                    
+                    <!-- Patreon 
+                    <a href="#" onclick="handleDonation('https://www.patreon.com/tecnik'); return false;" class="support-item">
+                        <div class="support-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #f96854;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <div class="support-info">
+                            <div class="support-name">Patreon</div>
+                            <div class="support-desc">Monthly support</div>
+                        </div>
+                    </a>-->
+                </div>
+                
+                <div class="support-footer">
+                    Every contribution, no matter how small, makes a difference. Thank you for your support! ❤️
+                </div>
+            </div>
+        </div>
+
 		<!-- Donation Overlay -->
-<div id="donation-overlay" class="overlay">
-    <div class="overlay-content">
+<div id="donation-overlay" class="futuristic-overlay">
+    <div class="futuristic-content">
         <span class="close-overlay" onclick="closeDonationOverlay()">✖</span>
-        <h2 style="color: green; text-align: center; text-decoration: underline; margin-bottom: 20px;">Choose Payment Method to Support</h2>
+        <h2 class="futuristic-title">Choose Payment Method to Support</h2>
+        
         <div class="button-container">
-            <button class="glow-button" title="Thank" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnikpay-1@okaxis&description=Thank+You')">Google PAY</button>
-            <button class="glow-button" title="you" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnik@upi&description=Thank+You')">₹ UPI</button>
-            <button class="glow-button" title="for" onclick="handleDonation('https://www.paypal.me/TecnikOfficial')">💲PayPal</button>
+            <button class="donation-button" title="Thank" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnikpay-1@okaxis&description=Thank+You')">Google PAY</button>
+            <button class="donation-button" title="you" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnik@upi&description=Thank+You')">₹ UPI</button>
+            <button class="donation-button" title="for" onclick="handleDonation('https://www.paypal.me/TecnikOfficial')">💲PayPal</button>
         </div>
         <div class="button-container">
-            <button class="glow-button" title="your" onclick="handleDonation('https://buymeacoffee.com/tecnik')">Buy me a☕</button>
-            <button class="glow-button" title="support!" onclick="handleDonation('https://ko-fi.com/tecnik')">Ko-Fi</button>
+            <button class="donation-button" title="your" onclick="handleDonation('https://buymeacoffee.com/tecnik')">Buy me a☕</button>
+            <button class="donation-button" title="support!" onclick="handleDonation('https://ko-fi.com/tecnik')">Ko-Fi</button>
+            <button class="donation-button" title="monthly" onclick="handleDonation('https://www.patreon.com/tecnik')">Patreon</button>
         </div>
     </div>
 </div>
-        <!-- Overlay for Table -->
-        <div id="table-overlay" class="overlay">
-            <div class="overlay-content">
+
+        <!-- Services Overlay -->
+        <div id="table-overlay" class="futuristic-overlay">
+            <div class="futuristic-content">
                 <span class="close-overlay" onclick="closeOverlay()">✖</span>
-                <h2>Freelance Services</h2>
+                <h2 class="futuristic-title">Freelance Services</h2>
+                
                 <div class="table-scroll">
                     <table>
                         <tr>
@@ -586,7 +978,7 @@ th {
                         </tr>
                         <tr>
                             <td>Web Development</td>
-                            <td>Building Static Portfolio Sites with Html5,CSS,JS. Converting sites to Android App . Provides Hosting Advice and Site Optimisation</td>
+                            <td>Building Static Portfolio Sites with Html5,CSS,JS. Converting sites to Android App. Provides Hosting Advice and Site Optimisation</td>
                             <td>749 - 4999</td>
                         </tr>
                         <tr>
@@ -608,40 +1000,52 @@ th {
 			<BR><p style="font-size: 16px; text-align: center;"><strong>GIVE US FEEDBACK <a href="https://tellonym.me/tecnik">HERE😃</a></strong></p>
             </div>
         </div>
+        
+        <!-- Projects Overlay -->
+        <div id="projects-overlay" class="futuristic-overlay">
+            <div class="futuristic-content">
+                <span class="close-overlay" onclick="closeProjectsOverlay()">✖</span>
+                
+                <h2 class="futuristic-title">Projects</h2>
+                
+                <div style="margin-top: 20px;">
+                    <h2 style="color: green; text-decoration: underline;">Worked as Lead:</h2>
+                    <br>
+                    <div class="scrolling-text">
+                        <span>
+                            Automotive (Social Media Marketing) | Agro Pvt Ltd (Product Label & Logo Design) | Music Distributor (Website Design) | Resume Design (Multiple Clients)
+                        </span>
+                        <span>
+                            Automotive (Social Media Marketing) | Agro Pvt Ltd (Product Label & Logo Design) | Music Distributor (Website Design) | Resume Design (Multiple Clients)
+                        </span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <h2 style="color: green; text-decoration: underline;">Collaborations:</h2>
+                    <br>
+                    <div class="scrolling-text">
+                        <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase), Gaming Channel (Montage Edits)</span>
+                        <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase), Gaming Channel (Montage Edits)</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <h2 style="color: green; text-decoration: underline;">Currently Working On:</h2>
+                    <br>
+                    <span>Building WEB App (working along with doctor)</span>
+                </div>
+                
+                <div class="expertise-text" style="margin-top: 30px;">
+                    <span style="font-weight: bold;">Expertise in Efficiency | Provides Value for Money Solutions</span>
+                </div>
+            </div>
+        </div>
+        
         <img src="https://tecnik.pages.dev/assets/media/noti.webp" class="notification-bell" alt="Notification Bell" width="60px" 
      height="60px" onclick="openNotificationPanel()" loading="lazy"> 
     </div>
-<!-- New Overlay for Projects -->
-<div id="projects-overlay" class="overlay">
-    <div class="overlay-content">
-        <span class="close-overlay" onclick="closeProjectsOverlay()">✖</span>      
-        <h2 style="color: green; text-decoration: underline;">Worked as Lead:</h2>
-      <br>
-        <div class="scrolling-text">
-        <span>
-            Automotive (Social Media Marketing) | Agro Pvt Ltd (Product Label & Logo Design) | Music Distributor (Website Design) | Resume Design (Multiple Clients)
-        </span>
-          <span>
-            Automotive (Social Media Marketing) | Agro Pvt Ltd (Product Label & Logo Design) | Music Distributor (Website Design) | Resume Design (Multiple Clients)
-        </span>
-      </div>
-      <br>
-        <h2 style="color: green; text-decoration: underline;">Collaborations:</h2>
-      <br>
-      <div class="scrolling-text">
-        <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase) , Gaming Channel (Montage Edits)</span>
-        <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase) , Gaming Channel (Montage Edits)</span>
-		<br><br>
-      </div>	    
-        <h2 style="color: green; text-decoration: underline;">Currently Working On:</h2>
-      <br>
-        <span>Building WEB App (working along with doctor)</span>
-		<br><br>
-	    <div class="expertise-text">
-    <span style="font-weight: bold;">Expertise in Efficiency | Provides Value for Money Solutions</span>
-</div>
-    </div>
-</div>
+    
     <!-- Notification Panel Overlay -->
     <div id="notification-panel">
         <div class="overlay-content">
@@ -653,10 +1057,10 @@ th {
     </div>
     <!-- Footer Section -->
     <footer class="footer">
-    Made with <a href="https://youtu.be/71qssscQqH8?feature=shared" target="_blank">
+    Made with <a href="https://youtu.be/71qssscQqH8?feature=shared" target="_blank"> 
     <img src="https://tecnik.pages.dev/assets/media/heart.gif" alt="Heart" title="Listen💓" width="20" height="20" style="vertical-align: bottom;" loading="lazy">
-</a> using A.i | Source Code  
-    <a href="https://github.com/TecnikOfficial/TecnikOfficial.github.io" target="_blank">
+</a> using A.i | Source Code   
+    <a href="https://github.com/TecnikOfficial/TecnikOfficial.github.io" target="_blank"> 
         <img src="https://tecnik.pages.dev/assets/media/GITHUB-white.svg" alt="GitHub" title="Github" width="20" height="20" style="vertical-align: bottom;" loading="lazy"></a>
 </footer>
     <script>// Array of text options
@@ -680,6 +1084,8 @@ function changeText() {
         currentTextIndex++; // Move to the next text option
     } else {
         currentTextIndex = 0; // Reset index if needed
+        textElement.textContent = textOptions[currentTextIndex];
+        currentTextIndex++;
     }
 }
 // Function to start the text display after loading
@@ -707,36 +1113,116 @@ const totalDuration = 2000; // Total duration in milliseconds
 const durationFor1999 = 600; // Duration for 1999
 const durationFor2025 = 600; // Duration for 2025
 const durationPerYear = (totalDuration - durationFor1999 - durationFor2025) / (totalYears - 2); // Duration for years in between
+
 function updateYear() {
-    yearTimerElement.textContent = currentYear;
-    // Smooth transition effect
-    yearTimerElement.style.opacity = 1; // Fade in
-    setTimeout(() => {
-        yearTimerElement.style.opacity = 0; // Fade out
-    }, (currentYear === 1999 || currentYear === 2025 ? 400 : durationPerYear) - 30); // Fade out just before the year changes
-    // Increment the year
-    if (currentYear < 2025) {
-        // Schedule the next update
-        setTimeout(() => {
-            currentYear++; // Move to the next year
-            updateYear(); // Call the function recursively for the next year
-        }, (currentYear === 1999 ? durationFor1999 : (currentYear === 2025 ? durationFor2025 : durationPerYear))); // Use specific durations for 1999 and 2025
-    } else {
-        // Ensure the last year is displayed without going blank
-        yearTimerElement.textContent = 2025;
-        yearTimerElement.style.opacity = 1; // Ensure it is fully visible
-        fadeOutLoadingScreen(); // Call fade out function
+    if (currentYear <= 2025) {
+        yearTimerElement.textContent = currentYear;
+        // Smooth transition effect
+        yearTimerElement.style.opacity = 1; // Fade in
+        
+        // Determine the delay for the next year
+        let delay = (currentYear === 1999) ? durationFor1999 : 
+                   (currentYear === 2024) ? durationFor2025 : 
+                   durationPerYear;
+        
+        // Only fade out if not the final year
+        if (currentYear < 2025) {
+            setTimeout(() => {
+                yearTimerElement.style.opacity = 0; // Fade out
+            }, delay - 30); // Fade out just before the year changes
+            
+            // Schedule the next update
+            setTimeout(() => {
+                currentYear++; // Move to the next year
+                updateYear(); // Call the function recursively for the next year
+            }, delay);
+        } else {
+            // We've reached 2025, wait a moment then fade out the loading screen
+            setTimeout(() => {
+                fadeOutLoadingScreen();
+            }, 800);
+        }
     }
 }
-// Start the year update animation
-updateYear();
-// Set the initial text immediately when the page loads
+
+// Start the year update animation when the page loads
 document.addEventListener('DOMContentLoaded', function() {
+    // Start the year timer
+    updateYear();
+    
+    // Set initial text
     const textElement = document.getElementById("slider-text");
-    textElement.textContent = "Welcome! Thx for Visiting !"; // Set initial text
+    textElement.textContent = "Welcome Thanks 4 Visiting!"; // Set initial text
+    
     // Add click event listener to change text on click
     textElement.addEventListener('click', changeText);
+    
+    // Add event listeners for the new overlays
+    setupOverlays();
 });
+
+// Function to setup all overlays
+function setupOverlays() {
+    // Contact button - Connect overlay
+    const contactButton = document.getElementById('contactButton');
+    if (contactButton) {
+        contactButton.addEventListener('click', openConnectOverlay);
+    }
+    
+    // Widget image - Support overlay
+    const widgetImage = document.querySelector('.widget-image');
+    if (widgetImage) {
+        widgetImage.addEventListener('click', openSupportOverlay);
+    }
+    
+    // Services button
+    const servicesButton = document.getElementById('button2');
+    if (servicesButton) {
+        servicesButton.addEventListener('click', openOverlay);
+    }
+    
+    // Projects button
+    const projectsButton = document.getElementById('button3');
+    if (projectsButton) {
+        projectsButton.addEventListener('click', openProjectsOverlay);
+    }
+    
+    // Setup close on outside click for all overlays
+    setupCloseOnOutsideClick();
+}
+
+// Function to setup close on outside click for all overlays
+function setupCloseOnOutsideClick() {
+    const overlays = [
+        { id: 'table-overlay', contentClass: 'futuristic-content' },
+        { id: 'projects-overlay', contentClass: 'futuristic-content' },
+        { id: 'donation-overlay', contentClass: 'futuristic-content' },
+        { id: 'connect-overlay', contentClass: 'connect-content' },
+        { id: 'support-overlay', contentClass: 'support-content' }
+    ];
+    
+    overlays.forEach(overlay => {
+        const element = document.getElementById(overlay.id);
+        if (element) {
+            element.addEventListener('click', function(event) {
+                // If the click is directly on the overlay (not on its content)
+                if (event.target === element) {
+                    closeAllOverlays();
+                }
+            });
+        }
+    });
+}
+
+// Function to copy Discord username
+function copyDiscord() {
+    navigator.clipboard.writeText('tecnik.gg').then(() => {
+        alert('Discord username copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
+
 // Heart emoji functionality
 function createHeart() {
     const heart = document.createElement('div');
@@ -758,6 +1244,7 @@ function createHeart() {
         heart.remove();
     });
 }
+
 // Function to add heart drop effect to buttons
 function addHeartDropEffectToButtons(buttons) {
     buttons.forEach(button => {
@@ -768,12 +1255,19 @@ function addHeartDropEffectToButtons(buttons) {
         });
     });
 }
+
 // Call this function for the donation overlay buttons
-const donationButtons = document.querySelectorAll('#donation-overlay .glow-button');
-addHeartDropEffectToButtons(donationButtons);
-// Call this function for the widget image button
-const widgetImage = document.querySelector('.widget-image');
-addHeartDropEffectToButtons([widgetImage]);
+document.addEventListener('DOMContentLoaded', function() {
+    const donationButtons = document.querySelectorAll('#support-overlay .support-item, #donation-overlay .glow-button');
+    addHeartDropEffectToButtons(donationButtons);
+    
+    // Call this function for the widget image button
+    const widgetImage = document.querySelector('.widget-image');
+    if (widgetImage) {
+        addHeartDropEffectToButtons([widgetImage]);
+    }
+});
+
 // Function to handle mouse movement for drawing
 let isDrawing = false;
 function handleMouseMove(event) {
@@ -792,84 +1286,109 @@ function handleMouseMove(event) {
         }, 5000);
     }
 }
+
 // Function to start drawing
 function startDrawing() {
     isDrawing = true;
 }
+
 // Function to stop drawing
 function stopDrawing() {
     isDrawing = false;
 }
+
 // Add event listener for mouse down to start drawing
 document.addEventListener('mousedown', (event) => {
     startDrawing(); // Start drawing on click
     handleMouseMove(event); // Call handleMouseMove to draw at the click position
 });
+
 // Add event listener for mouse move to draw
 document.addEventListener('mousemove', handleMouseMove); // Start drawing on mouse move
+
 // Add event listener for mouse up to stop drawing
 document.addEventListener('mouseup', stopDrawing); // Stop drawing on mouse up
+
 // Function to open the overlay for services
 function openOverlay() {
+    closeAllOverlays(); // Close any open overlays
     document.getElementById("table-overlay").style.display = "flex"; // Show overlay
 }
+
 // Function to close the overlay for services
 function closeOverlay() {
     document.getElementById("table-overlay").style.display = "none"; // Hide overlay
 }
-// Add event listener to services button
-document.getElementById("button2").addEventListener("click", openOverlay);
 
-// Add event listener to the overlay to close it when clicking outside the content
-document.getElementById("table-overlay").addEventListener("click", function(event) {
-    // Check if the clicked target is the overlay itself
-    if (event.target === this) {
-        closeOverlay(); // Close the overlay
-    }
-});
 // Function to open the projects overlay
 function openProjectsOverlay() {
+    closeAllOverlays(); // Close any open overlays
     document.getElementById("projects-overlay").style.display = "flex"; // Show overlay
 }
+
 // Function to close the projects overlay
 function closeProjectsOverlay() {
     document.getElementById("projects-overlay").style.display = "none"; // Hide overlay
 }
-// Add event listener to the projects button
-document.getElementById("button3").addEventListener("click", openProjectsOverlay);
-// Add event listener to the projects overlay to close it when clicking outside the content
-document.getElementById("projects-overlay").addEventListener("click", function(event) {
-    // Check if the clicked target is the overlay itself
-    if (event.target === this) {
-        closeProjectsOverlay(); // Close the overlay
-    }
-});
-// Function to copy text to clipboard
-function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        alert("Discord username copied to clipboard!"); // Show prompt
-    }).catch(err => {
-        console.error('Failed to copy: ', err);
+
+// Function to open the connect overlay
+function openConnectOverlay() {
+    closeAllOverlays(); // Close any open overlays
+    document.getElementById("connect-overlay").style.display = "flex"; // Show overlay
+}
+
+// Function to close the connect overlay
+function closeConnectOverlay() {
+    document.getElementById("connect-overlay").style.display = "none"; // Hide overlay
+}
+
+// Function to open the support overlay
+function openSupportOverlay() {
+    closeAllOverlays(); // Close any open overlays
+    document.getElementById("support-overlay").style.display = "flex"; // Show overlay
+}
+
+// Function to close the support overlay
+function closeSupportOverlay() {
+    document.getElementById("support-overlay").style.display = "none"; // Hide overlay
+}
+
+// Function to open the donation overlay
+function openDonationOverlay() {
+    closeAllOverlays(); // Close any open overlays
+    document.getElementById("donation-overlay").style.display = "flex"; // Show donation overlay
+}
+
+// Function to close the donation overlay
+function closeDonationOverlay() {
+    document.getElementById("donation-overlay").style.display = "none"; // Hide overlay
+}
+
+// Function to close all overlays
+function closeAllOverlays() {
+    const overlays = [
+        "table-overlay", 
+        "projects-overlay", 
+        "donation-overlay", 
+        "connect-overlay", 
+        "support-overlay"
+    ];
+    
+    overlays.forEach(id => {
+        const overlay = document.getElementById(id);
+        if (overlay) {
+            overlay.style.display = "none";
+        }
     });
 }
-// Add event listener for the main image click
-document.addEventListener('DOMContentLoaded', function() {
-    const mainImage = document.querySelector('.hover-image'); 
-    if (mainImage) {
-        mainImage.addEventListener('click', function() {
-            console.log('Main image clicked'); // Log to console for debugging
-            copyToClipboard('tecnik.gg'); // Copy text to clipboard
-        });
-    } else {
-        console.error('Main image not found');
+
+// Function to handle donation
+function handleDonation(url) {
+    // Create hearts
+    for (let i = 0; i < 15; i++) {
+        createHeart();
     }
-});
-function handleDonation(url) {
-    setTimeout(() => {
-        window.open(url, '_blank'); // Open the URL in a new tab
-    }, 1000); // Delay the redirection by 1 second
-}
-function handleDonation(url) {
+    
     // Create a temporary message element
     const messageElement = document.createElement('div');
     messageElement.style.position = 'fixed';
@@ -880,16 +1399,18 @@ function handleDonation(url) {
     messageElement.style.color = 'white';
     messageElement.style.padding = '20px';
     messageElement.style.borderRadius = '10px';
-    messageElement.style.zIndex = '200'; // Ensure it's above other elements
+    messageElement.style.zIndex = '2000'; // Ensure it's above other elements
     messageElement.style.fontSize = '1.5rem'; // Increase font size
     messageElement.style.fontWeight = 'bold'; // Make text bold
     messageElement.innerText = "🤗Thanks so much for your support! It means a lot❤️";
-	// Set width for mobile view
+    
+    // Set width for mobile view
     if (window.innerWidth < 768) {
-        messageElement.style.width = '70%'; // Set width to 90% for mobile
+        messageElement.style.width = '70%'; // Set width to 70% for mobile
     } else {
         messageElement.style.width = '450px'; // Set a fixed width for larger screens
     }
+    
     // Append the message to the body
     document.body.appendChild(messageElement);
 
@@ -899,39 +1420,9 @@ function handleDonation(url) {
         document.body.removeChild(messageElement); // Remove the message after redirect
     }, 2000); // 2000 milliseconds = 2 seconds
 }
-// Function to open the donation overlay
-function openDonationOverlay() {
-    document.getElementById("donation-overlay").style.display = "flex"; // Show overlay
-}
-// Function to close the donation overlay
-function closeDonationOverlay() {
-    document.getElementById("donation-overlay").style.display = "none"; // Hide overlay
-}
-// Add event listener to the widget image to open the donation overlay
-document.querySelector('.widget-image').addEventListener('click', openDonationOverlay);
 
-// Add event listener to the donation overlay to close it when clicking outside the content
-document.getElementById("donation-overlay").addEventListener("click", function(event) {
-    // Check if the clicked target is the overlay itself
-    if (event.target === this) {
-        closeDonationOverlay(); // Close the overlay
-    }
-});
-// Function to close all overlays
-        function closeAllOverlays() {
-            closeOverlay(); // Close services overlay
-            closeProjectsOverlay(); // Close projects overlay
-            closeDonationOverlay(); // Close donation overlay
-        }
-        // Function to open the donation overlay
-        function openDonationOverlay() {
-            closeAllOverlays(); // Close any active overlays
-            document.getElementById("donation-overlay").style.display = "flex"; // Show donation overlay
-        }
-        // Add event listener to the donation widget
-        document.querySelector('.widget-image').addEventListener('click', openDonationOverlay);
-// Function to open or close the notification panel
-function toggleNotificationPanel() {
+// Function to open notification panel
+function openNotificationPanel() {
     const notificationPanel = document.getElementById("notification-panel");
     if (notificationPanel.style.display === "flex") {
         notificationPanel.style.display = "none"; // Hide notification panel
@@ -939,47 +1430,38 @@ function toggleNotificationPanel() {
         notificationPanel.style.display = "flex"; // Show notification panel
     }
 }
-// Add event listener to the notification bell
-document.querySelector('.notification-bell').addEventListener('click', toggleNotificationPanel);
 
 // Close the notification panel when clicking outside of it
 document.addEventListener('click', function(event) {
     const notificationPanel = document.getElementById("notification-panel");
     const bellIcon = document.querySelector('.notification-bell');
     
-    // Check if the click was outside the notification panel and the bell icon
-    if (!notificationPanel.contains(event.target) && !bellIcon.contains(event.target)) {
-        notificationPanel.style.display = "none"; // Close the notification panel
+    if (notificationPanel && bellIcon) {
+        // Check if the click was outside the notification panel and the bell icon
+        if (!notificationPanel.contains(event.target) && !bellIcon.contains(event.target)) {
+            notificationPanel.style.display = "none"; // Close the notification panel
+        }
     }
 });
+
 // Function to disable right-click
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
 // Check if service workers are supported
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                // Register the service worker
-                navigator.serviceWorker.register('/service-worker.js')
-                    .then(registration => {
-                        console.log('Service Worker registered with scope:', registration.scope);
-                    })
-                    .catch(error => {
-                        console.error('Service Worker registration failed:', error);
-                    });
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        // Register the service worker
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(error => {
+                console.error('Service Worker registration failed:', error);
             });
-        }
-// Function to preload an external page
-        function preloadExternalPage(url) {
-            const link = document.createElement('link');
-            link.rel = 'prefetch'; // or 'preload'
-            link.href = url;
-            document.head.appendChild(link);
-        }
-        // Preload the external page after the window has fully loaded
-        window.addEventListener('load', function() {
-            preloadExternalPage('https://tecnik.bio.link'); // Replace with your external link
-        });	    
+    });
+}
 </script>
 	<script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
 </body>
