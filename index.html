@@ -368,7 +368,7 @@ iframe {
 }
 
 .table-scroll {
-    max-height: 300px; /* Set a maximum height for the table container */
+    max-height: 350px; /* Set a maximum height for the table container */
     overflow-y: auto; /* Enable vertical scrolling */
     margin-top: 10px; /* Space between the title and the table */
 }
@@ -590,7 +590,7 @@ th {
         padding: 20px;
     }
     .table-scroll {
-        max-height: 200px;
+        max-height: 250px;
     }
     th, td {
         padding: 5px;
@@ -722,7 +722,7 @@ th {
     .connect-content, .support-content, .futuristic-content {
 	height: auto; /* Allow height to adjust based on content */
 		max-height: 500px;
-		overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
+		overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */		
     }
     
 }
@@ -869,12 +869,9 @@ th {
             <div class="support-content">
                 <span class="close-overlay" onclick="closeSupportOverlay()">✖</span>
                 <h2 class="support-title">Support TecNik</h2>
-                
-                <div class="support-message">
-                    Your support helps me continue creating content and developing new projects.<br>
-                    Choose a payment method below:
+				<div class="support-message">
+                    Your support helps me continue creating content and developing new projects.
                 </div>
-                
                 <div class="support-grid">
                     <!-- Google Pay -->
                     <a href="#" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnikpay-1@okaxis&description=Thank+You'); return false;" class="support-item">
@@ -944,7 +941,7 @@ th {
                 </div>
                 
                 <div class="support-footer">
-                    Every contribution, no matter how small, makes a difference. Thank you for your support! ❤️
+                    Every contribution, makes a difference. Thank you for your support! ❤️
                 </div>
             </div>
         </div>
@@ -1019,11 +1016,12 @@ th {
         <!-- Projects Overlay -->
         <div id="projects-overlay" class="futuristic-overlay">
             <div class="futuristic-content">
-                <span class="close-overlay" onclick="closeProjectsOverlay()">✖</span>
-                
+                <span class="close-overlay" onclick="closeProjectsOverlay()">✖</span>               
                 <h2 class="futuristic-title">Projects</h2>
-                
-                <div style="margin-top: 20px;">
+				<div class="support-message">
+                    Expertise in Efficiency | Provides Value for Money Solutions
+                </div>				
+                <div>
                     <h2 style="color: green; text-decoration: underline;">Worked as Lead:</h2>
                     <br>
                     <div class="scrolling-text">
@@ -1049,11 +1047,7 @@ th {
                     <h2 style="color: green; text-decoration: underline;">Currently Working On:</h2>
                     <br>
                     <span>Building WEB App (working along with doctor)</span>
-                </div>
-                
-                <div class="expertise-text" style="margin-top: 30px;">
-                    <span style="font-weight: bold;">Expertise in Efficiency | Provides Value for Money Solutions</span>
-                </div>
+                </div>               
             </div>
         </div>
         
