@@ -42,6 +42,35 @@ body, html {
     overflow: hidden; /* Show scrollbars only when necessary */
     cursor: url('https://play.vsthemes.org/t-cursors/12251/25a255ea88403b8c79e2bb1b03efd2a5.webp'), auto; 
 }
+
+/* Custom scrollbar styles */
+/* For Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 0, 0.5);
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 0, 0.7);
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 255, 0, 0.5) rgba(0, 0, 0, 0.2);
+}
+
 /* Custom cursor for buttons and specific classes */
 button, .hover-image, .notification-bell, .widget-image, a {
     cursor: url('https://play.vsthemes.org/t-cursors/12251/b455a062e7b24797cc26a84981f31797.webp'), pointer !important;
@@ -109,7 +138,7 @@ video {
 }
 .unblur {
     backdrop-filter: blur(0); /* Remove blur */
-    transition: backdrop-filter 5s ease; /* Transition for unblur effect */
+    transition: backdrop-filter 6s ease; /* Transition for unblur effect */
 }
 .slider {
     position: absolute;
@@ -352,19 +381,29 @@ iframe {
     position: relative; /* Position relative to allow absolute positioning of the close button */
 }
 .close-overlay {
-    position: absolute;
-    top: 5px; /* Position from the top */
-    right: 12px; /* Position from the right */
-    font-size: 24px; /* Size of the close button */
-    cursor: pointer; /* Change cursor to pointer */
-    color: white; /* Close button color */
-    background: none; /* No background */
-    border: none; /* No border */
-    z-index: 6; /* Ensure it is above other elements */
+    position: absolute; /* Change from fixed to absolute */
+    top: 15px;
+    right: 25px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 255, 0, 0.5);
+    z-index: 10; /* Reduced z-index */
 }
+
+/* Remove hover styles completely */
 .close-overlay:hover {
-    color: green; /* Change text color to green on hover */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    color: white; /* Keep color consistent */
+    background: rgba(0, 0, 0, 0.5); /* Keep background consistent */
+    border-color: rgba(0, 255, 0, 0.5); /* Keep border consistent */
+    box-shadow: none; /* Remove glow effect */
 }
 
 .table-scroll {
@@ -383,16 +422,6 @@ th, td {
 }
 th {
     background-color: rgba(0, 255, 0, 0.5); /* Light green background for headers */
-}
-.expertise-text {
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    text-align: center; /* Center text */
-    margin: 10px 0; /* Add some margin for spacing */
-    word-wrap: break-word; /* Allow long words to break to the next line */
-    overflow-wrap: break-word; /* Ensure text wraps correctly */
-    width: 100%; /* Ensure it takes full width */
 }
 /*Projects Overlay content*/
 .scrolling-text {
@@ -418,57 +447,102 @@ th {
 }
 
 /* Futuristic overlay styles - Updated */
-.futuristic-overlay {
+.futuristic-overlay, .connect-overlay, .support-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* More transparent background */
+    background-color: rgba(0, 0, 0, 0.5);
     display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    overflow: hidden;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    padding: 20px 0;
 }
 
-.futuristic-content {
-    background-color: rgba(0, 0, 0, 0.5); /* Darker but still transparent */
-    backdrop-filter: blur(6px); /* Add blur effect */
+.futuristic-content, .connect-content, .support-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
     border: 2px solid rgba(0, 255, 0, 0.5);
     border-radius: 15px;
-    padding: 30px;
+    padding: 25px;
+    padding-top: 50px; /* Add space for fixed header */
     max-width: 800px;
     width: 90%;
     color: white;
     position: relative;
     box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
-    overflow: hidden;
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0 auto;
 }
 
-.futuristic-title {
+/* Fixed header styles */
+.futuristic-title, .connect-title, .support-title {
     text-align: center;
-    margin-bottom: 20px;
     font-size: 2rem;
-    background: linear-gradient(to right, #00ff00, #00aa00); /* Gradient green */
+    background: linear-gradient(to right, #00ff00, #00aa00);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    position: absolute; /* Position absolute relative to the content container */
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    backdrop-filter: blur(8px);
+    z-index: 20; /* Ensure it's above content */
+    width: 100%;
+    margin: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
-/* New styles for Connect and Support overlays - Updated */
+.close-overlay {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 255, 0, 0.5);
+    z-index: 21; /* Above the title */
+    transition: color 0.3s ease; /* Only transition the color */
+}
+
+/* Simplify hover effect to be consistent */
+.close-overlay:hover {
+    color: green; /* Only change color on hover */
+}
+
+/* Connect and Support overlay styles */
 .connect-overlay, .support-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* More transparent background */
+    background-color: rgba(0, 0, 0, 0.5);
     display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    overflow-y: auto;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    padding: 20px 0;
 }
 
 .connect-content, .support-content {
@@ -476,28 +550,37 @@ th {
     width: 90%;
     position: relative;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Darker but still transparent */
-    backdrop-filter: blur(5px); /* Add blur effect */
+    padding-top: 60px; /* Add space for fixed header */
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
     border: 2px solid rgba(0, 255, 0, 0.5);
     border-radius: 15px;
     box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0 auto;
 }
 
 .connect-title, .support-title {
     text-align: center;
+    margin-bottom: 10px; /* Reduced margin */
     font-size: 2rem;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, #00ff00, #00aa00); /* Gradient green */
+    background: linear-gradient(to right, #00ff00, #00aa00);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    position: relative; /* Change from sticky to relative */
+    padding: 5px 0; /* Reduced padding */
+    width: 100%;
 }
 
 .connect-grid, .support-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Changed to 3 columns */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
     gap: 15px;
+    margin-top: 15px;
 }
 
 .connect-item, .support-item {
@@ -581,6 +664,15 @@ th {
     transform: scale(1.05);
 }
 
+/* Control welcome text display */
+#slider-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Default to 3 lines on desktop */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: 150px; /* Limit height on desktop */
+}
+
 /* Media queries */
 /* Media query for mobile devices */
 @media only screen and (max-width: 600px) {
@@ -595,7 +687,7 @@ th {
     th, td {
         padding: 5px;
     }
-  .slider {
+    .slider {
         top: 36%;
         width: 95%;
     }
@@ -613,31 +705,34 @@ th {
     .widget-image {
         width: 85px;
     }
-	.notification-bell {
-    top: 10px;
-    right: 10px;
-}
-	.glow-button {
-		font-size: 1.5rem;
-        padding: 8px 16px;
-		max-width: 200px;	
+    .notification-bell {
+        top: 10px;
+        right: 10px;
     }
-	.button-container {
-    gap: 10px;
-	}
-	.iframe-container {
-    height: 48%;
-	}
-    .futuristic-title {
+    .glow-button {
+        font-size: 1.5rem;
+        padding: 8px 16px;
+        max-width: 200px;	
+    }
+    .button-container {
+        gap: 10px;
+    }
+    .iframe-container {
+        height: 48%;
+    }
+    #slider-text {
+        -webkit-line-clamp: 2; /* Limit to 2 lines on mobile */
+        max-height: 100px; /* Limit height on mobile */
+    }
+    
+    /* Further reduce spacing in overlays on mobile */
+    .futuristic-title, .connect-title, .support-title {
+        margin-bottom: 5px;
         font-size: 1.5rem;
     }
     
-    .connect-grid, .support-grid {
-        grid-template-columns: 1fr; /* Single column on mobile */
-    }
-    
-    .connect-title, .support-title {
-        font-size: 1.8rem;
+    .support-message {
+        margin-bottom: 10px;
     }
 }
 /* Tablet devices (portrait and landscape) */
@@ -711,20 +806,18 @@ th {
         padding: 6px 12px;
         min-width: 70px;
     }
-}
-/* Media query for mobile devices */
-@media only screen and (max-width: 600px) {
-    .futuristic-overlay, .connect-overlay, .support-overlay {
-        height: auto; /* Allow height to adjust based on content */   
-		max-height: 500px;
-        overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
-    }  
-    .connect-content, .support-content, .futuristic-content {
-	height: auto; /* Allow height to adjust based on content */
-		max-height: 500px;
-		overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */		
+    
+    /* Further reduce overlay size for very small screens */
+    .futuristic-content, .connect-content, .support-content {
+        padding: 12px;
+        margin: 15px auto;
+        max-height: 75vh;
     }
     
+    .futuristic-title, .connect-title, .support-title {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
 }
 </style>
 </head>
@@ -741,7 +834,7 @@ th {
         </video>
         <div class="slider">
             <img src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" onclick="copyDiscord(); return false;" class="hover-image" alt="Main Image" width="322" height="60"> 
-            <div class="text three-d" id="slider-text" onclick="changeText()">WELCOME!</div>   
+            <div class="text three-d" id="slider-text" onclick="changeText()"></div>   
 		<div class="button-container">
                 <button class="glow-button" id="contactButton" title="📧Connect with Us">Contact</button>
                 <button class="glow-button" id="button2" title="💲Freelance">Services</button>
@@ -761,7 +854,7 @@ th {
         <div id="connect-overlay" class="connect-overlay">
             <div class="connect-content">
                 <span class="close-overlay" onclick="closeConnectOverlay()">✖</span>
-                <h2 class="connect-title">Connect with TecNik</h2>
+                <h2 class="futuristic-title">Connect</h2>
 				<div class="support-message">
                     Explore my Youtube channels and other ways to get in touch.
                 </div>      
@@ -868,7 +961,7 @@ th {
         <div id="support-overlay" class="support-overlay">
             <div class="support-content">
                 <span class="close-overlay" onclick="closeSupportOverlay()">✖</span>
-                <h2 class="support-title">Support TecNik</h2>
+                <h2 class="futuristic-title">Support</h2>
 				<div class="support-message">
                     Your support helps me continue creating content and developing new projects.
                 </div>
@@ -969,7 +1062,7 @@ th {
         <div id="table-overlay" class="futuristic-overlay">
             <div class="futuristic-content">
                 <span class="close-overlay" onclick="closeOverlay()">✖</span>
-                <h2 class="futuristic-title">Freelance Services</h2>
+                <h2 class="futuristic-title">Services</h2>
                 
                 <div class="table-scroll">
                     <table>
@@ -1018,6 +1111,7 @@ th {
             <div class="futuristic-content">
                 <span class="close-overlay" onclick="closeProjectsOverlay()">✖</span>               
                 <h2 class="futuristic-title">Projects</h2>
+				<br>
 				<div class="support-message">
                     Expertise in Efficiency | Provides Value for Money Solutions
                 </div>				
@@ -1059,6 +1153,7 @@ th {
     <div id="notification-panel">
         <div class="overlay-content">
             <p>• Are you subscribed to ▶️<a href="https://www.youtube.com/channel/UCXucwi4swKyTmCUB9RrFaQw?sub_confirmation=1" target="_blank">Tecnik Official</a>💻 ?</p><br>
+<p>• Are you subscribed to ▶️<a href="https://  target="_blank">Tecnik Official</a>💻 ?</p><br>
 <p>• Are you subscribed to ▶️<a href="https://www.youtube.com/channel/UC35TPNUnNegZq4mBWvU0o7g?sub_confirmation=1" target="_blank">Syncking</a>🎵 ?</p><br>
 <p>• <a href="https://www.youtube-nocookie.com/embed/videoseries?list=PLzXDhbvRPJ1A33piKX-ss1zjNAVdqu4mM&loop=1&autoplay=1&modestbranding=1" target="_blank">CSGO Montage 😎</a></p><br>
 <p>• <a href="./oldtheme/1.0.html">Old Site 🐈 </a>• <a href="https://tecnikofficial.github.io/404">4🚫4</a></p>
