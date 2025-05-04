@@ -1,0 +1,3 @@
+"scripts": {
+  "minify": "html-minifier --collapse-whitespace --remove-comments --minify-css true --minify-js true src/index.html -o index.html"
+}
