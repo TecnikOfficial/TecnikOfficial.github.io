@@ -5,6 +5,9 @@ on:
     paths:
       - 'src/index.html'  # Trigger the workflow only when index.html is changed
 
+permissions:
+  contents: write
+
 jobs:
   minify:
     runs-on: ubuntu-latest
