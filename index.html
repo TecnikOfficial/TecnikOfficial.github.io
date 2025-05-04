@@ -468,8 +468,7 @@ th {
     backdrop-filter: blur(6px);
     border: 2px solid rgba(0, 255, 0, 0.5);
     border-radius: 15px;
-    padding: 25px;
-    padding-top: 50px; /* Add space for fixed header */
+    padding: 0 25px 25px 25px;
     max-width: 800px;
     width: 90%;
     color: white;
@@ -477,11 +476,66 @@ th {
     box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
     max-height: 80vh;
     overflow-y: auto;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
     margin: 0 auto;
 }
 
+/* Add this after the .futuristic-title, .connect-title, .support-title styles */
+.overlay-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
+ width: 100%;
+
+    border-bottom: 2px solid rgba(0, 255, 0, 0.3);
+    z-index: 30;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Update the title styles */
+.futuristic-title, .connect-title, .support-title {
+    text-align: center;
+    font-size: 2rem;
+    background: linear-gradient(to right, #00ff00, #00aa00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+/* Update the close button styles */
+.close-overlay {
+    position: sticky;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: right;
+    justify-content: center;
+    border: none;
+    transition: color 0.3s ease;
+    margin-left: 20px;
+}
+
+.close-overlay:hover {
+    color: #00ff00;
+}
+
 /* Fixed header styles */
+/*
 .futuristic-title, .connect-title, .support-title {
     text-align: center;
     font-size: 2rem;
@@ -491,14 +545,14 @@ th {
     color: transparent;
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
     position: absolute; /* Position absolute relative to the content container */
-    top: 0;
+/*    top: 0;
     left: 0;
     right: 0;
-    padding: 10px 0;
+   
     background-color: rgba(0, 0, 0, 0.8); /* Dark background */
-    backdrop-filter: blur(8px);
+/*    backdrop-filter: blur(8px);
     z-index: 20; /* Ensure it's above content */
-    width: 100%;
+/*    width: 100%;
     margin: 0;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -520,13 +574,13 @@ th {
     justify-content: center;
     border: 1px solid rgba(0, 255, 0, 0.5);
     z-index: 21; /* Above the title */
-    transition: color 0.3s ease; /* Only transition the color */
-}
+/*    transition: color 0.3s ease; /* Only transition the color */
+/*}
 
 /* Simplify hover effect to be consistent */
-.close-overlay:hover {
+/*.close-overlay:hover {
     color: green; /* Only change color on hover */
-}
+/*}
 
 /* Connect and Support overlay styles */
 .connect-overlay, .support-overlay {
@@ -726,8 +780,11 @@ th {
     }
     
     /* Further reduce spacing in overlays on mobile */
+    .overlay-header {
+        padding: 10px 15px;
+    }
+    
     .futuristic-title, .connect-title, .support-title {
-        margin-bottom: 5px;
         font-size: 1.5rem;
     }
     
@@ -814,6 +871,10 @@ th {
         max-height: 75vh;
     }
     
+    .overlay-header {
+        padding: 10px 15px;
+    }
+    
     .futuristic-title, .connect-title, .support-title {
         font-size: 1.3rem;
         margin-bottom: 12px;
@@ -852,198 +913,204 @@ th {
 		
         <!-- Connect with TecNik Overlay -->
         <div id="connect-overlay" class="connect-overlay">
-            <div class="connect-content">
-                <span class="close-overlay" onclick="closeConnectOverlay()">✖</span>
-                <h2 class="futuristic-title">Connect</h2>
-				<div class="support-message">
-                    Explore my Youtube channels and other ways to get in touch.
-                </div>      
-                <div class="connect-grid">
-                    <!-- YouTube -->
-                    <a href="https://www.youtube.com/channel/UCXucwi4swKyTmCUB9RrFaQw" target="_blank" class="connect-item">
-                        <div class="connect-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ff0000;"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-                        </div>
-                        <div class="connect-info">
-                            <div class="connect-name">TecNik Official</div>
-                            <div class="connect-desc">Tech tips & tutorials</div>
-                        </div>
-                    </a>
-                    
-                    <!-- SyncKing -->
-                    <a href="https://www.youtube.com/channel/UC35TPNUnNegZq4mBWvU0o7g" target="_blank" class="connect-item">
-                        <div class="connect-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #1db954;"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-                        </div>
-                        <div class="connect-info">
-                            <div class="connect-name">SyncKing</div>
-                            <div class="connect-desc">A.i Music & Songs</div>
-                        </div>
-                    </a>
-                    
-                    <!-- GitHub -->
-                    <a href="https://github.com/TecnikOfficial" target="_blank" class="connect-item">
-                        <div class="connect-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #fff;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                        </div>
-                        <div class="connect-info">
-                            <div class="connect-name">GitHub</div>
-                            <div class="connect-desc">Open source projects</div>
-                        </div>
-                    </a>
-                    
-                    <!-- Email -->
-                    <a href="mailto:TecnikOfficial@Outlook.com" class="connect-item">
-                        <div class="connect-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #00a4ef;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        </div>
-                        <div class="connect-info">
-                            <div class="connect-name">Email</div>
-                            <div class="connect-desc">TecnikOfficial@Outlook.com</div>
-                        </div>
-                    </a>
-                    
-                    <!-- Twitch 
-                    <a href="https://www.twitch.tv/tecnikofficial" target="_blank" class="connect-item">
-                        <div class="connect-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #6441a5;"><path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path></svg>
-                        </div>
-                        <div class="connect-info">
-                            <div class="connect-name">Twitch</div>
-                            <div class="connect-desc">Live streams</div>
-                        </div>
-                    </a> -->
-                    
-                    <!-- LinkedIn
-                    <a href="https://www.linkedin.com/in/tecnikofficial" target="_blank" class="connect-item">
-                        <div class="connect-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #0077b5;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                        </div>
-                        <div class="connect-info">
-                            <div class="connect-name">LinkedIn</div>
-                            <div class="connect-desc">Professional profile</div>
-                        </div>
-                    </a> -->
-                    
-                    <!-- Discord -->
-                    <a href="https://discord.com/invite/uFMJ6xZbDz"  class="connect-item">
-                        <div class="connect-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #7289da;"><path d="M21 18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12Z"></path><path d="m9 10 2 2 4-4"></path></svg>
-                        </div>
-                        <div class="connect-info">
-                            <div class="connect-name">Discord</div>
-                            <div class="connect-desc">50 slots left</div>
-                        </div>
-                    </a>
-                    
-                    <!-- Feedback -->
-                    <a href="https://tellonym.me/tecnik" target="_blank" class="connect-item">
-                        <div class="connect-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #fff;">
+    <div class="connect-content">
+        <div class="overlay-header">
+            <h2 class="futuristic-title">Connect</h2>
+            <span class="close-overlay" onclick="closeConnectOverlay()">✖</span>
+        </div>
+        <div class="support-message">
+            Explore my Youtube channels and other ways to get in touch.
+        </div>      
+        <div class="connect-grid">
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/channel/UCXucwi4swKyTmCUB9RrFaQw" target="_blank" class="connect-item">
+                <div class="connect-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #ff0000;"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                </div>
+                <div class="connect-info">
+                    <div class="connect-name">TecNik Official</div>
+                    <div class="connect-desc">Tech tips & tutorials</div>
+                </div>
+            </a>
+            
+            <!-- SyncKing -->
+            <a href="https://www.youtube.com/channel/UC35TPNUnNegZq4mBWvU0o7g" target="_blank" class="connect-item">
+                <div class="connect-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #1db954;"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                </div>
+                <div class="connect-info">
+                    <div class="connect-name">SyncKing</div>
+                    <div class="connect-desc">A.i Music & Songs</div>
+                </div>
+            </a>
+            
+            <!-- GitHub -->
+            <a href="https://github.com/TecnikOfficial" target="_blank" class="connect-item">
+                <div class="connect-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #fff;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </div>
+                <div class="connect-info">
+                    <div class="connect-name">GitHub</div>
+                    <div class="connect-desc">Open source projects</div>
+                </div>
+            </a>
+            
+            <!-- Email -->
+            <a href="mailto:TecnikOfficial@Outlook.com" class="connect-item">
+                <div class="connect-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #00a4ef;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="connect-info">
+                    <div class="connect-name">Email</div>
+                    <div class="connect-desc">TecnikOfficial@Outlook.com</div>
+                </div>
+            </a>
+            
+            <!-- Twitch 
+            <a href="https://www.twitch.tv/tecnikofficial" target="_blank" class="connect-item">
+                <div class="connect-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #6441a5;"><path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path></svg>
+                </div>
+                <div class="connect-info">
+                    <div class="connect-name">Twitch</div>
+                    <div class="connect-desc">Live streams</div>
+                </div>
+            </a> -->
+            
+            <!-- LinkedIn
+            <a href="https://www.linkedin.com/in/tecnikofficial" target="_blank" class="connect-item">
+                <div class="connect-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #0077b5;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </div>
+                <div class="connect-info">
+                    <div class="connect-name">LinkedIn</div>
+                    <div class="connect-desc">Professional profile</div>
+                </div>
+            </a> -->
+            
+            <!-- Discord -->
+            <a href="https://discord.com/invite/uFMJ6xZbDz"  class="connect-item">
+                <div class="connect-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #7289da;"><path d="M21 18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12Z"></path><path d="m9 10 2 2 4-4"></path></svg>
+                </div>
+                <div class="connect-info">
+                    <div class="connect-name">Discord</div>
+                    <div class="connect-desc">50 slots left</div>
+                </div>
+            </a>
+            
+            <!-- Feedback -->
+            <a href="https://tellonym.me/tecnik" target="_blank" class="connect-item">
+                <div class="connect-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #fff;">
     <path d="M12 2C8.69 2 6 4.69 6 8c0 1.5.5 2.88 1.34 4H16.66C17.5 10.88 18 9.5 18 8c0-3.31-2.69-6-6-6z"></path>
     <path d="M4 12c0 4.42 3.58 8 8 8s8-3.58 8-8"></path>
     <path d="M9 16h6"></path>
 </svg>
-                        </div>
-                        <div class="connect-info">
-                            <div class="connect-name">Feedback</div>
-                            <div class="connect-desc">Send Text Anonymously</div>
-                        </div>
-                    </a>
-                </div>				
-				<div class="support-footer">
-                    Whether you want to follow my latest updates, collaborate on projects, or just say hello, feel free to reach out!👋 
                 </div>
-            </div>
+                <div class="connect-info">
+                    <div class="connect-name">Feedback</div>
+                    <div class="connect-desc">Send Text Anonymously</div>
+                </div>
+            </a>
+        </div>				
+        <div class="support-footer">
+            Whether you want to follow my latest updates, collaborate on projects, or just say hello, feel free to reach out!👋 
         </div>
+    </div>
+</div>
         
         <!-- Support TecNik Overlay -->
         <div id="support-overlay" class="support-overlay">
-            <div class="support-content">
-                <span class="close-overlay" onclick="closeSupportOverlay()">✖</span>
-                <h2 class="futuristic-title">Support</h2>
-				<div class="support-message">
-                    Your support helps me continue creating content and developing new projects.
-                </div>
-                <div class="support-grid">
-                    <!-- Google Pay -->
-                    <a href="#" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnikpay-1@okaxis&description=Thank+You'); return false;" class="support-item">
-                        <div class="support-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #4285f4;"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M12 12h.01"></path><path d="M17 12h.01"></path><path d="M7 12h.01"></path></svg>
-                        </div>
-                        <div class="support-info">
-                            <div class="support-name">Google Pay</div>
-                            <div class="support-desc">Fast & secure payment</div>
-                        </div>
-                    </a>
-                    
-                    <!-- UPI -->
-                    <a href="#" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnik@upi&description=Thank+You'); return false;" class="support-item">
-                        <div class="support-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #00baf2;"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
-                        </div>
-                        <div class="support-info">
-                            <div class="support-name">UPI</div>
-                            <div class="support-desc">Indian payment system</div>
-                        </div>
-                    </a>
-                    
-                    <!-- PayPal -->
-                    <a href="#" onclick="handleDonation('https://www.paypal.me/TecnikOfficial'); return false;" class="support-item">
-                        <div class="support-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #00457c;"><path d="M17.4 7.8C16.6 5.7 14.5 4 12 4H6.5C5.7 4 5 4.7 5 5.5c0 0 0 0 0 0L3 18c0 .5.4 1 1 1h4l1-5h2c3.9 0 6-2.2 6-5.5 0-.3 0-.5-.1-.7z"></path><path d="M15.8 12c.7-2.5 0-4-2.4-4H9l-1.8 9h4l.6-3h1c1.1 0 1.8-.4 2-2z"></path></svg>
-                        </div>
-                        <div class="support-info">
-                            <div class="support-name">PayPal</div>
-                            <div class="support-desc">International payments</div>
-                        </div>
-                    </a>
-                    
-                    <!-- Buy me a Coffee -->
-                    <a href="#" onclick="handleDonation('https://buymeacoffee.com/tecnik'); return false;" class="support-item">
-                        <div class="support-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #fd0;"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
-                        </div>
-                        <div class="support-info">
-                            <div class="support-name">Buy me a Coffee</div>
-                            <div class="support-desc">Support my work</div>
-                        </div>
-                    </a>
-                    
-                    <!-- Ko-Fi -->
-                    <a href="#" onclick="handleDonation('https://ko-fi.com/tecnik'); return false;" class="support-item">
-                        <div class="support-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #29abe0;"><path d="M5 8h14"></path><path d="M5 12h14"></path><path d="M5 16h14"></path><path d="M3 20h18"></path><path d="M17 4h1a2 2 0 0 1 2 2v1"></path><path d="M16 6H8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"></path></svg>
-                        </div>
-                        <div class="support-info">
-                            <div class="support-name">Ko-Fi</div>
-                            <div class="support-desc">Buy me a coffee</div>
-                        </div>
-                    </a>
-                    
-                    <!-- Patreon 
-                    <a href="#" onclick="handleDonation('https://www.patreon.com/tecnik'); return false;" class="support-item">
-                        <div class="support-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #f96854;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                        </div>
-                        <div class="support-info">
-                            <div class="support-name">Patreon</div>
-                            <div class="support-desc">Monthly support</div>
-                        </div>
-                    </a>-->
-                </div>
-                
-                <div class="support-footer">
-                    Every contribution, makes a difference. Thank you for your support! ❤️
-                </div>
-            </div>
+    <div class="support-content">
+        <div class="overlay-header">
+            <h2 class="futuristic-title">Support</h2>
+            <span class="close-overlay" onclick="closeSupportOverlay()">✖</span>
         </div>
+        <div class="support-message">
+            Your support helps me continue creating content and developing new projects.
+        </div>
+        <div class="support-grid">
+            <!-- Google Pay -->
+            <a href="#" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnikpay-1@okaxis&description=Thank+You'); return false;" class="support-item">
+                <div class="support-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #4285f4;"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M12 12h.01"></path><path d="M17 12h.01"></path><path d="M7 12h.01"></path></svg>
+                </div>
+                <div class="support-info">
+                    <div class="support-name">Google Pay</div>
+                    <div class="support-desc">Fast & secure payment</div>
+                </div>
+            </a>
+            
+            <!-- UPI -->
+            <a href="#" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnik@upi&description=Thank+You'); return false;" class="support-item">
+                <div class="support-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #00baf2;"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                </div>
+                <div class="support-info">
+                    <div class="support-name">UPI</div>
+                    <div class="support-desc">Indian payment system</div>
+                </div>
+            </a>
+            
+            <!-- PayPal -->
+            <a href="#" onclick="handleDonation('https://www.paypal.me/TecnikOfficial'); return false;" class="support-item">
+                <div class="support-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #00457c;"><path d="M17.4 7.8C16.6 5.7 14.5 4 12 4H6.5C5.7 4 5 4.7 5 5.5c0 0 0 0 0 0L3 18c0 .5.4 1 1 1h4l1-5h2c3.9 0 6-2.2 6-5.5 0-.3 0-.5-.1-.7z"></path><path d="M15.8 12c.7-2.5 0-4-2.4-4H9l-1.8 9h4l.6-3h1c1.1 0 1.8-.4 2-2z"></path></svg>
+                </div>
+                <div class="support-info">
+                    <div class="support-name">PayPal</div>
+                    <div class="support-desc">International payments</div>
+                </div>
+            </a>
+            
+            <!-- Buy me a Coffee -->
+            <a href="#" onclick="handleDonation('https://buymeacoffee.com/tecnik'); return false;" class="support-item">
+                <div class="support-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #fd0;"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                </div>
+                <div class="support-info">
+                    <div class="support-name">Buy me a Coffee</div>
+                    <div class="support-desc">Support my work</div>
+                </div>
+            </a>
+            
+            <!-- Ko-Fi -->
+            <a href="#" onclick="handleDonation('https://ko-fi.com/tecnik'); return false;" class="support-item">
+                <div class="support-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #29abe0;"><path d="M5 8h14"></path><path d="M5 12h14"></path><path d="M5 16h14"></path><path d="M3 20h18"></path><path d="M17 4h1a2 2 0 0 1 2 2v1"></path><path d="M16 6H8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"></path></svg>
+                </div>
+                <div class="support-info">
+                    <div class="support-name">Ko-Fi</div>
+                    <div class="support-desc">Buy me a coffee</div>
+                </div>
+            </a>
+            
+            <!-- Patreon 
+            <a href="#" onclick="handleDonation('https://www.patreon.com/tecnik'); return false;" class="support-item">
+                <div class="support-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #f96854;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                </div>
+                <div class="support-info">
+                    <div class="support-name">Patreon</div>
+                    <div class="support-desc">Monthly support</div>
+                </div>
+            </a>-->
+        </div>
+        
+        <div class="support-footer">
+            Every contribution, makes a difference. Thank you for your support! ❤️
+        </div>
+    </div>
+</div>
 
 		<!-- Donation Overlay -->
 <div id="donation-overlay" class="futuristic-overlay">
     <div class="futuristic-content">
-        <span class="close-overlay" onclick="closeDonationOverlay()">✖</span>
-        <h2 class="futuristic-title">Choose Payment Method to Support</h2>
+        <div class="overlay-header">
+            <h2 class="futuristic-title">Choose Payment Method</h2>
+            <span class="close-overlay" onclick="closeDonationOverlay()">✖</span>
+        </div>
         
         <div class="button-container">
             <button class="donation-button" title="Thank" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnikpay-1@okaxis&description=Thank+You')">Google PAY</button>
@@ -1060,90 +1127,94 @@ th {
 
         <!-- Services Overlay -->
         <div id="table-overlay" class="futuristic-overlay">
-            <div class="futuristic-content">
-                <span class="close-overlay" onclick="closeOverlay()">✖</span>
-                <h2 class="futuristic-title">Services</h2>
-                
-                <div class="table-scroll">
-                    <table>
-                        <tr>
-                            <th>Service</th>
-                            <th>Description</th>
-                            <th>Price Range in (INR)</th>
-                        </tr>
-                        <tr>
-                            <td>Graphic Design</td>
-                            <td>A.i Photo editing, Logo/Banner/Thumbnails/Product label/Social media promotional Post Designs</td>
-                            <td>149 - 849</td>
-                        </tr>
-                        <tr>
-                            <td>Video Editing</td>
-                            <td>Youtube video editing and intro/outro design or cover song mix</td>
-                            <td>449 - 2499</td>
-                        </tr>
-                        <tr>
-                            <td>Web Development</td>
-                            <td>Building Static Portfolio Sites with Html5,CSS,JS. Converting sites to Android App. Provides Hosting Advice and Site Optimisation</td>
-                            <td>749 - 4999</td>
-                        </tr>
-                        <tr>
-                            <td>Resume Making</td>
-                            <td>ATS compatible or modern design resume</td>
-                            <td>175 - 240</td>
-                        </tr>
-                        <tr>
-                            <td>Computer Troubleshoot</td>
-                            <td>Diagnose computer related problem and try to find solution, pc build advice</td>
-                            <td>FREE</td>
-                        </tr>
-                    </table>
-                </div>
-                <br>
-                <h4>Contact using Discord or Email📧: <a href="mailto:TecnikOfficial@Outlook.com">TecnikOfficial@Outlook.com</a></h4>
-                <br>
-                <p style="font-size: 15px;">Please note that the preferred payment method is UPI. Full refunds are only available for payments made via UPI. Payments made through PayPal or Stripe are not eligible for refunds.</p>
-			<BR><p style="font-size: 16px; text-align: center;"><strong>GIVE US FEEDBACK <a href="https://tellonym.me/tecnik">HERE😃</a></strong></p>
-            </div>
+    <div class="futuristic-content">
+        <div class="overlay-header">
+            <h2 class="futuristic-title">Services</h2>
+            <span class="close-overlay" onclick="closeOverlay()">✖</span>
         </div>
+        
+        <div class="table-scroll">
+            <table>
+                <tr>
+                    <th>Service</th>
+                    <th>Description</th>
+                    <th>Price Range in (INR)</th>
+                </tr>
+                <tr>
+                    <td>Graphic Design</td>
+                    <td>A.i Photo editing, Logo/Banner/Thumbnails/Product label/Social media promotional Post Designs</td>
+                    <td>149 - 849</td>
+                </tr>
+                <tr>
+                    <td>Video Editing</td>
+                    <td>Youtube video editing and intro/outro design or cover song mix</td>
+                    <td>449 - 2499</td>
+                </tr>
+                <tr>
+                    <td>Web Development</td>
+                    <td>Building Static Portfolio Sites with Html5,CSS,JS. Converting sites to Android App. Provides Hosting Advice and Site Optimisation</td>
+                    <td>749 - 4999</td>
+                </tr>
+                <tr>
+                    <td>Resume Making</td>
+                    <td>ATS compatible or modern design resume</td>
+                    <td>175 - 240</td>
+                </tr>
+                <tr>
+                    <td>Computer Troubleshoot</td>
+                    <td>Diagnose computer related problem and try to find solution, pc build advice</td>
+                    <td>FREE</td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <h4>Contact using Discord or Email📧: <a href="mailto:TecnikOfficial@Outlook.com">TecnikOfficial@Outlook.com</a></h4>
+        <br>
+        <p style="font-size: 15px;">Please note that the preferred payment method is UPI. Full refunds are only available for payments made via UPI. Payments made through PayPal or Stripe are not eligible for refunds.</p>
+		<BR><p style="font-size: 16px; text-align: center;"><strong>GIVE US FEEDBACK <a href="https://tellonym.me/tecnik">HERE😃</a></strong></p>
+    </div>
+</div>
         
         <!-- Projects Overlay -->
         <div id="projects-overlay" class="futuristic-overlay">
-            <div class="futuristic-content">
-                <span class="close-overlay" onclick="closeProjectsOverlay()">✖</span>               
-                <h2 class="futuristic-title">Projects</h2>
-				<br>
-				<div class="support-message">
-                    Expertise in Efficiency | Provides Value for Money Solutions
-                </div>				
-                <div>
-                    <h2 style="color: green; text-decoration: underline;">Worked as Lead:</h2>
-                    <br>
-                    <div class="scrolling-text">
-                        <span>
-                            Automotive (Social Media Marketing) | Agro Pvt Ltd (Product Label & Logo Design) | Music Distributor (Website Design) | Resume Design (Multiple Clients)
-                        </span>
-                        <span>
-                            Automotive (Social Media Marketing) | Agro Pvt Ltd (Product Label & Logo Design) | Music Distributor (Website Design) | Resume Design (Multiple Clients)
-                        </span>
-                    </div>
-                </div>
-                
-                <div style="margin-top: 30px;">
-                    <h2 style="color: green; text-decoration: underline;">Collaborations:</h2>
-                    <br>
-                    <div class="scrolling-text">
-                        <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase), Gaming Channel (Montage Edits)</span>
-                        <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase), Gaming Channel (Montage Edits)</span>
-                    </div>
-                </div>
-                
-                <div style="margin-top: 30px;">
-                    <h2 style="color: green; text-decoration: underline;">Currently Working On:</h2>
-                    <br>
-                    <span>Building WEB App (working along with doctor)</span>
-                </div>               
+    <div class="futuristic-content">
+        <div class="overlay-header">
+            <h2 class="futuristic-title">Projects</h2>
+            <span class="close-overlay" onclick="closeProjectsOverlay()">✖</span>
+        </div>
+        
+        <div class="support-message">
+            Expertise in Efficiency | Provides Value for Money Solutions
+        </div>				
+        <div>
+            <h2 style="color: green; text-decoration: underline;">Worked as Lead:</h2>
+            <br>
+            <div class="scrolling-text">
+                <span>
+                    Automotive (Social Media Marketing) | Agro Pvt Ltd (Product Label & Logo Design) | Music Distributor (Website Design) | Resume Design (Multiple Clients)
+                </span>
+                <span>
+                    Automotive (Social Media Marketing) | Agro Pvt Ltd (Product Label & Logo Design) | Music Distributor (Website Design) | Resume Design (Multiple Clients)
+                </span>
             </div>
         </div>
+        
+        <div style="margin-top: 30px;">
+            <h2 style="color: green; text-decoration: underline;">Collaborations:</h2>
+            <br>
+            <div class="scrolling-text">
+                <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase), Gaming Channel (Montage Edits)</span>
+                <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase), Gaming Channel (Montage Edits)</span>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <h2 style="color: green; text-decoration: underline;">Currently Working On:</h2>
+            <br>
+            <span>Building WEB App (working along with doctor)</span>
+        </div>               
+    </div>
+</div>
         
         <img src="https://tecnik.pages.dev/assets/media/noti.webp" class="notification-bell" alt="Notification Bell" width="60px" 
      height="60px" onclick="openNotificationPanel()" loading="lazy"> 
