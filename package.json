@@ -1,3 +1,23 @@
-"scripts": {
-  "minify": "html-minifier --collapse-whitespace --remove-comments --minify-css true --minify-js true src/index.html -o index.html"
+{
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "description": "Your project description",
+  "main": "index.js",
+  "scripts": {
+    "minify": "html-minifier --collapse-whitespace --remove-comments --minify-css true --minify-js true src/index.html -o index.html"
+  },
+  "devDependencies": {
+    "html-minifier": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TecnikOfficial/TecnikOfficial.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TecnikOfficial/TecnikOfficial.github.io/issues"
+  },
+  "homepage": "https://github.com/TecnikOfficial/TecnikOfficial.github.io#readme"
 }
