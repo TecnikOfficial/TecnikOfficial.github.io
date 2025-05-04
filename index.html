@@ -487,16 +487,19 @@ th {
     left: 0;
     right: 0;
     display: flex;
-    
+    justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(8px);
- width: 100%;
-
+    width: 100%;
+    padding: 8px 0;
     border-bottom: 2px solid rgba(0, 255, 0, 0.3);
     z-index: 30;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-top: -2px; /* Move it slightly up */
 }
 
 /* Update the title styles */
@@ -509,13 +512,15 @@ th {
     color: transparent;
     text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
     margin: 0;
-    padding: 0;
+    padding: 5px 0;
     flex: 1;
 }
 
-/* Update the close button styles */
+/* Update the close button styles to position it at the right top */
 .close-overlay {
-    position: sticky;
+    position: absolute;
+    top: 8px; /* Move it slightly higher */
+    right: 15px;
     font-size: 24px;
     cursor: pointer;
     color: white;
@@ -523,15 +528,36 @@ th {
     width: 30px;
     height: 30px;
     display: flex;
-    align-items: right;
+    align-items: center;
     justify-content: center;
     border: none;
     transition: color 0.3s ease;
-    margin-left: 20px;
+    padding: 0;
+    margin: 0;
 }
 
+/* Add green color on hover */
 .close-overlay:hover {
-    color: #00ff00;
+    color: #00ff00; /* Bright green on hover */
+}
+
+/* Update the content containers to account for the header positioning */
+.futuristic-content, .connect-content, .support-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+    border: 2px solid rgba(0, 255, 0, 0.5);
+    border-radius: 15px;
+    padding: 0 25px 25px 25px;
+    padding-top: 45px; /* Slightly reduced to account for higher header */
+    max-width: 800px;
+    width: 90%;
+    color: white;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0 auto;
 }
 
 /* Fixed header styles */
