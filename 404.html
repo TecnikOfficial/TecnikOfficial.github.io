@@ -116,8 +116,9 @@ a::after {
     }
 }
 	.link-overlay {
-    position: relative; /* Ensure it can be positioned */
+     position: relative; /* Ensure it can be positioned */
     z-index: 99999; /* Set a high z-index */
+    pointer-events: auto; /* Ensure links can be clicked */
 }
 
 iframe {
