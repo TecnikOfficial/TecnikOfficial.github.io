@@ -4,10 +4,13 @@
   "description": "Your project description",
   "main": "index.js",
   "scripts": {
-    "minify": "html-minifier --collapse-whitespace --remove-comments --minify-css true --minify-js true src/index.html -o index.html"
+    "minify": "node minify.js"
   },
   "devDependencies": {
-    "html-minifier": "^4.0.0"
+    "cssnano": "^7.0.6",
+    "html-minifier": "^4.0.0",
+    "postcss": "^8.5.3",
+    "terser": "^5.39.0"
   },
   "repository": {
     "type": "git",
