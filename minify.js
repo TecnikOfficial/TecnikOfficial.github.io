@@ -9,8 +9,8 @@ async function minifyHTML() {
     const html = fs.readFileSync('src/index.html', 'utf8');
 
     // Extract inline CSS and JS
-    const cssMatch = html.match(/<style>([\s\S]*?)<\/style>/i);
-    const jsMatch = html.match(/<script>([\s\S]*?)<\/script>/i);
+    const cssMatch = html.match(/<style>([\s\S]*?)<\/style>/);
+    const jsMatch = html.match(/<script>([\s\S]*?)<\/script>/);
 
     const css = cssMatch ? cssMatch[1] : '';
     const js = jsMatch ? jsMatch[1] : '';
@@ -31,8 +31,8 @@ async function minifyHTML() {
 
     // Insert minified CSS and JS back into HTML
     const finalHTML = minifiedHTML
-        .replace(/<style>[\s\S]*?<\/style>/i, `<style>${minifiedCSS}</style>`)
-        .replace(/<script>[\s\S]*?<\/script>/i, `<script>${minifiedJS.code}</script>`);
+        .replace(/<style>[\s\S]*?<\/style>/, `<style>${minifiedCSS}</style>`)
+        .replace(/<script>[\s\S]*?<\/script>/, `<script>${minifiedJS.code}</script>`);
 
     // Write the final minified HTML to the root
     fs.writeFileSync('index.html', finalHTML);
