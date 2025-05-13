@@ -1,4 +1,4 @@
-const CACHE_NAME = 'my-site-cache-v4.23-' + new Date().getTime(); // Append timestamp
+const CACHE_NAME = 'my-site-cache-v4.24-' + new Date().getTime(); // Append timestamp
 const urlsToCache = [
     '/',
     '/index.html',
