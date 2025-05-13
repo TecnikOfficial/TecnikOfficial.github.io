@@ -7,7 +7,7 @@
     "minify": "node minify.js"
   },
   "devDependencies": {
-    "cssnano": "^7.0.6",
+    "cssnano": "^7.0.7",
     "html-minifier": "^4.0.0",
     "postcss": "^8.5.3",
     "terser": "^5.39.0"
