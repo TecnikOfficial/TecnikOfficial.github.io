@@ -31,55 +31,60 @@
         <!-- Page Title -->         
         <title>Tecnik - Official Site</title>         
         <!-- CSS -->         
-        <style>* {
+        <style>
+/* Base styles */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-} /* Set body and html styles */
-body,
-html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 255, 0, 0.5) rgba(0, 0, 0, 0.2);
+}
+
+body, html {
   height: auto;
   font-family: Arial, sans-serif;
   overflow: hidden;
-  cursor: url(https://play.vsthemes.org/t-cursors/12251/25a255ea88403b8c79e2bb1b03efd2a5.webp),
-    auto;
-} /* Custom scrollbar styles */
+  cursor: url(https://play.vsthemes.org/t-cursors/12251/25a255ea88403b8c79e2bb1b03efd2a5.webp), auto;
+}
+
+/* Scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 255, 0, 0.5);
   border-radius: 10px;
   border: 2px solid rgba(0, 0, 0, 0.2);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 255, 0, 0.7);
 }
-* {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 255, 0, 0.5) rgba(0, 0, 0, 0.2);
-} /* Cursor styles for interactive elements */
-.hover-image,
-.notification-bell,
-.widget-image,
-a,
-button {
-  cursor: url(https://play.vsthemes.org/t-cursors/12251/b455a062e7b24797cc26a84981f31797.webp),
-    pointer !important;
-} /* Link styles */
+
+/* Cursor styles */
+.hover-image, .notification-bell, .widget-image, a, button {
+  cursor: url(https://play.vsthemes.org/t-cursors/12251/b455a062e7b24797cc26a84981f31797.webp), pointer !important;
+}
+
+/* Link styles */
 a {
   color: green;
   text-decoration: none;
 }
+
 a:hover {
   color: #90ee90;
-  text-decoration: none;
-} /* Drawing effect */
+}
+
+/* Drawing effect */
 .drawing {
   position: absolute;
   border-radius: 50%;
@@ -89,13 +94,16 @@ a:hover {
   background-color: rgba(0, 255, 0, 0.7);
   box-shadow: 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 255, 0, 0.5);
   transition: opacity 0.5s ease;
-} /* Video background styles */
+}
+
+/* Video background */
 .video-background {
   position: relative;
   height: 100vh;
   overflow: hidden;
   background-color: #000;
 }
+
 .video-background::before {
   content: "";
   position: absolute;
@@ -106,12 +114,15 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
+
 video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 0;
-} /* Loading screen styles */
+}
+
+/* Loading screen */
 #loading-screen {
   position: fixed;
   top: 0;
@@ -127,14 +138,18 @@ video {
   opacity: 1;
   transition: opacity 5s ease;
 }
+
 .loading-content {
   color: #fff;
   font-size: 3rem;
-} /* Unblur effect */
+}
+
 .unblur {
   backdrop-filter: blur(0);
   transition: backdrop-filter 7s ease;
-} /* Slider styles */
+}
+
+/* Slider styles */
 .slider {
   position: absolute;
   top: 35%;
@@ -144,8 +159,10 @@ video {
   z-index: 2;
   height: 400px;
   pointer-events: auto;
-} /* 3D text styles */
-.text.three-d {
+}
+
+/* Text styles */
+.text.three-d, .three-d {
   font-size: 4rem;
   color: #fff;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), 2px 2px 0 rgba(0, 0, 0, 0.5),
@@ -157,44 +174,36 @@ video {
   position: relative;
   z-index: 1;
 }
+
+.three-d:hover {
+  color: green;
+}
+
+.green-text {
+  color: green;
+}
+
+/* Image styles */
 .hover-image {
-  width: 322px;
-  height: 60px;
-  aspect-ratio: 322/60;
-  max-width: 100%;
   width: 80%;
+  max-width: 322px;
+  height: 60px;
   max-height: 60px;
   margin-bottom: 20px;
   transition: transform 0.3s ease, filter 0.3s ease;
-  cursor: pointer;
   filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
   pointer-events: auto;
   object-fit: contain;
 }
+
 .hover-image:hover {
   transform: scale(1.1);
   filter: drop-shadow(0 0 15px rgba(0, 255, 0, 0.7))
     drop-shadow(0 0 25px rgba(0, 255, 0, 0.5))
     drop-shadow(0 0 35px rgba(0, 255, 0, 0.3));
 }
-.three-d {
-  font-size: 4rem;
-  color: #fff;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), 2px 2px 0 rgba(0, 0, 0, 0.5),
-    3px 3px 0 rgba(0, 0, 0, 0.5), 4px 4px 0 rgba(0, 0, 0, 0.5),
-    5px 5px 0 rgba(0, 0, 0, 0.5);
-  -webkit-text-stroke: 1px #000;
-  animation: float 3s ease-in-out infinite;
-  transition: color 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
-.three-d:hover {
-  color: green;
-}
-.green-text {
-  color: green;
-}
+
+/* Button styles */
 .glow-button {
   padding: 10px 20px;
   font-size: 1.5rem;
@@ -212,6 +221,7 @@ video {
   width: fit-content;
   max-width: 250px;
 }
+
 .button-container {
   display: flex;
   justify-content: center;
@@ -221,11 +231,14 @@ video {
   pointer-events: auto;
   flex-wrap: wrap;
 }
+
 .glow-button:hover {
   box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 0 0 30px rgba(0, 255, 0, 0.5),
     0 0 40px rgba(0, 255, 0, 0.5), 0 0 50px rgba(0, 255, 0, 0.5);
   transform: scale(1.05);
 }
+
+/* Iframe container */
 .iframe-container {
   position: relative;
   width: 100%;
@@ -233,6 +246,7 @@ video {
   padding-top: 56.25%;
   margin-top: 20px;
 }
+
 iframe {
   position: absolute;
   top: 0;
@@ -242,6 +256,8 @@ iframe {
   border: none;
   pointer-events: auto;
 }
+
+/* Widget container */
 .widget-container {
   position: absolute;
   bottom: 20px;
@@ -251,6 +267,7 @@ iframe {
   align-items: center;
   pointer-events: auto;
 }
+
 .widget-image {
   width: 100px;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -258,33 +275,27 @@ iframe {
   z-index: 11;
   cursor: pointer;
 }
+
 .widget-image:hover {
   transform: scale(1.1);
   filter: drop-shadow(0 0 8px rgba(0, 255, 0, 0.5))
     drop-shadow(0 0 15px rgba(0, 255, 0, 0.3))
     drop-shadow(0 0 25px rgba(0, 255, 0, 0.2));
 }
+
+/* Animations */
 @keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
 }
+
 .heart {
   position: absolute;
   animation: fall 2s forwards;
   font-size: 30px;
 }
-@media only screen and (max-width: 768px) {
-  .heart {
-    font-size: 20px;
-  }
-}
+
 @keyframes fall {
   0% {
     transform: translateY(0);
@@ -295,6 +306,8 @@ iframe {
     opacity: 0;
   }
 }
+
+/* Notification styles */
 .notification-bell {
   position: absolute;
   top: 20px;
@@ -304,6 +317,7 @@ iframe {
   height: 60px;
   z-index: 3;
 }
+
 #notification-panel {
   position: absolute;
   top: 80px;
@@ -315,6 +329,7 @@ iframe {
   z-index: 6;
   background-color: transparent;
 }
+
 #notification-panel::before {
   content: "";
   position: absolute;
@@ -324,6 +339,7 @@ iframe {
   bottom: 0;
   z-index: 1;
 }
+
 #notification-panel .overlay-content {
   position: relative;
   color: #fff;
@@ -333,6 +349,8 @@ iframe {
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 2;
 }
+
+/* Footer styles */
 .footer {
   display: flex;
   justify-content: center;
@@ -351,6 +369,8 @@ iframe {
   border-radius: 5px;
   max-width: 350px;
 }
+
+/* Overlay styles */
 .overlay-content {
   background-color: transparent;
   border-radius: 15px;
@@ -363,24 +383,30 @@ iframe {
   color: #fff;
   position: relative;
 }
+
+/* Table styles */
 .table-scroll {
   max-height: 350px;
   overflow-y: auto;
   margin-top: 10px;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
 }
-td,
-th {
+
+td, th {
   padding: 10px;
   border: 1px solid #fff;
   text-align: left;
 }
+
 th {
   background-color: rgba(0, 255, 0, 0.5);
 }
+
+/* Scrolling text */
 .scrolling-text {
   overflow: hidden;
   white-space: nowrap;
@@ -388,23 +414,21 @@ th {
   width: 100%;
   position: relative;
 }
+
 .scrolling-text span {
   display: inline-block;
   margin-right: 60px;
   animation: scroll 31s linear infinite;
   animation-delay: 3s;
 }
+
 @keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
-.connect-overlay,
-.futuristic-overlay,
-.support-overlay {
+
+/* Overlay containers */
+.connect-overlay, .futuristic-overlay, .support-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -417,9 +441,8 @@ th {
   z-index: 1000;
   overflow: hidden;
 }
-.connect-content,
-.futuristic-content,
-.support-content {
+
+.connect-content, .futuristic-content, .support-content {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(6px);
   border: 2px solid rgba(0, 255, 0, 0.5);
@@ -436,6 +459,7 @@ th {
   display: flex;
   flex-direction: column;
 }
+
 .overlay-header {
   position: sticky;
   top: 0;
@@ -454,9 +478,8 @@ th {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.connect-title,
-.futuristic-title,
-.support-title {
+
+.connect-title, .futuristic-title, .support-title {
   text-align: center;
   font-size: 2rem;
   background: linear-gradient(to right, #0f0, #0a0);
@@ -468,6 +491,7 @@ th {
   padding: 5px 0;
   flex: 1;
 }
+
 .close-overlay {
   position: absolute;
   top: 8px;
@@ -486,19 +510,21 @@ th {
   padding: 0;
   margin: 0;
 }
+
 .close-overlay:hover {
   color: #0f0 !important;
   transition: color 0.2s ease;
 }
-.connect-grid,
-.support-grid {
+
+/* Grid layouts */
+.connect-grid, .support-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
   margin-top: 15px;
 }
-.connect-item,
-.support-item {
+
+.connect-item, .support-item {
   background-color: transparent;
   border: 3px solid rgba(0, 255, 0, 0.3);
   border-radius: 10px;
@@ -507,15 +533,15 @@ th {
   align-items: center;
   transition: all 0.3s ease;
 }
-.connect-item:hover,
-.support-item:hover {
+
+.connect-item:hover, .support-item:hover {
   background-color: rgba(0, 0, 0, 0.5);
   border-color: #0f0;
   box-shadow: 0 0 12px rgba(0, 255, 0, 0.7);
   transform: translateY(-3px);
 }
-.connect-icon,
-.support-icon {
+
+.connect-icon, .support-icon {
   width: 30px;
   height: 30px;
   display: flex;
@@ -524,22 +550,23 @@ th {
   margin-right: 10px;
   font-size: 1.2rem;
 }
-.connect-info,
-.support-info {
+
+.connect-info, .support-info {
   flex: 1;
 }
-.connect-name,
-.support-name {
+
+.connect-name, .support-name {
   font-weight: 700;
   font-size: 1rem;
   color: #fff;
   margin-bottom: 2px;
 }
-.connect-desc,
-.support-desc {
+
+.connect-desc, .support-desc {
   color: #aaa;
   font-size: 0.75rem;
 }
+
 .support-message {
   text-align: center;
   color: #fff;
@@ -547,12 +574,14 @@ th {
   font-size: 0.9rem;
   line-height: 1.3;
 }
+
 .support-footer {
   text-align: center;
   color: #fff;
   margin-top: 15px;
   font-size: 0.9rem;
 }
+
 .donation-button {
   padding: 8px 15px;
   font-size: 1.2rem;
@@ -568,10 +597,12 @@ th {
   width: fit-content;
   max-width: 150px;
 }
+
 .donation-button:hover {
   box-shadow: 0 0 15px rgba(0, 255, 0, 0.5), 0 0 25px rgba(0, 255, 0, 0.3);
   transform: scale(1.05);
 }
+
 #slider-text {
   white-space: normal;
   overflow: visible;
@@ -580,11 +611,14 @@ th {
   line-height: 1.2;
   margin-bottom: 10px;
 }
+
 .overlay-content-scroll {
   padding: 11px 25px 25px;
   overflow-y: auto;
   flex-grow: 1;
-} /* Fixed media query - added missing closing bracket */
+}
+
+/* Media queries */
 @media only screen and (max-width: 600px) {
   .overlay-content {
     width: 90%;
@@ -593,8 +627,7 @@ th {
   .table-scroll {
     max-height: 250px;
   }
-  td,
-  th {
+  td, th {
     padding: 5px;
   }
   .slider {
@@ -637,9 +670,7 @@ th {
   .overlay-header {
     padding: 10px 0;
   }
-  .connect-title,
-  .futuristic-title,
-  .support-title {
+  .connect-title, .futuristic-title, .support-title {
     font-size: 1.5rem;
   }
   .support-message {
@@ -648,7 +679,11 @@ th {
   .overlay-content-scroll {
     padding: 15px;
   }
-} /* Fixed nested media query - moved outside previous media query */
+  .heart {
+    font-size: 20px;
+  }
+}
+
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   .overlay-content {
     width: 80%;
@@ -657,8 +692,7 @@ th {
   .table-scroll {
     max-height: 250px;
   }
-  td,
-  th {
+  td, th {
     padding: 10px;
   }
   .text.three-d {
@@ -683,11 +717,11 @@ th {
     height: 90%;
     width: 100%;
   }
-  .connect-grid,
-  .support-grid {
+  .connect-grid, .support-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media only screen and (min-width: 320px) and (max-width: 599px) {
   .glow-button {
     font-size: 1.3rem;
@@ -698,18 +732,17 @@ th {
     gap: 10px;
   }
 }
+
 @media only screen and (max-width: 300px) {
   .footer {
     flex-wrap: wrap;
     font-size: 0.9rem;
     padding: 10px;
   }
-  .connect-item,
-  .support-item {
+  .connect-item, .support-item {
     padding: 8px;
   }
-  .connect-name,
-  .support-name {
+  .connect-name, .support-name {
     font-size: 0.9rem;
   }
   .donation-button {
@@ -717,9 +750,7 @@ th {
     padding: 6px 12px;
     min-width: 70px;
   }
-  .connect-content,
-  .futuristic-content,
-  .support-content {
+  .connect-content, .futuristic-content, .support-content {
     padding: 12px;
     margin: 15px auto;
     max-height: 75vh;
@@ -727,9 +758,7 @@ th {
   .overlay-header {
     padding: 10px 15px;
   }
-  .connect-title,
-  .futuristic-title,
-  .support-title {
+  .connect-title, .futuristic-title, .support-title {
     font-size: 1.3rem;
     margin-bottom: 12px;
   }
@@ -743,12 +772,12 @@ th {
             </div>             
         </div>         
         <div class="video-background"> 
-            <video autoplay muted loop> 
+            <video autoplay muted loop preload="auto"> 
                 <source src="https://tecnik.pages.dev/assets/media/video.webm" type="video/webm"> 
                 Your browser does not support the video tag.
             </video>             
             <div class="slider"> 
-                <img src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" onclick="copyDiscord(); return false;" class="hover-image" alt="Main Image" width="322" height="60"> 
+                <img src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" onclick="copyDiscord(); return false;" class="hover-image" alt="Main Image" width="322" height="60" loading="lazy"> 
                 <div class="text three-d" id="slider-text" onclick="changeText()"></div>                 
                 <div class="button-container"> 
                     <button class="glow-button" id="contactButton" title="📧Connect with Us">Contact</button>                     
@@ -757,11 +786,11 @@ th {
                 </div>                 
                 <!-- Iframe-->                 
                 <div class="iframe-container"> 
-                    <iframe scrolling="no" id="hearthis_at_user_syncking" width="100%" height="350" src="https://app.hearthis.at/syncking/embed/?hcolor=ba1010&css=&skin=black" title="SyncKing" frameborder="0" allowtransparency></iframe>                     
+                    <iframe scrolling="no" id="hearthis_at_user_syncking" width="100%" height="350" src="https://app.hearthis.at/syncking/embed/?hcolor=ba1010&css=&skin=black" title="SyncKing" frameborder="0" allowtransparency loading="lazy"></iframe>                     
                 </div>                 
             </div>             
             <div class="widget-container"> 
-                <img src="https://tecnik.pages.dev/assets/media/donate.webp" class="widget-image" title="TYSM❤️" alt="Donate" width="100%" height="100%" loading="lazy"> 
+                <img src="https://tecnik.pages.dev/assets/media/donate.webp" class="widget-image" title="TYSM❤️" alt="Donate" width="100" height="100" loading="lazy"> 
             </div>             
             <!-- Connect with TecNik Overlay -->             
             <div id="connect-overlay" class="connect-overlay"> 
@@ -999,7 +1028,7 @@ th {
                 </div>                 
             </div>             
             <div class="notification-bell" onclick="openNotificationPanel()"> 
-                <img src="https://tecnik.pages.dev/assets/media/noti.webp" class="notification-bell" alt="Notification Bell" width="60px" height="60px" loading="lazy"> 
+                <img src="https://tecnik.pages.dev/assets/media/noti.webp" class="notification-bell" alt="Notification Bell" width="60" height="60" loading="lazy"> 
             </div>             
             <!-- Notification Panel Overlay -->             
             <div id="notification-panel"> 
@@ -1020,7 +1049,8 @@ th {
 <a href="https://github.com/TecnikOfficial/TecnikOfficial.github.io" target="_blank">  <img src="https://tecnik.pages.dev/assets/media/GITHUB-white.svg" alt="GitHub" title="Github" width="20" height="20" style="vertical-align: bottom; margin-left: 5px;" loading="lazy">  </a> 
             </footer>             
         </div>         
-        <script>// Array of text options
+        <script>
+// Text options array
 const textOptions = [
   "COMPUTER ENTHUSIAST",
   "GRAPHICS DESIGNER VFX",
@@ -1030,124 +1060,96 @@ const textOptions = [
   "DIGITAL MUSIC CREATOR",
   "CASUAL GAMER GG + OG",
   "FREELANCE VIDEO EDITOR",
-]
-let currentTextIndex = 0 // Initialize index for text options
+];
 
-// Function to change the text
-function changeText() {
-  const textElement = document.getElementById("slider-text")
-  // Check if we have more text options to display
-  if (currentTextIndex < textOptions.length) {
-    textElement.textContent = textOptions[currentTextIndex]
-    currentTextIndex++ // Move to the next text option
-  } else {
-    currentTextIndex = 0 // Reset index if needed
-    textElement.textContent = textOptions[currentTextIndex]
-    currentTextIndex++
-  }
-}
+// Global variables
+let currentTextIndex = 0;
+let isDrawing = false;
+let textChangeInterval;
 
-// Function to start the text display after loading
-function startTextDisplay() {
-  // Start changing text after a delay
-  setInterval(changeText, 3000) // Change text every 3 seconds
-}
-
-// Modify the fadeOutLoadingScreen function to call startTextDisplay
-function fadeOutLoadingScreen() {
-  const loadingScreen = document.getElementById("loading-screen")
-  loadingScreen.style.opacity = 0 // Start fading out
-  setTimeout(() => {
-    loadingScreen.style.display = "none" // Hide after fade out
-    // Start displaying the initial text for 1 seconds after unblur
-    setTimeout(() => {
-      startTextDisplay() // Start displaying text options
-    }, 700) // Keep initial text for 1 seconds after unblur
-  }, 3500) // Match this duration with the CSS transition duration
-}
-
-// Year timer functionality
-let currentYear = 1999
-const yearTimerElement = document.getElementById("year-timer")
-const totalYears = 2025 - 1999 + 1 // Include both 1999 and 2025
-const totalDuration = 2000 // Total duration in milliseconds
-const durationFor1999 = 600 // Duration for 1999
-const durationFor2025 = 600 // Duration for 2025
-const durationPerYear = (totalDuration - durationFor1999 - durationFor2025) / (totalYears - 2) // Duration for years in between
-
-function updateYear() {
-  if (currentYear <= 2025) {
-    yearTimerElement.textContent = currentYear
-    // Smooth transition effect
-    yearTimerElement.style.opacity = 1 // Fade in
-
-    // Determine the delay for the next year
-    const delay = currentYear === 1999 ? durationFor1999 : currentYear === 2024 ? durationFor2025 : durationPerYear
-
-    // Only fade out if not the final year
-    if (currentYear < 2025) {
-      setTimeout(() => {
-        yearTimerElement.style.opacity = 0 // Fade out
-      }, delay - 30) // Fade out just before the year changes
-
-      // Schedule the next update
-      setTimeout(() => {
-        currentYear++ // Move to the next year
-        updateYear() // Call the function recursively for the next year
-      }, delay)
-    } else {
-      // We've reached 2025, wait a moment then fade out the loading screen
-      setTimeout(() => {
-        fadeOutLoadingScreen()
-      }, 800)
-    }
-  }
-}
-
-// Start the year update animation when the page loads
+// DOM ready function
 document.addEventListener("DOMContentLoaded", () => {
   // Start the year timer
-  updateYear()
+  updateYear();
 
   // Set initial text
-  const textElement = document.getElementById("slider-text")
-  textElement.textContent = "Welcome\nThanks for Visiting!" // Set initial text with line break
+  const textElement = document.getElementById("slider-text");
+  textElement.textContent = "Welcome\nThanks for Visiting!";
 
-  // Add click event listener to change text on click
-  textElement.addEventListener("click", changeText)
+  // Add event listeners
+  setupEventListeners();
+});
 
-  // Add event listeners for the new overlays
-  setupOverlays()
-})
+// Setup all event listeners
+function setupEventListeners() {
+  // Text change on click
+  const textElement = document.getElementById("slider-text");
+  textElement.addEventListener("click", changeText);
+
+  // Setup overlays
+  setupOverlays();
+
+  // Drawing functionality
+  document.addEventListener("mousedown", (event) => {
+    isDrawing = true;
+    handleMouseMove(event);
+  });
+  document.addEventListener("mousemove", handleMouseMove);
+  document.addEventListener("mouseup", () => isDrawing = false);
+
+  // Disable right-click
+  document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+  // Close notification panel when clicking outside
+  document.addEventListener("click", (event) => {
+    const notificationPanel = document.getElementById("notification-panel");
+    const bellIcon = document.querySelector(".notification-bell");
+
+    if (notificationPanel && bellIcon && 
+        !notificationPanel.contains(event.target) && 
+        !bellIcon.contains(event.target)) {
+      notificationPanel.style.display = "none";
+    }
+  });
+
+  // Heart effect for donation buttons
+  const donationButtons = document.querySelectorAll("#support-overlay .support-item, #donation-overlay .glow-button");
+  addHeartDropEffectToButtons(donationButtons);
+
+  const widgetImage = document.querySelector(".widget-image");
+  if (widgetImage) {
+    addHeartDropEffectToButtons([widgetImage]);
+  }
+}
 
 // Function to setup all overlays
 function setupOverlays() {
   // Contact button - Connect overlay
-  const contactButton = document.getElementById("contactButton")
+  const contactButton = document.getElementById("contactButton");
   if (contactButton) {
-    contactButton.addEventListener("click", openConnectOverlay)
+    contactButton.addEventListener("click", openConnectOverlay);
   }
 
   // Widget image - Support overlay
-  const widgetImage = document.querySelector(".widget-image")
+  const widgetImage = document.querySelector(".widget-image");
   if (widgetImage) {
-    widgetImage.addEventListener("click", openSupportOverlay)
+    widgetImage.addEventListener("click", openSupportOverlay);
   }
 
   // Services button
-  const servicesButton = document.getElementById("button2")
+  const servicesButton = document.getElementById("button2");
   if (servicesButton) {
-    servicesButton.addEventListener("click", openOverlay)
+    servicesButton.addEventListener("click", openOverlay);
   }
 
   // Projects button
-  const projectsButton = document.getElementById("button3")
+  const projectsButton = document.getElementById("button3");
   if (projectsButton) {
-    projectsButton.addEventListener("click", openProjectsOverlay)
+    projectsButton.addEventListener("click", openProjectsOverlay);
   }
 
   // Setup close on outside click for all overlays
-  setupCloseOnOutsideClick()
+  setupCloseOnOutsideClick();
 }
 
 // Function to setup close on outside click for all overlays
@@ -1158,67 +1160,124 @@ function setupCloseOnOutsideClick() {
     { id: "donation-overlay", contentClass: "futuristic-content" },
     { id: "connect-overlay", contentClass: "connect-content" },
     { id: "support-overlay", contentClass: "support-content" },
-  ]
+  ];
 
   overlays.forEach((overlay) => {
-    const element = document.getElementById(overlay.id)
+    const element = document.getElementById(overlay.id);
     if (element) {
       element.addEventListener("click", (event) => {
         // If the click is directly on the overlay (not on its content)
         if (event.target === element) {
-          closeAllOverlays()
+          closeAllOverlays();
         }
-      })
+      });
     }
-  })
+  });
+}
+
+// Function to change the text
+function changeText() {
+  const textElement = document.getElementById("slider-text");
+  currentTextIndex = (currentTextIndex < textOptions.length) ? currentTextIndex : 0;
+  textElement.textContent = textOptions[currentTextIndex];
+  currentTextIndex++;
+}
+
+// Function to start the text display after loading
+function startTextDisplay() {
+  // Clear any existing interval
+  if (textChangeInterval) clearInterval(textChangeInterval);
+  // Start changing text every 3 seconds
+  textChangeInterval = setInterval(changeText, 3000);
+}
+
+// Year timer functionality
+let currentYear = 1999;
+function updateYear() {
+  const yearTimerElement = document.getElementById("year-timer");
+  if (currentYear <= 2025) {
+    yearTimerElement.textContent = currentYear;
+    yearTimerElement.style.opacity = 1; // Fade in
+
+    // Determine the delay for the next year
+    const totalYears = 2025 - 1999 + 1;
+    const totalDuration = 2000;
+    const durationFor1999 = 600;
+    const durationFor2025 = 600;
+    const durationPerYear = (totalDuration - durationFor1999 - durationFor2025) / (totalYears - 2);
+    
+    const delay = currentYear === 1999 ? durationFor1999 : 
+                 currentYear === 2024 ? durationFor2025 : durationPerYear;
+
+    // Only fade out if not the final year
+    if (currentYear < 2025) {
+      setTimeout(() => {
+        yearTimerElement.style.opacity = 0; // Fade out
+      }, delay - 30);
+
+      // Schedule the next update
+      setTimeout(() => {
+        currentYear++;
+        updateYear();
+      }, delay);
+    } else {
+      // We've reached 2025, wait a moment then fade out the loading screen
+      setTimeout(fadeOutLoadingScreen, 800);
+    }
+  }
+}
+
+// Function to fade out loading screen
+function fadeOutLoadingScreen() {
+  const loadingScreen = document.getElementById("loading-screen");
+  loadingScreen.style.opacity = 0;
+  setTimeout(() => {
+    loadingScreen.style.display = "none";
+    // Start displaying text after a short delay
+    setTimeout(startTextDisplay, 600);
+  }, 3500);
 }
 
 // Function to copy Discord username
 function copyDiscord() {
-  navigator.clipboard
-    .writeText("tecnik.gg")
-    .then(() => {
-      alert("Discord username copied to clipboard!")
-    })
-    .catch((err) => {
-      console.error("Failed to copy: ", err)
-    })
+  navigator.clipboard.writeText("tecnik.gg")
+    .then(() => alert("Discord username copied to clipboard!"))
+    .catch(err => console.error("Failed to copy: ", err));
 }
+
 // Function to copy email and open mail app
 function copyEmailAndOpenMailApp() {
-    const email = "TecnikOfficial@Outlook.com";
-    
-    // Copy email to clipboard
-    navigator.clipboard.writeText(email).then(() => {
-        alert("Email copied to clipboard!");
-        
-        // Open mail app
-        window.location.href = `mailto:${email}`;
-    }).catch(err => {
-        console.error("Failed to copy: ", err);
-    });
+  const email = "TecnikOfficial@Outlook.com";
+  navigator.clipboard.writeText(email)
+    .then(() => {
+      alert("Email copied to clipboard!");
+      window.location.href = `mailto:${email}`;
+    })
+    .catch(err => console.error("Failed to copy: ", err));
 }
+
 // Heart emoji functionality
 function createHeart() {
-  const heart = document.createElement("div")
-  heart.classList.add("heart")
-  heart.innerText = "❤️" // Heart emoji
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerText = "❤️"; // Heart emoji
+  
   // Set size based on screen width
   if (window.innerWidth < 768) {
-    // Mobile view
-    heart.style.fontSize = "20px" // Smaller size for mobile
+    heart.style.fontSize = "20px"; // Smaller size for mobile
   } else {
-    heart.style.fontSize = "30px" // Default size for larger screens
+    heart.style.fontSize = "30px"; // Default size for larger screens
   }
-  heart.style.position = "fixed" // Change to fixed to prevent layout shift
-  heart.style.left = Math.random() * 100 + "vw" // Random horizontal position
-  heart.style.top = "0" // Start from the top
-  document.body.appendChild(heart)
+  
+  heart.style.position = "fixed"; // Fixed position to prevent layout shift
+  heart.style.left = Math.random() * 100 + "vw"; // Random horizontal position
+  heart.style.top = "0"; // Start from the top
+  document.body.appendChild(heart);
 
   // Remove heart after animation
   heart.addEventListener("animationend", () => {
-    heart.remove()
-  })
+    heart.remove();
+  });
 }
 
 // Function to add heart drop effect to buttons
@@ -1226,213 +1285,131 @@ function addHeartDropEffectToButtons(buttons) {
   buttons.forEach((button) => {
     button.addEventListener("mouseover", () => {
       for (let i = 0; i < 10; i++) {
-        // Create 10 heart emojis
-        createHeart()
+        createHeart();
       }
-    })
-  })
+    });
+  });
 }
-
-// Call this function for the donation overlay buttons
-document.addEventListener("DOMContentLoaded", () => {
-  const donationButtons = document.querySelectorAll("#support-overlay .support-item, #donation-overlay .glow-button")
-  addHeartDropEffectToButtons(donationButtons)
-
-  // Call this function for the widget image button
-  const widgetImage = document.querySelector(".widget-image")
-  if (widgetImage) {
-    addHeartDropEffectToButtons([widgetImage])
-  }
-})
 
 // Function to handle mouse movement for drawing
-let isDrawing = false
 function handleMouseMove(event) {
   if (isDrawing) {
-    const drawingDot = document.createElement("div")
-    drawingDot.classList.add("drawing")
-    drawingDot.style.left = `${event.pageX}px`
-    drawingDot.style.top = `${event.pageY}px`
-    document.body.appendChild(drawingDot)
-    // Remove the dot after 5 seconds
+    const drawingDot = document.createElement("div");
+    drawingDot.classList.add("drawing");
+    drawingDot.style.left = `${event.pageX}px`;
+    drawingDot.style.top = `${event.pageY}px`;
+    document.body.appendChild(drawingDot);
+    
+    // Remove the dot after 5 seconds with fade out
     setTimeout(() => {
-      drawingDot.style.opacity = 0 // Fade out
+      drawingDot.style.opacity = 0;
       setTimeout(() => {
-        drawingDot.remove() // Remove from DOM
-      }, 500) // Match this duration with the CSS transition duration
-    }, 5000)
+        drawingDot.remove();
+      }, 500);
+    }, 5000);
   }
 }
 
-// Function to start drawing
-function startDrawing() {
-  isDrawing = true
-}
-
-// Function to stop drawing
-function stopDrawing() {
-  isDrawing = false
-}
-
-// Add event listener for mouse down to start drawing
-document.addEventListener("mousedown", (event) => {
-  startDrawing() // Start drawing on click
-  handleMouseMove(event) // Call handleMouseMove to draw at the click position
-})
-
-// Add event listener for mouse move to draw
-document.addEventListener("mousemove", handleMouseMove) // Start drawing on mouse move
-
-// Add event listener for mouse up to stop drawing
-document.addEventListener("mouseup", stopDrawing) // Stop drawing on mouse up
-
-// Function to open the overlay for services
+// Overlay management functions
 function openOverlay() {
-  closeAllOverlays() // Close any open overlays
-  document.getElementById("table-overlay").style.display = "flex" // Show overlay
+  closeAllOverlays();
+  document.getElementById("table-overlay").style.display = "flex";
 }
 
-// Function to close the overlay for services
 function closeOverlay() {
-  document.getElementById("table-overlay").style.display = "none" // Hide overlay
+  document.getElementById("table-overlay").style.display = "none";
 }
 
-// Function to open the projects overlay
 function openProjectsOverlay() {
-  closeAllOverlays() // Close any open overlays
-  document.getElementById("projects-overlay").style.display = "flex" // Show overlay
+  closeAllOverlays();
+  document.getElementById("projects-overlay").style.display = "flex";
 }
 
-// Function to close the projects overlay
 function closeProjectsOverlay() {
-  document.getElementById("projects-overlay").style.display = "none" // Hide overlay
+  document.getElementById("projects-overlay").style.display = "none";
 }
 
-// Function to open the connect overlay
 function openConnectOverlay() {
-  closeAllOverlays() // Close any open overlays
-  document.getElementById("connect-overlay").style.display = "flex" // Show overlay
+  closeAllOverlays();
+  document.getElementById("connect-overlay").style.display = "flex";
 }
 
-// Function to close the connect overlay
 function closeConnectOverlay() {
-  document.getElementById("connect-overlay").style.display = "none" // Hide overlay
+  document.getElementById("connect-overlay").style.display = "none";
 }
 
-// Function to open the support overlay
 function openSupportOverlay() {
-  closeAllOverlays() // Close any open overlays
-  document.getElementById("support-overlay").style.display = "flex" // Show overlay
+  closeAllOverlays();
+  document.getElementById("support-overlay").style.display = "flex";
 }
 
-// Function to close the support overlay
 function closeSupportOverlay() {
-  document.getElementById("support-overlay").style.display = "none" // Hide overlay
+  document.getElementById("support-overlay").style.display = "none";
 }
 
-// Function to open the donation overlay
-function openDonationOverlay() {
-  closeAllOverlays() // Close any open overlays
-  document.getElementById("donation-overlay").style.display = "flex" // Show donation overlay
-}
-
-// Function to close the donation overlay
-function closeDonationOverlay() {
-  document.getElementById("donation-overlay").style.display = "none" // Hide overlay
-}
-
-// Function to close all overlays
 function closeAllOverlays() {
-  const overlays = ["table-overlay", "projects-overlay", "donation-overlay", "connect-overlay", "support-overlay"]
-
+  const overlays = ["table-overlay", "projects-overlay", "donation-overlay", "connect-overlay", "support-overlay"];
   overlays.forEach((id) => {
-    const overlay = document.getElementById(id)
+    const overlay = document.getElementById(id);
     if (overlay) {
-      overlay.style.display = "none"
+      overlay.style.display = "none";
     }
-  })
+  });
 }
 
 // Function to handle donation
 function handleDonation(url) {
   // Create hearts
   for (let i = 0; i < 15; i++) {
-    createHeart()
+    createHeart();
   }
 
   // Create a temporary message element
-  const messageElement = document.createElement("div")
-  messageElement.style.position = "fixed"
-  messageElement.style.top = "40%"
-  messageElement.style.left = "50%"
-  messageElement.style.transform = "translate(-50%, -50%)"
-  messageElement.style.backgroundColor = "rgba(0, 0, 0, 0.8)"
-  messageElement.style.color = "white"
-  messageElement.style.padding = "20px"
-  messageElement.style.borderRadius = "10px"
-  messageElement.style.zIndex = "2000" // Ensure it's above other elements
-  messageElement.style.fontSize = "1.5rem" // Increase font size
-  messageElement.style.fontWeight = "bold" // Make text bold
-  messageElement.innerText = "🤗Thanks so much for your support! It means a lot❤️"
+  const messageElement = document.createElement("div");
+  messageElement.style.position = "fixed";
+  messageElement.style.top = "40%";
+  messageElement.style.left = "50%";
+  messageElement.style.transform = "translate(-50%, -50%)";
+  messageElement.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+  messageElement.style.color = "white";
+  messageElement.style.padding = "20px";
+  messageElement.style.borderRadius = "10px";
+  messageElement.style.zIndex = "2000";
+  messageElement.style.fontSize = "1.5rem";
+  messageElement.style.fontWeight = "bold";
+  messageElement.innerText = "🤗Thanks so much for your support! It means a lot❤️";
 
   // Set width for mobile view
-  if (window.innerWidth < 768) {
-    messageElement.style.width = "70%" // Set width to 70% for mobile
-  } else {
-    messageElement.style.width = "450px" // Set a fixed width for larger screens
-  }
+  messageElement.style.width = window.innerWidth < 768 ? "70%" : "450px";
 
   // Append the message to the body
-  document.body.appendChild(messageElement)
+  document.body.appendChild(messageElement);
 
   // Redirect after 2 seconds
   setTimeout(() => {
-    window.open(url, "_blank") // Open the URL in a new tab
-    document.body.removeChild(messageElement) // Remove the message after redirect
-  }, 2000) // 2000 milliseconds = 2 seconds
+    window.open(url, "_blank");
+    document.body.removeChild(messageElement);
+  }, 2000);
 }
 
 // Function to open notification panel
 function openNotificationPanel() {
-  const notificationPanel = document.getElementById("notification-panel")
-  if (notificationPanel.style.display === "flex") {
-    notificationPanel.style.display = "none" // Hide notification panel
-  } else {
-    notificationPanel.style.display = "flex" // Show notification panel
-  }
+  const notificationPanel = document.getElementById("notification-panel");
+  notificationPanel.style.display = notificationPanel.style.display === "flex" ? "none" : "flex";
 }
 
-// Close the notification panel when clicking outside of it
-document.addEventListener("click", (event) => {
-  const notificationPanel = document.getElementById("notification-panel")
-  const bellIcon = document.querySelector(".notification-bell")
-
-  if (notificationPanel && bellIcon) {
-    // Check if the click was outside the notification panel and the bell icon
-    if (!notificationPanel.contains(event.target) && !bellIcon.contains(event.target)) {
-      notificationPanel.style.display = "none" // Close the notification panel
-    }
-  }
-})
-
-// Function to disable right-click
-document.addEventListener("contextmenu", (e) => {
-  e.preventDefault()
-})
-
-// Check if service workers are supported
+// Register service worker if supported
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    // Register the service worker
     navigator.serviceWorker
       .register("/service-worker.js")
       .then((registration) => {
-        console.log("Service Worker registered with scope:", registration.scope)
+        console.log("Service Worker registered with scope:", registration.scope);
       })
       .catch((error) => {
-        console.error("Service Worker registration failed:", error)
-      })
-  })
+        console.error("Service Worker registration failed:", error);
+      });
+  });
 }
 </script>         
         <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>         
