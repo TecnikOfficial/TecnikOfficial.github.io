@@ -103,6 +103,33 @@ a::after {
     content: "]";
 }
 
+/* Button styling for the Bio Link and Try Again links */
+.button-link {
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+    padding: 8px 16px;
+    background-color: rgba(51, 255, 51, 0.2);
+    border: 1px solid rgba(51, 255, 51, 0.8);
+    color: rgba(128, 255, 128, 1);
+    text-decoration: none;
+    text-shadow: 0 0 1ex rgba(51, 255, 51, 1), 0 0 2px rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.button-link:hover {
+    background-color: rgba(51, 255, 51, 0.4);
+    box-shadow: 0 0 10px rgba(51, 255, 51, 0.8);
+}
+
+/* Override the default link styling for button links */
+.button-link::before, .button-link::after {
+    content: none;
+}
+
 .errorcode {
     color: white;
 }
@@ -114,9 +141,14 @@ a::after {
     .terminal {
         padding: 1rem;
     }
+    .button-link {
+        padding: 6px 12px;
+        margin: 8px 8px 8px 0;
+    }
 }
-	.link-overlay {
-     position: relative; /* Ensure it can be positioned */
+
+.link-overlay {
+    position: relative; /* Ensure it can be positioned */
     z-index: 99999; /* Set a high z-index */
     pointer-events: auto; /* Ensure links can be clicked */
 }
@@ -149,31 +181,34 @@ iframe {
     border: none; /* Remove default border */
     filter: invert(1) hue-rotate(180deg); /* Existing filter */
 }
+
 @media only screen and (max-width: 600px) {
-.iframe {
+    .iframe {
         top: 50%; /* Move iframe closer to the paragraph text */    
     }
-	.iframe-container { 
-    height: 385px; /* Default height */
+    .iframe-container { 
+        height: 385px; /* Default height */
+    }
+
+    .iframe-container iframe {
+        top: -245px; /* Move the iframe up to crop content from the top */
+    }
 }
 
-.iframe-container iframe {
-	top: -245px; /* Move the iframe up to crop content from the top */
-}
-}
 @media only screen and (min-width: 320px) and (max-width: 599px) {
     .iframe {
         top: 50%; /* Move iframe closer to the paragraph text */    
     }
-	.iframe-container { 
-    height: 385px; /* Default height */
+    .iframe-container { 
+        height: 385px; /* Default height */
+    }
+
+    .iframe-container iframe {
+        top: -220px; /* Move the iframe up to crop content from the top */
+        height: calc(79% + 5px); /* Adjust height to compensate for the negative top margin */
+    }
 }
 
-.iframe-container iframe {
-	top: -220px; /* Move the iframe up to crop content from the top */
-    height: calc(79% + 5px); /* Adjust height to compensate for the negative top margin */
-}
-}
 /* Hide scrollbar for desktop view */
 body::-webkit-scrollbar {
     display: none; /* Safari and Chrome */
@@ -181,7 +216,8 @@ body::-webkit-scrollbar {
 
 body {
     -ms-overflow-style: none; /* Internet Explorer and Edge */
-    scrollbar-width:
+    scrollbar-width: none;
+}
 </style>
 </head>
 <body>
@@ -191,17 +227,21 @@ body {
         <p><a href="https://tecnikofficial.github.io">Back to main page</a></p>
         <h1>tecnik<span class="errorcode">.404</span><a href="https://geekprank.com/"><img class="widget-button" src="https://tecnik.pages.dev/oldtheme/assets/img/xp.gif" height="50" width="50" alt="Paradox" title="404" loading="lazy" style="bottom: 74px;"></a></h1>
         <p class="output">You are viewing this site because this page is unavailable :(</p>
-        <p class="output">Until things get fixed, you can visit <a class="link-overlay" href="https://tecnik.bio.link">Bio Link</a> or <a class="link-overlay" href="https://tecnik.pages.dev">Try Again</a>.</p>
+        <p class="output">Until things get fixed, you can visit:</p>
+        <div class="button-container">
+            <a class="button-link" href="https://tecnik.bio.link">Bio Link</a>
+            <a class="button-link" href="https://tecnik.pages.dev">Try Again</a>
+        </div>
         <p class="output">Tap on Dino and Press Space :)</p>
         <div class="iframe-container">
-    <iframe src="https://chromedino.com/color/" frameborder="0" scrolling="no" title="Tap on Dino & Press Spacebar" top=10px;></iframe>
-</div>
-		<br>
+            <iframe src="https://chromedino.com/color/" frameborder="0" scrolling="no" title="Tap on Dino & Press Spacebar" top=10px;></iframe>
+        </div>
+        <br>
         <footer style="position: fixed; bottom: 0; width: 100%; text-align: left; ">
-    <a href="https://codepen.io/robinselmer/pen/vJjbOZ" target="_blank">Forked</a>
-</footer>
+            <a href="https://codepen.io/robinselmer/pen/vJjbOZ" target="_blank">Forked</a>
+        </footer>
     </div>
-	<script>
+    <script>
         // Check if service workers are supported
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -216,6 +256,6 @@ body {
             });
         }
     </script>
-	<script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+    <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
 </body>
 </html>
