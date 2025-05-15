@@ -13,7 +13,7 @@ We are dedicated to helping users make the most of their technology. From softwa
 
 ## Quick Overview
 - Safe and reversible tips
-- Practical advice for optimizing your tech experience
+- Freelance Services of Desgin | Develop | Edit
 - Gaming/Windows/Internet Tweaks
 - Regularly updated content
 - Copyright Free Songs/Music
