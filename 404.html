@@ -1,273 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"> 
-    <meta name="description" content="This page is unavailable. Visit our Bio Link or Try Again.">
-	<!--link-credit:geekprank.com-->
-    <title>TecNik - 404</title>
-<style type="text/css">
-@import url('https://fonts.googleapis.com/css?family=Inconsolata');
-
-html {
-    min-height: 100%;
-    overflow: hidden; /* Hide scrollbar */
-}
-
-body {
-    box-sizing: border-box;
-    height: 100%;
-    margin: 0; /* Remove default margin */
-    background-color: #000000;
-    background-image: radial-gradient(#11581E, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: 'Inconsolata', Helvetica, sans-serif;
-    font-size: 1.5rem;
-    color: rgba(128, 255, 128, 0.8);
-    text-shadow: 0 0 1ex rgba(51, 255, 51, 1), 0 0 2px rgba(255, 255, 255, 0.8);
-}
-
-.noise {
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-    opacity: 0.02;
-}
-
-.overlay {
-    pointer-events: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
-    background-size: auto 4px;
-    z-index: 1;
-}
-
-.overlay::before {
-    content: "";
-    pointer-events: none;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(0deg, transparent 0%, rgba(32, 128, 32, 0.2) 2%, rgba(32, 128, 32, 0.8) 3%, rgba(32, 128, 32, 0.2) 3%, transparent 100%);
-    background-repeat: no-repeat;
-    animation: scan 7.5s linear 0s infinite;
-}
-
-@keyframes scan {
-    0% { background-position: 0 -100vh; }
-    35% { background-position: 0 100vh; }
-    100% { background-position: 0 100vh; }
-}
-
-.terminal {
-    box-sizing: inherit;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    padding: 2rem;
-    text-transform: uppercase;
-}
-
-.output {
-    color: rgba(128, 255, 128, 0.8);
-    text-shadow: 0 0 1px rgba(51, 255, 51, 0.4), 0 0 2px rgba(255, 255, 255, 0.8);
-    position: relative; /* Add position relative */
-    z-index: 10; /* Ensure text is above background elements but below iframe */
-}
-
-.output::before {
-    content: "> ";
-}
-
-a {
-    color: #fff;
-    text-decoration: none;
-}
-
-a::before {
-    content: "[";
-}
-
-a::after {
-    content: "]";
-}
-
-/* Button styling for the Bio Link and Try Again links */
-.button-link {
-    display: inline-block;
-    margin: 0 8px;
-    padding: 4px 12px;
-    background-color: rgba(51, 255, 51, 0.2);
-    border: 1px solid rgba(51, 255, 51, 0.8);
-    color: rgba(128, 255, 128, 1);
-    text-decoration: none;
-    text-shadow: 0 0 1ex rgba(51, 255, 51, 1), 0 0 2px rgba(255, 255, 255, 0.8);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 4px;
-    text-transform: uppercase;
-    font-weight: bold;
-    vertical-align: middle;
-    position: relative; /* Add position relative */
-    z-index: 100; /* Higher z-index to ensure clickability */
-}
-
-.button-link:hover {
-    background-color: rgba(51, 255, 51, 0.4);
-    box-shadow: 0 0 10px rgba(51, 255, 51, 0.8);
-}
-
-/* Override the default link styling for button links */
-.button-link::before, .button-link::after {
-    content: none;
-}
-
-.errorcode {
-    color: white;
-}
-
-@media only screen and (max-width: 600px) {
-    body {
-        font-size: 1.2rem;
-    }
-    .terminal {
-        padding: 1rem;
-    }
-    .button-link {
-        padding: 3px 8px;
-        margin: 0 4px;
-        font-size: 0.9em;
-    }
-    .inline-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        margin-bottom: 15px; /* Add space below buttons on mobile */
-    }
-    .inline-buttons .button-link {
-        margin-top: 5px;
-    }
-}
-
-.link-overlay {
-    position: relative;
-    z-index: 99;
-    pointer-events: auto;
-}
-
-/* Class for the inline buttons paragraph */
-.inline-buttons {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 10px; /* Add space below the buttons */
-    position: relative; /* Add position relative */
-    z-index: 100; /* Higher z-index to ensure clickability */
-}
-
-/* Iframe container styling */
-.iframe-container {
-    position: relative;
-    width: 100%;
-    height: 285px;
-    max-height: 400px;
-    overflow: hidden;
-    margin: 20px auto 0;
-    z-index: 5; /* Lower z-index than buttons */
-    pointer-events: auto; /* Allow interaction with iframe */
-}
-
-.iframe-container iframe {
-    position: absolute;
-    top: -150px;
-    left: 0;
-    width: 100%;
-    height: calc(90% + 10px);
-    border: none;
-    filter: invert(1) hue-rotate(180deg);
-    z-index: 5; /* Same z-index as container */
-}
-
-@media only screen and (max-width: 600px) {
-    .iframe-container { 
-        height: 385px;
-        margin-top: 30px; /* More space on mobile */
-    }
-
-    .iframe-container iframe {
-        top: -245px;
-    }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 599px) {
-    .iframe-container { 
-        height: 385px;
-        margin-top: 30px; /* More space on mobile */
-    }
-
-    .iframe-container iframe {
-        top: -220px;
-        height: calc(79% + 5px);
-    }
-}
-
-/* Hide scrollbar for desktop view */
-body::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
-}
-
-body {
-    -ms-overflow-style: none; /* Internet Explorer and Edge */
-    scrollbar-width: none;
-}
-
-/* Add clear space between buttons and iframe */
-.spacer {
-    height: 20px;
-    width: 100%;
-    position: relative;
-    z-index: 50;
-}
-</style>
-</head>
-<body>
-    <div class="noise"></div>
-    <div class="overlay"></div>
-    <div class="terminal">
-        <p><a href="https://tecnikofficial.github.io">Back to main page</a></p>
-        <h1>tecnik<span class="errorcode">.404</span><a href="https://geekprank.com/"><img class="widget-button" src="https://tecnik.pages.dev/oldtheme/assets/img/xp.gif" height="50" width="50" alt="Paradox" title="404" loading="lazy" style="bottom: 74px;"></a></h1>
-        <p class="output">You are viewing this site because this page is unavailable :(</p>
-        <p class="output inline-buttons">Until things get fixed, you can visit: 
-            <a class="button-link" href="https://tecnik.bio.link">Bio Link</a>
-            <a class="button-link" href="https://tecnik.pages.dev">Try Again</a>
-        </p>
-        
-        <!-- Add a clear spacer between buttons and iframe -->
-        <div class="spacer"></div>
-        
-        <p class="output">Tap on Dino and Press Space :)</p>
-        <div class="iframe-container">
-            <iframe src="https://chromedino.com/color/" frameborder="0" scrolling="no" title="Tap on Dino & Press Spacebar"></iframe>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"> 
+        <meta name="description" content="This page is unavailable. Visit our Bio Link or Try Again.">
+        <!--link-credit:geekprank.com-->
+        <title>TecNik - 404</title>
+        <style type="text/css">@import url('https://fonts.googleapis.com/css?family=Inconsolata'); html { min-height: 100%; overflow: hidden;  /* Hide scrollbar */ } body { box-sizing: border-box; height: 100%; margin: 0;  /* Remove default margin */ background-color: #000000; background-image: radial-gradient(#11581E, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif"); background-repeat: no-repeat; background-size: cover; font-family: 'Inconsolata', Helvetica, sans-serif; font-size: 1.5rem; color: rgba(128, 255, 128, 0.8); text-shadow: 0 0 1ex rgba(51, 255, 51, 1), 0 0 2px rgba(255, 255, 255, 0.8); } .noise { pointer-events: none; position: absolute; width: 100%; height: 100%; background-image: url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif"); background-repeat: no-repeat; background-size: cover; z-index: -1; opacity: 0.02; } .overlay { pointer-events: none; position: absolute; width: 100%; height: 100%; background: repeating-linear-gradient(180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%); background-size: auto 4px; z-index: 1; } .overlay::before { content: ""; pointer-events: none; position: absolute; display: block; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; background-image: linear-gradient(0deg, transparent 0%, rgba(32, 128, 32, 0.2) 2%, rgba(32, 128, 32, 0.8) 3%, rgba(32, 128, 32, 0.2) 3%, transparent 100%); background-repeat: no-repeat; animation: scan 7.5s linear 0s infinite; } @keyframes scan { 0% {  background-position: 0 -100vh; }  35% {  background-position: 0 100vh; }  100% {  background-position: 0 100vh; } } .terminal { box-sizing: inherit; position: absolute; height: 100%; width: 100%; padding: 2rem; text-transform: uppercase; } .output { color: rgba(128, 255, 128, 0.8); text-shadow: 0 0 1px rgba(51, 255, 51, 0.4), 0 0 2px rgba(255, 255, 255, 0.8); position: relative;  /* Add position relative */ z-index: 10;  /* Ensure text is above background elements but below iframe */ } .output::before { content: "> "; } a { color: #fff; text-decoration: none; } a::before { content: "["; } a::after { content: "]"; } /* Button styling for the Bio Link and Try Again links */.button-link { display: inline-block; margin: 0 8px; padding: 4px 12px; background-color: rgba(51, 255, 51, 0.2); border: 1px solid rgba(51, 255, 51, 0.8); color: rgba(128, 255, 128, 1); text-decoration: none; text-shadow: 0 0 1ex rgba(51, 255, 51, 1), 0 0 2px rgba(255, 255, 255, 0.8); cursor: pointer; transition: all 0.3s ease; border-radius: 4px; text-transform: uppercase; font-weight: bold; vertical-align: middle; position: relative;  /* Add position relative */ z-index: 100;  /* Higher z-index to ensure clickability */ } .button-link:hover { background-color: rgba(51, 255, 51, 0.4); box-shadow: 0 0 10px rgba(51, 255, 51, 0.8); } /* Override the default link styling for button links */.button-link::before, .button-link::after { content: none; } .errorcode { color: white; } @media only screen and (max-width: 600px) { body {  font-size: 1.2rem; }  .terminal {  padding: 1rem; }  .button-link {  padding: 3px 8px;  margin: 0 4px;  font-size: 0.9em; }  .inline-buttons {  display: flex;  flex-wrap: wrap;  align-items: center;  margin-bottom: 15px;   /* Add space below buttons on mobile */ }  .inline-buttons .button-link {  margin-top: 5px; } } .link-overlay { position: relative; z-index: 99; pointer-events: auto; } /* Class for the inline buttons paragraph */.inline-buttons { display: flex; align-items: center; flex-wrap: wrap; margin-bottom: 10px;  /* Add space below the buttons */ position: relative;  /* Add position relative */ z-index: 100;  /* Higher z-index to ensure clickability */ } /* Iframe container styling */.iframe-container { position: relative; width: 100%; height: 285px; max-height: 400px; overflow: hidden; z-index: 5;  /* Lower z-index than buttons */ pointer-events: auto; padding-top: 0px; margin: 83px;  /* Allow interaction with iframe */ } .iframe-container iframe { position: absolute; top: -150px; left: 0; width: 100%; height: calc(90% + 10px); border: none; filter: invert(1) hue-rotate(180deg); z-index: 5;  /* Same z-index as container */ } @media only screen and (max-width: 600px) { .iframe-container {  height: 385px;  margin-top: 30px;   /* More space on mobile */ }  .iframe-container iframe {  top: -245px; } } @media only screen and (min-width: 320px) and (max-width: 599px) { .iframe-container {  height: 385px;  margin-top: 30px;   /* More space on mobile */ }  .iframe-container iframe {  top: -220px;  height: calc(79% + 5px); } } /* Hide scrollbar for desktop view */body::-webkit-scrollbar { display: none;  /* Safari and Chrome */ } body { -ms-overflow-style: none;  /* Internet Explorer and Edge */ scrollbar-width: none; } /* Add clear space between buttons and iframe */.spacer { height: 20px; width: 100%; position: relative; z-index: 50; }</style>
+    </head>
+    <body>
+        <div class="noise"></div>
+        <div class="overlay"></div>
+        <div class="terminal">
+            <p><a href="https://tecnikofficial.github.io">Back to main page</a></p>
+            <h1>tecnik<span class="errorcode">.404</span><a href="https://geekprank.com/"><img class="widget-button" src="https://tecnik.pages.dev/oldtheme/assets/img/xp.gif" height="50" width="50" alt="Paradox" title="404" loading="lazy" style="bottom: 74px;"></a></h1>
+            <p class="output">You are viewing this site because this page is unavailable :(</p>
+            <p class="output inline-buttons">Until things get fixed, you can visit:  <a class="button-link" href="https://tecnik.bio.link">Bio Link</a> <a class="button-link" href="https://tecnik.pages.dev">Try Again</a> </p>
+            <!-- Add a clear spacer between buttons and iframe -->
+            <div class="spacer"></div>
+            <p class="output">Tap on Dino and Press Space :)</p>
+            <div class="iframe-container" style="margin-top: 75px; padding-top: 0px;">
+                <iframe src="https://chromedino.com/color/" frameborder="0" scrolling="no" title="Tap on Dino & Press Spacebar"></iframe>
+            </div><br>
+            <footer style="position: fixed; bottom: 0; width: 100%; text-align: left; "><a href="https://codepen.io/robinselmer/pen/vJjbOZ" target="_blank">Forked</a>
+            </footer>
         </div>
-        <br>
-        <footer style="position: fixed; bottom: 0; width: 100%; text-align: left; ">
-            <a href="https://codepen.io/robinselmer/pen/vJjbOZ" target="_blank">Forked</a>
-        </footer>
-    </div>
-    <script>
+        <script>
         // Check if service workers are supported
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -282,6 +40,6 @@ body {
             });
         }
     </script>
-    <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
-</body>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+    </body>
 </html>
