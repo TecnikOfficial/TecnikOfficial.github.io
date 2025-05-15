@@ -106,8 +106,8 @@ a::after {
 /* Button styling for the Bio Link and Try Again links */
 .button-link {
     display: inline-block;
-    margin: 10px 10px 10px 0;
-    padding: 8px 16px;
+    margin: 0 8px;
+    padding: 4px 12px;
     background-color: rgba(51, 255, 51, 0.2);
     border: 1px solid rgba(51, 255, 51, 0.8);
     color: rgba(128, 255, 128, 1);
@@ -118,6 +118,7 @@ a::after {
     border-radius: 4px;
     text-transform: uppercase;
     font-weight: bold;
+    vertical-align: middle;
 }
 
 .button-link:hover {
@@ -142,8 +143,17 @@ a::after {
         padding: 1rem;
     }
     .button-link {
-        padding: 6px 12px;
-        margin: 8px 8px 8px 0;
+        padding: 3px 8px;
+        margin: 0 4px;
+        font-size: 0.9em;
+    }
+    .inline-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .inline-buttons .button-link {
+        margin-top: 5px;
     }
 }
 
@@ -218,6 +228,13 @@ body {
     -ms-overflow-style: none; /* Internet Explorer and Edge */
     scrollbar-width: none;
 }
+
+/* Class for the inline buttons paragraph */
+.inline-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
 </style>
 </head>
 <body>
@@ -227,11 +244,10 @@ body {
         <p><a href="https://tecnikofficial.github.io">Back to main page</a></p>
         <h1>tecnik<span class="errorcode">.404</span><a href="https://geekprank.com/"><img class="widget-button" src="https://tecnik.pages.dev/oldtheme/assets/img/xp.gif" height="50" width="50" alt="Paradox" title="404" loading="lazy" style="bottom: 74px;"></a></h1>
         <p class="output">You are viewing this site because this page is unavailable :(</p>
-        <p class="output">Until things get fixed, you can visit:</p>
-        <div class="button-container">
+        <p class="output inline-buttons">Until things get fixed, you can visit: 
             <a class="button-link" href="https://tecnik.bio.link">Bio Link</a>
             <a class="button-link" href="https://tecnik.pages.dev">Try Again</a>
-        </div>
+        </p>
         <p class="output">Tap on Dino and Press Space :)</p>
         <div class="iframe-container">
             <iframe src="https://chromedino.com/color/" frameborder="0" scrolling="no" title="Tap on Dino & Press Spacebar" top=10px;></iframe>
