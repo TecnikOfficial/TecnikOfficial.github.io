@@ -84,6 +84,8 @@ body {
 .output {
     color: rgba(128, 255, 128, 0.8);
     text-shadow: 0 0 1px rgba(51, 255, 51, 0.4), 0 0 2px rgba(255, 255, 255, 0.8);
+    position: relative; /* Add position relative */
+    z-index: 10; /* Ensure text is above background elements but below iframe */
 }
 
 .output::before {
@@ -119,6 +121,8 @@ a::after {
     text-transform: uppercase;
     font-weight: bold;
     vertical-align: middle;
+    position: relative; /* Add position relative */
+    z-index: 100; /* Higher z-index to ensure clickability */
 }
 
 .button-link:hover {
@@ -151,6 +155,7 @@ a::after {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        margin-bottom: 15px; /* Add space below buttons on mobile */
     }
     .inline-buttons .button-link {
         margin-top: 5px;
@@ -158,64 +163,64 @@ a::after {
 }
 
 .link-overlay {
-    position: relative; /* Ensure it can be positioned */
-    z-index: 99999; /* Set a high z-index */
-    pointer-events: auto; /* Ensure links can be clicked */
+    position: relative;
+    z-index: 99;
+    pointer-events: auto;
 }
 
-iframe {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 275px;
-    max-height: 400px;
-    z-index: 99999;
-    filter: invert(1) hue-rotate(180deg);
+/* Class for the inline buttons paragraph */
+.inline-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px; /* Add space below the buttons */
+    position: relative; /* Add position relative */
+    z-index: 100; /* Higher z-index to ensure clickability */
 }
 
+/* Iframe container styling */
 .iframe-container {
     position: relative;
-    width: 100%; /* Set to 80% of the parent container */
-    height: 285px; /* Default height */
-    max-height: 400px; /* Maximum height */
-    overflow: hidden; /* Hide overflow */
-    margin: 20px auto 0; /* Add top margin of 20px and center the container */
+    width: 100%;
+    height: 285px;
+    max-height: 400px;
+    overflow: hidden;
+    margin: 20px auto 0;
+    z-index: 5; /* Lower z-index than buttons */
+    pointer-events: auto; /* Allow interaction with iframe */
 }
 
 .iframe-container iframe {
     position: absolute;
-    top: -150px; /* Move the iframe up to crop content from the top */
+    top: -150px;
     left: 0;
-    width: 100%; /* Full width */
-    height: calc(90% + 10px); /* Adjust height to compensate for the negative top margin */
-    border: none; /* Remove default border */
-    filter: invert(1) hue-rotate(180deg); /* Existing filter */
+    width: 100%;
+    height: calc(90% + 10px);
+    border: none;
+    filter: invert(1) hue-rotate(180deg);
+    z-index: 5; /* Same z-index as container */
 }
 
 @media only screen and (max-width: 600px) {
-    .iframe {
-        top: 50%; /* Move iframe closer to the paragraph text */    
-    }
     .iframe-container { 
-        height: 385px; /* Default height */
+        height: 385px;
+        margin-top: 30px; /* More space on mobile */
     }
 
     .iframe-container iframe {
-        top: -245px; /* Move the iframe up to crop content from the top */
+        top: -245px;
     }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 599px) {
-    .iframe {
-        top: 50%; /* Move iframe closer to the paragraph text */    
-    }
     .iframe-container { 
-        height: 385px; /* Default height */
+        height: 385px;
+        margin-top: 30px; /* More space on mobile */
     }
 
     .iframe-container iframe {
-        top: -220px; /* Move the iframe up to crop content from the top */
-        height: calc(79% + 5px); /* Adjust height to compensate for the negative top margin */
+        top: -220px;
+        height: calc(79% + 5px);
     }
 }
 
@@ -229,11 +234,12 @@ body {
     scrollbar-width: none;
 }
 
-/* Class for the inline buttons paragraph */
-.inline-buttons {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+/* Add clear space between buttons and iframe */
+.spacer {
+    height: 20px;
+    width: 100%;
+    position: relative;
+    z-index: 50;
 }
 </style>
 </head>
@@ -248,9 +254,13 @@ body {
             <a class="button-link" href="https://tecnik.bio.link">Bio Link</a>
             <a class="button-link" href="https://tecnik.pages.dev">Try Again</a>
         </p>
+        
+        <!-- Add a clear spacer between buttons and iframe -->
+        <div class="spacer"></div>
+        
         <p class="output">Tap on Dino and Press Space :)</p>
         <div class="iframe-container">
-            <iframe src="https://chromedino.com/color/" frameborder="0" scrolling="no" title="Tap on Dino & Press Spacebar" top=10px;></iframe>
+            <iframe src="https://chromedino.com/color/" frameborder="0" scrolling="no" title="Tap on Dino & Press Spacebar"></iframe>
         </div>
         <br>
         <footer style="position: fixed; bottom: 0; width: 100%; text-align: left; ">
