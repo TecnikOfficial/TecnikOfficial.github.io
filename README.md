@@ -34,7 +34,7 @@ Contributions to TecNik are welcome! If you have tech tips or tricks to share, c
 - Collaborate on TecNik's GitHub projects.
 
 ## License
-Disclaimer: Some of the code and icons/images used on this site belong to their respective creators and owners. We are using them for personal use only and not for commercial purposes. Credits for the code and icons used can be found at the end of the file.
+- Disclaimer: Some of the code and icons/images used on this site belong to their respective creators and owners. We are using them for personal use only and not for commercial purposes. Credits for the code and icons used can be found at the end of the file.
 This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. You are free to share and adapt the content, but not for commercial purposes.Dont just directly copy/paste be creative.
 
 <details>
@@ -51,7 +51,8 @@ This project is licensed under the Creative Commons Attribution-NonCommercial-Sh
 
 
 ## Credits
-A.i : [Blackbox](https://www.blackbox.ai) and [Duck](https://duck.ai)  
-All icons, images, and trademarks displayed on this site are the property of their respective owners. The use of these assets is for informational purposes only and does not imply any affiliation with or endorsement by the respective companies. Unauthorized use of these images and trademarks is prohibited.
+-A.i : [Blackbox](https://www.blackbox.ai) and [Duck](https://duck.ai)  
+
+-All icons, images, and trademarks displayed on this site are the property of their respective owners. The use of these assets is for informational purposes only and does not imply any affiliation with or endorsement by the respective companies. Unauthorized use of these images and trademarks is prohibited.
 
 Happy exploring with TecNik! 🚀🔧
