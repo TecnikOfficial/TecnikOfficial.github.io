@@ -801,15 +801,9 @@ th {
   }
 }
 
-/* Animation for widget image */
-@keyframes pulseGlow {
-  0% { filter: drop-shadow(0 0 8px rgba(0, 255, 0, 0.5)); }
-  50% { filter: drop-shadow(0 0 15px rgba(0, 255, 0, 0.8)); }
-  100% { filter: drop-shadow(0 0 8px rgba(0, 255, 0, 0.5)); }
-}
-
+/* Animation for widget image - REMOVED as requested */
 .widget-image {
-  animation: pulseGlow 3s infinite;
+  /* No animation or filter as requested */
 }
 
 /* Notification panel animation */
@@ -1175,7 +1169,7 @@ th {
                         </div>
                         <div class="about-item">
                             <div class="about-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor"><path d="M14.5 10.5S12 12.5 12 15m-6 0h12M7 15l.51 3.566c.233 1.637.35 2.456.914 2.945S9.815 22 11.47 22h1.062c1.654 0 2.48 0 3.045-.49c.564-.488.68-1.307.915-2.944L17 15m-6.937-6.937a3.2 3.2 0 0 0 0-4.524C8.178 1.654 4.031 2.03 4.031 2.03s-.377 4.147 1.508 6.032a3.2 3.2 0 0 0 4.524 0m4.74 2.135a2.74 2.74 0 0 0 3.878 0c1.616-1.616 1.293-5.17 1.293-5.17s-3.555-.324-5.17 1.292a2.74 2.74 0 0 0 0 3.878"/><path d="M10 8.5s2 2.5 2 6.5"/></g></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor"  width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor"><path d="M14.5 10.5S12 12.5 12 15m-6 0h12M7 15l.51 3.566c.233 1.637.35 2.456.914 2.945S9.815 22 11.47 22h1.062c1.654 0 2.48 0 3.045-.49c.564-.488.68-1.307.915-2.944L17 15m-6.937-6.937a3.2 3.2 0 0 0 0-4.524C8.178 1.654 4.031 2.03 4.031 2.03s-.377 4.147 1.508 6.032a3.2 3.2 0 0 0 4.524 0m4.74 2.135a2.74 2.74 0 0 0 3.878 0c1.616-1.616 1.293-5.17 1.293-5.17s-3.555-.324-5.17 1.292a2.74 2.74 0 0 0 0 3.878"/><path d="M10 8.5s2 2.5 2 6.5"/></g></svg>
     </svg>
 </div>
                 <div class="about-text">
@@ -1541,7 +1535,9 @@ function createHeart() {
 function addHeartDropEffectToButtons(buttons) {
   buttons.forEach((button) => {
     button.addEventListener("mouseover", () => {
-      for (let i = 0; i < 4; i++) {
+      // Create more hearts (8 instead of 4) specifically for the donate widget
+      const heartCount = button.classList.contains("widget-image") ? 8 : 4;
+      for (let i = 0; i < heartCount; i++) {
         createHeart();
       }
     });
