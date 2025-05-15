@@ -18,6 +18,10 @@ We are dedicated to helping users make the most of their technology. From softwa
 - Regularly updated content
 - Copyright Free Songs/Music
 
+## How to clone this site
+- `src/index.html` is in a readable and easily understandable format. Copy it and paste it into your repository, then make the necessary changes and deploy it on GitHub Pages. All the necessary JS and CSS code is contained within one file, so you only need to create your `assets` folder if you want to change images on the site.  
+- Please do not remove the credit comment lines from the top and bottom of the index file; it's a humble request.
+
 ## What you can do to support!
 1. 💲upport us on [CoinDrop](https://coindrop.to/tecnik).
 2. Explore the playlists to find topics that interest you.
