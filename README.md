@@ -52,5 +52,6 @@ This project is licensed under the Creative Commons Attribution-NonCommercial-Sh
 
 ## Credits
 A.i : [Blackbox](https://www.blackbox.ai) and [Duck](https://duck.ai)  
+All icons, images, and trademarks displayed on this site are the property of their respective owners. The use of these assets is for informational purposes only and does not imply any affiliation with or endorsement by the respective companies. Unauthorized use of these images and trademarks is prohibited.
 
 Happy exploring with TecNik! 🚀🔧
