@@ -3,7 +3,7 @@ name: Minify HTML
 on:
   push:
     paths:
-      - 'src/index.html'  # Trigger the workflow only when index.html is changed
+      - 'src/index.html'   # Triggers on changes to src/index.html
 
 permissions:
   contents: write
@@ -14,12 +14,15 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Use latest Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'  # Specify the Node.js version
+          node-version: 'node'
+
+      - name: Upgrade npm to latest
+        run: npm install -g npm@latest
 
       - name: Install dependencies
         run: npm install
@@ -27,12 +30,12 @@ jobs:
       - name: Minify HTML
         run: npm run minify
 
-      - name: Commit and push minified file
+      - name: Commit and push minified files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add index.html
-          git commit -m "Update minified index.html" || echo "No changes to commit"
+          git add index.html assets/style.min.css assets/script.min.js
+          git commit -m "Auto-update minified files from src/index.html" || echo "No changes to commit"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
