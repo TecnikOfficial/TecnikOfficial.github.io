@@ -6,7 +6,7 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const { PurgeCSS } = require('purgecss');
 const Terser = require('terser');
-const { minify: htmlMinify } = require('html-minifier');
+const { minify: htmlMinify } = require('html-minifier-terser');
 
 // Paths
 const SRC_HTML = path.join(__dirname, 'src', 'index.html');
