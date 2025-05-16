@@ -699,8 +699,8 @@ th {
     width: 85px;
   }
   .notification-bell {
-    top: 10px;
-    right: 10px;
+    top: 5px;
+    right: 5px;
   }
   .glow-button {
     font-size: 1.5rem;
@@ -838,7 +838,6 @@ th {
   border-radius: 8px;
   z-index: 2000;
   opacity: 0;
-  display: none;
   transition: opacity 0.3s ease;
   font-size: 1.2rem;
   font-weight: bold;
@@ -846,14 +845,15 @@ th {
   border: 2px solid rgba(0, 255, 0, 0.3);
   text-align: center;
   min-width: 250px;
-  pointer-events: none; /* Never block clicks */
+   pointer-events: none;  /* Prevent all interaction */
+  display: none;         /* Hidden by default */
 }
 
 .toast-notification.show {
   opacity: 1;
   display: block;
+  pointer-events: none;  /* Even when showing, still not clickable */
 }
-
 </style>         
     </head>     
     <body> 
@@ -1548,18 +1548,14 @@ function showToast(message) {
   toast.textContent = message;
   toast.style.display = 'block';
   toast.classList.add('show');
-  toast.style.pointerEvents = 'none'; // Never clickable
+  toast.style.pointerEvents = 'none'; // Always non-clickable
 
-  // After fade-out is done (match transition duration)
   setTimeout(() => {
     toast.classList.remove('show');
-
-    // Wait for fade-out to finish (300ms), then hide it from layout
-    setTimeout(() => {
-      toast.style.display = 'none';
-    }, 300); // Match this with your CSS transition duration
-  }, 3000); // Toast visible for 3 seconds
+    toast.style.display = 'none'; // Fully removes it from layout
+  }, 3000); // or your preferred duration
 }
+
 
 
 // Function to copy email and open mail app
