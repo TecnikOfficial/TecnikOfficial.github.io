@@ -313,18 +313,26 @@ iframe {
 }
 
 /* Notification styles */
-.notification-bell {
+.notification-container {
   position: absolute;
   top: 20px;
   right: 20px;
-  cursor: pointer;
-  width: 60px;
-  height: 60px;
   z-index: 20;
   pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.notification-bell {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
 .notification-bell:hover {
-    opacity: 0.8; /* Slightly fade the icon on hover */
+  opacity: 0.8;
 }
 #notification-panel {
   position: absolute;
@@ -1246,9 +1254,9 @@ th {
                     </div>
                 </div>
             </div>
-            <div class="notification-bell" onclick="openNotificationPanel()"> 
-                <img src="https://tecnik.pages.dev/assets/media/noti.webp" class="notification-bell" alt="Notification Bell" width="60" height="60" loading="lazy"> 
-            </div>             
+            <div class="notification-container" onclick="openNotificationPanel()">
+					<img src="https://tecnik.pages.dev/assets/media/noti.webp" class="notification-bell" alt="Notification Bell" width="60" height="60" loading="lazy">
+				</div>           
             <!-- Notification Panel Overlay -->             
             <div id="notification-panel"> 
                 <div class="overlay-content"> 
