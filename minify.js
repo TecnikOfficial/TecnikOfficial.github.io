@@ -1,43 +1,92 @@
 const fs = require('fs');
-const { minify } = require('terser');
-const cssnano = require('cssnano');
+const path = require('path');
+const { JSDOM } = require('jsdom');
 const postcss = require('postcss');
-const htmlMinifier = require('html-minifier').minify;
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const { PurgeCSS } = require('purgecss');
+const Terser = require('terser');
+const { minify: htmlMinify } = require('html-minifier');
 
-async function minifyHTML() {
-    // Read the HTML file from the src folder
-    const html = fs.readFileSync('src/index.html', 'utf8');
+// Paths
+const SRC_HTML = path.join(__dirname, 'src', 'index.html');
+const OUT_HTML = path.join(__dirname, 'index.html');
+const ASSETS_DIR = path.join(__dirname, 'assets');
+const OUT_CSS = path.join(ASSETS_DIR, 'style.min.css');
+const OUT_JS = path.join(ASSETS_DIR, 'script.min.js');
 
-    // Extract inline CSS and JS
-    const cssMatch = html.match(/<style>([\s\S]*?)<\/style>/i);
-    const jsMatch = html.match(/<script>([\s\S]*?)<\/script>/i);
+// Ensure assets dir exists
+if (!fs.existsSync(ASSETS_DIR)) fs.mkdirSync(ASSETS_DIR);
 
-    const css = cssMatch ? cssMatch[1] : '';
-    const js = jsMatch ? jsMatch[1] : '';
+// Read src/index.html
+const htmlContent = fs.readFileSync(SRC_HTML, 'utf8');
+const dom = new JSDOM(htmlContent);
+const document = dom.window.document;
 
-    // Minify CSS
-    const minifiedCSS = await postcss([cssnano]).process(css, { from: undefined }).then(result => result.css);
+// Extract CSS and JS
+const styleTag = document.querySelector('style');
+const scriptTag = document.querySelector('script');
 
-    // Minify JS
-    const minifiedJS = await minify(js);
+const css = styleTag ? styleTag.textContent : '';
+const js = scriptTag ? scriptTag.textContent : '';
 
-    // Minify HTML (without inline CSS and JS)
-    const minifiedHTML = htmlMinifier(html, {
-        collapseWhitespace: true,
-        removeComments: true,
-        minifyCSS: false, // We will insert minified CSS later
-        minifyJS: false,  // We will insert minified JS later
-    });
+// PurgeCSS (remove unused CSS based on HTML content)
+async function processCSS() {
+  // Write HTML to temp file, as PurgeCSS expects a file
+  const tempHtmlPath = path.join(__dirname, 'assets', 'purge-tmp.html');
+  fs.writeFileSync(tempHtmlPath, dom.serialize(), 'utf8');
+  const purgeCSSResult = await new PurgeCSS().purge({
+    content: [tempHtmlPath],
+    css: [{ raw: css }],
+    defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+  });
+  fs.unlinkSync(tempHtmlPath);
 
-    // Insert minified CSS and JS back into HTML
-    const finalHTML = minifiedHTML
-        .replace(/<style>[\s\S]*?<\/style>/i, `<style>${minifiedCSS}</style>`)
-        .replace(/<script>[\s\S]*?<\/script>/i, `<script>${minifiedJS.code}</script>`);
-
-    // Write the final minified HTML to the root
-    fs.writeFileSync('index.html', finalHTML);
-    console.log('Minification complete! Updated index.html in the root folder.');
+  const purgedCSS = purgeCSSResult[0] ? purgeCSSResult[0].css : css;
+  // PostCSS with Autoprefixer and cssnano
+  const result = await postcss([autoprefixer, cssnano]).process(purgedCSS, { from: undefined });
+  return result.css;
 }
 
-// Run the minification process
-minifyHTML().catch(console.error);
+// Minify JS
+async function processJS() {
+  const minified = await Terser.minify(js);
+  return minified.code || '';
+}
+
+(async () => {
+  // Process CSS & JS
+  const cssFinal = await processCSS();
+  const jsFinal = await processJS();
+
+  // Write minified CSS & JS to assets
+  fs.writeFileSync(OUT_CSS, cssFinal, 'utf8');
+  fs.writeFileSync(OUT_JS, jsFinal, 'utf8');
+
+  // Remove old <style> and <script> tags from DOM
+  if (styleTag) styleTag.remove();
+  if (scriptTag) scriptTag.remove();
+
+  // Add <link> and <script> references
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'assets/style.min.css';
+  document.head.appendChild(link);
+
+  const script = document.createElement('script');
+  script.src = 'assets/script.min.js';
+  script.defer = true;
+  document.body.appendChild(script);
+
+  // Minify HTML
+  const finalHtml = htmlMinify(dom.serialize(), {
+    collapseWhitespace: true,
+    removeComments: true,
+    minifyCSS: false,
+    minifyJS: false
+  });
+
+  // Write output HTML
+  fs.writeFileSync(OUT_HTML, finalHtml, 'utf8');
+  console.log('Build complete: index.html and assets/style.min.css + script.min.js created/updated.');
+})();

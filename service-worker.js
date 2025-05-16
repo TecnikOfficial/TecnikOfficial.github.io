@@ -3,6 +3,8 @@ const urlsToCache = [
     '/',
     '/index.html',
     '/404.html',
+    '/assets/style.min.css',
+    '/assets/script.min.js',
 ];
 
 // Install event: Cache the necessary files

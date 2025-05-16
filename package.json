@@ -1,26 +1,20 @@
 {
-  "name": "your-project-name",
+  "name": "tecnikofficial-site",
   "version": "1.0.0",
-  "description": "Your project description",
-  "main": "index.js",
+  "description": "Automated build for extracting and optimizing inline CSS & JS from index.html.",
+  "main": "minify.js",
   "scripts": {
-    "minify": "node minify.js"
+    "build": "node minify.js"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.19",
     "cssnano": "^7.0.7",
-    "html-minifier": "^4.0.0",
+    "jsdom": "^23.1.0",
     "postcss": "^8.5.3",
-    "terser": "^5.39.0"
+    "purgecss": "^6.0.0",
+    "terser": "^5.39.0",
+    "html-minifier": "^4.0.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TecnikOfficial/TecnikOfficial.github.io.git"
-  },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TecnikOfficial/TecnikOfficial.github.io/issues"
-  },
-  "homepage": "https://github.com/TecnikOfficial/TecnikOfficial.github.io#readme"
+  "license": "ISC"
 }
