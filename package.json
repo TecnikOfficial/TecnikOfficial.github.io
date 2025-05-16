@@ -4,7 +4,9 @@
   "description": "Automated build for extracting and optimizing inline CSS & JS from index.html.",
   "main": "minify.js",
   "scripts": {
-    "build": "node minify.js"
+    "build": "node minify.js",
+    "minify": "node minify.js"
+}
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
