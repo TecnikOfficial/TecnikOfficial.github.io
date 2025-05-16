@@ -890,7 +890,7 @@ th {
             </video>             
             <div class="slider"> 
 			<div class="mainimage-container">
-  <img src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" id="mainImage" class="hover-image" alt="Main Image" width="322" height="60">
+  <img src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" id="mainImage" class="hover-image" alt="Main Image" width="322" height="60" loading="lazy">
 </div>
                 <div class="text three-d" id="slider-text" onclick="changeText()"></div>                 
                 <div class="button-container"> 
@@ -1578,8 +1578,6 @@ function showToast(message) {
     toast.style.display = 'none'; // Fully removes it from layout
   }, 3000); // or your preferred duration
 }
-
-
 
 // Function to copy email and open mail app
 function copyEmailAndOpenMailApp() {
