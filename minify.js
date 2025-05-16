@@ -55,7 +55,7 @@ async function processJS() {
 }
 
 (async () => {
-  // Process CSS & JS
+  // Always await these async functions!
   const cssFinal = await processCSS();
   const jsFinal = await processJS();
 
@@ -78,8 +78,8 @@ async function processJS() {
   script.defer = true;
   document.body.appendChild(script);
 
-  // Minify HTML
-  const finalHtml = htmlMinify(dom.serialize(), {
+  // Minify HTML - htmlMinify is async in html-minifier-terser!
+  const finalHtml = await htmlMinify(dom.serialize(), {
     collapseWhitespace: true,
     removeComments: true,
     minifyCSS: false,
