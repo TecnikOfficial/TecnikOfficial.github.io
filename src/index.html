@@ -185,6 +185,14 @@ video {
 }
 
 /* Image styles */
+.mainimage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+  z-index: 12;
+  position: relative;
+}
 .hover-image {
   width: 80%;
   max-width: 322px;
@@ -197,6 +205,9 @@ video {
   object-fit: contain;
   position: relative;
   z-index: 10;
+   pointer-events: auto;
+  z-index: 13;
+  cursor: pointer;
 }
 
 .hover-image:hover {
@@ -336,13 +347,13 @@ iframe {
 }
 #notification-panel {
   position: absolute;
-  top: 80px;
+  top: 50px;
   right: 0;
   width: 300px;
   border-radius: 10px;
   overflow: hidden;
   display: none;
-  z-index: 6;
+  z-index: 21;
   background-color: transparent;
 }
 
@@ -365,6 +376,22 @@ iframe {
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 2;
 }
+/* Notification panel animation */
+#notification-panel {
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              opacity 0.4s ease,
+              display 0s 0.4s;
+}
+
+#notification-panel.active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              opacity 0.4s ease;
+}
+
 /* Toast notification */
 .toast-notification {
   position: fixed;
@@ -846,21 +873,6 @@ th {
   }
 }
 
-/* Notification panel animation */
-#notification-panel {
-  transform: translateY(-20px);
-  opacity: 0;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-              opacity 0.4s ease,
-              display 0s 0.4s;
-}
-
-#notification-panel.active {
-  transform: translateY(0);
-  opacity: 1;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-              opacity 0.4s ease;
-}
 
 
 </style>         
@@ -877,7 +889,9 @@ th {
                 Your browser does not support the video tag.
             </video>             
             <div class="slider"> 
-                <img src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" id="mainImage" class="hover-image" alt="Main Image" width="322" height="60" loading="lazy"> 
+			<div class="mainimage-container">
+  <img src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" id="mainImage" class="hover-image" alt="Main Image" width="322" height="60">
+</div>
                 <div class="text three-d" id="slider-text" onclick="changeText()"></div>                 
                 <div class="button-container"> 
                     <button class="glow-button" id="contactButton" title="📧Connect with Us">Contact</button>                     
