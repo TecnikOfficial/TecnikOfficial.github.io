@@ -195,6 +195,8 @@ video {
   filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
   pointer-events: auto;
   object-fit: contain;
+  position: relative;
+  z-index: 10;
 }
 
 .hover-image:hover {
@@ -318,7 +320,8 @@ iframe {
   cursor: pointer;
   width: 60px;
   height: 60px;
-  z-index: 3;
+  z-index: 20;
+  pointer-events: auto;
 }
 .notification-bell:hover {
     opacity: 0.8; /* Slightly fade the icon on hover */
@@ -521,6 +524,7 @@ th {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  pointer-events: auto;
 }
 
 .connect-title, .futuristic-title, .support-title, .about-title {
@@ -553,6 +557,8 @@ th {
   transition: color 0.3s ease, transform 0.3s ease;
   padding: 0;
   margin: 0;
+  z-index: 50;
+  pointer-events: auto;
 }
 
 .close-overlay:hover {
