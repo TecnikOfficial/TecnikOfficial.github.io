@@ -838,6 +838,7 @@ th {
   border-radius: 8px;
   z-index: 2000;
   opacity: 0;
+  display: none;
   transition: opacity 0.3s ease;
   font-size: 1.2rem;
   font-weight: bold;
@@ -845,11 +846,14 @@ th {
   border: 2px solid rgba(0, 255, 0, 0.3);
   text-align: center;
   min-width: 250px;
+  pointer-events: none; /* Never block clicks */
 }
 
 .toast-notification.show {
   opacity: 1;
+  display: block;
 }
+
 </style>         
     </head>     
     <body> 
@@ -1540,14 +1544,23 @@ function copyDiscord() {
 
 // Function to show toast notification
 function showToast(message) {
-  const toast = document.getElementById("toast");
+  const toast = document.getElementById('toast');
   toast.textContent = message;
-  toast.classList.add("show");
-  
+  toast.style.display = 'block';
+  toast.classList.add('show');
+  toast.style.pointerEvents = 'none'; // Never clickable
+
+  // After fade-out is done (match transition duration)
   setTimeout(() => {
-    toast.classList.remove("show");
-  }, 3000);
+    toast.classList.remove('show');
+
+    // Wait for fade-out to finish (300ms), then hide it from layout
+    setTimeout(() => {
+      toast.style.display = 'none';
+    }, 300); // Match this with your CSS transition duration
+  }, 3000); // Toast visible for 3 seconds
 }
+
 
 // Function to copy email and open mail app
 function copyEmailAndOpenMailApp() {
