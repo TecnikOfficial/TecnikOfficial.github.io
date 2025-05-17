@@ -145,6 +145,7 @@ video {
 
 .loading-content {
   color: #fff;
+  font-family: 'Consolas', 'Monaco', 'Lucida Console', monospace;
   font-size: 3rem;
 }
 
@@ -170,6 +171,13 @@ video {
 
 /* Text styles */
 .text.three-d, .three-d {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1.2; /* Set a consistent line height */
+  min-height: 80px; 
+  margin-bottom: 10px; /* Keep the same margin as before */
+  padding: 0;
   font-size: 4rem;
   color: #fff;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5), 2px 2px 0 rgba(0, 0, 0, 0.5),
@@ -275,7 +283,9 @@ iframe {
   height: 100%;
   border: none;
   pointer-events: auto;
+  border-radius: 0 0 25px 25px; /* Rounded corners only at the bottom */
 }
+
 
 /* Widget container */
 .widget-container {
@@ -710,9 +720,10 @@ th {
   white-space: normal;
   overflow: visible;
   height: auto;
-  min-height: 80px;
+  min-height: 80px; /* Ensure this stays the same */
   line-height: 1.2;
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Ensure this stays the same */
+  display: block;
 }
 
 .overlay-content-scroll {
@@ -771,6 +782,12 @@ th {
   .widget-image {
     width: 85px;
   }
+    .hover-image {
+    width: 60%; 
+  max-width: 240px; 
+  height: 40px; 
+  max-height: 40px;
+  }
   .notification-container {
     top: 5px;
     right: 5px;
@@ -825,6 +842,9 @@ th {
     padding: 3px;
     font-size: 0.9rem;
   }
+  .loading-content {
+  font-size: 2.7rem;
+}
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -844,6 +864,9 @@ th {
   .three-d {
     font-size: 2.5rem;
   }
+   .loading-content {
+  font-size: 2.7rem;
+}
   .glow-button {
     font-size: 1.5rem;
     padding: 8px 16px;
@@ -873,6 +896,9 @@ th {
   .button-container {
     gap: 10px;
   }
+   .loading-content {
+  font-size: 2.7rem;
+}
 }
 
 @media only screen and (max-width: 300px) {
@@ -1271,7 +1297,9 @@ th {
                         </div>
                         <div class="about-item">
                             <div class="about-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"> <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor"><path d="M14.5 10.5S12 12.5 12 15m-6 0h12M7 15l.51 3.566c.233 1.637.35 2.456.914 2.945S9.815 22 11.47 22h1.062c1.654 0 2.48 0 3.045-.49c.564-.488.68-1.307.915-2.944L17 15m-6.937-6.937a3.2 3.2 0 0 0 0-4.524C8.178 1.654 4.031 2.03 4.031 2.03s-.377 4.147 1.508 6.032a3.2 3.2 0 0 0 4.524 0m4.74 2.135a2.74 2.74 0 0 0 3.878 0c1.616-1.616 1.293-5.17 1.293-5.17s-3.555-.324-5.17 1.292a2.74 2.74 0 0 0 0 3.878"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor">
+    <path d="M14.5 10.5S12 12.5 12 15m-6 0h12M7 15l.51 3.566c.233 1.637.35 2.456.914 2.945S9.815 22 11.47 22h1.062c1.654 0 2.48 0 3.045-.49c.564-.488.68-1.307.915-2.944L17 15m-6.937-6.937a3.2 3.2 0 0 0 0-4.524C8.178 1.654 4.031 2.03 4.031 2.03s-.377 4.147 1.508 6.032a3.2 3.2 0 0 0 4.524 0m4.74 2.135a2.74 2.74 0 0 0 3.878 0c1.616-1.616 1.293-5.17 1.293-5.17s-3.555-.324-5.17 1.292a2.74 2.74 0 0 0 0 3.878"/>
     <path d="M10 8.5s2 2.5 2 6.5"/>
   </g>
 </svg>
@@ -1332,12 +1360,12 @@ th {
 // Text options array
 const textOptions = [
   "COMPUTER ENTHUSIAST",
-  "GRAPHICS DESIGNER ",
+  "GRAPHICS DESIGNER VFX",
   "WEB DESIGN + DEVELOPER",
-  "A.i TECH EXPLORER ",
-  "PRIVACY FOCUSED",
+  "A.i TOOLS EXPLORER ",
+  "PRIVACY + SECURITY ",
   "DIGITAL MUSIC CREATOR",
-  "CASUAL GAMER",
+  "CASUAL GAMER + BINGER",
   "FREELANCE VIDEO EDITOR",
 ];
 
@@ -1353,7 +1381,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Set initial text
   const textElement = document.getElementById("slider-text");
-  textElement.textContent = "Welcome\nThanks for Visiting!";
+  textElement.textContent = "Thanks for Visiting!";
 
   // Add event listeners
   setupEventListeners();
