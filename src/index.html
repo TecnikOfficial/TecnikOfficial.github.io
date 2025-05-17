@@ -492,7 +492,9 @@ th {
   animation: scroll 31s linear infinite;
   animation-delay: 3s;
 }
-
+.scrolling-text:hover span {
+  animation-play-state: paused;
+}
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
@@ -645,7 +647,7 @@ th {
   padding: 10px;
   display: flex;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .connect-item:hover, .support-item:hover {
@@ -1153,10 +1155,7 @@ th {
                     <div class="overlay-header"> 
                         <h2 class="futuristic-title">Projects</h2> <span class="close-overlay">✖</span> 
                     </div>                     
-                    <div class="overlay-content-scroll"> 
-                        <div class="support-message"> 
-                            Expertise in Efficiency | Provides Value for Money Solutions
-                        </div>                         
+                    <div class="overlay-content-scroll">                                                
                         <div> 
                             <h2 style="color: green; text-decoration: underline;">Worked as Lead:</h2> 
                             <br> 
@@ -1177,7 +1176,10 @@ th {
                             <h2 style="color: green; text-decoration: underline;">Currently Working On:</h2> 
                             <br> 
                             <span>Building WEB App (working along with doctor)</span> 
-                        </div>                         
+                        </div>     <br>
+						<div class="support-footer"> 
+                            Expertise in Efficiency | Provides Value for Money Solutions
+                        </div>  						
                     </div>                     
                 </div>                 
             </div>             
@@ -1537,7 +1539,7 @@ function updateYear() {
       }, delay);
     } else {
       // We've reached 2025, wait a moment then fade out the loading screen
-      setTimeout(fadeOutLoadingScreen, 700);
+      setTimeout(fadeOutLoadingScreen, 500);
     }
   }
 }
@@ -1549,8 +1551,8 @@ function fadeOutLoadingScreen() {
   setTimeout(() => {
     loadingScreen.style.display = "none";
     // Start displaying text after a short delay
-    setTimeout(startTextDisplay, 600);
-  }, 3400);
+    setTimeout(startTextDisplay, 500);
+  }, 3500);
 }
 
 // Function to copy Discord username
