@@ -1912,7 +1912,7 @@ function openNotificationPanel() {
   }
 }
 
-// Ensure the function is available globally (prevents tree-shaking/removal)
+// Make it global for HTML event attributes
 window.openNotificationPanel = openNotificationPanel;
 
 // Register service worker if supported
