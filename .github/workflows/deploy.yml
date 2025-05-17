@@ -1,36 +1,33 @@
-name: Minify HTML
+name: Build and Minify Site
 
 on:
   push:
     paths:
-      - 'src/index.html'   # Triggers on changes to src/index.html
+      - 'src/index.html'
 
 permissions:
   contents: write
 
 jobs:
-  minify:
+  build-and-minify:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Use latest Node.js
+      - name: Setup latest stable Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 'node'
-
-      - name: Upgrade npm to latest
-        run: npm install -g npm@latest
+          node-version: 'node' # Always uses the latest stable, not just LTS
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Minify HTML
+      - name: Build and Minify
         run: npm run minify
 
-      - name: Commit and push minified files
+      - name: Commit and push minified assets
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"

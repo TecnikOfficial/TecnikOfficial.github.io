@@ -9,12 +9,10 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
-    "cssnano": "^7.0.7",
+    "esbuild": "^0.25.4",
     "html-minifier-terser": "^7.2.0",
     "jsdom": "^23.1.0",
-    "postcss": "^8.5.3",
-    "purgecss": "^6.0.0",
-    "terser": "^5.39.0"
+    "purgecss": "^6.0.0"
   },
   "author": "",
   "license": "ISC"

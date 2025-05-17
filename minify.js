@@ -1,11 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 const { JSDOM } = require('jsdom');
+const { PurgeCSS } = require('purgecss');
+const esbuild = require('esbuild');
 const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
-const { PurgeCSS } = require('purgecss');
-const Terser = require('terser');
 const { minify: htmlMinify } = require('html-minifier-terser');
 
 // Paths
@@ -26,13 +25,11 @@ const document = dom.window.document;
 // Extract CSS and JS
 const styleTag = document.querySelector('style');
 const scriptTag = document.querySelector('script');
-
 const css = styleTag ? styleTag.textContent : '';
 const js = scriptTag ? scriptTag.textContent : '';
 
-// PurgeCSS (remove unused CSS based on HTML content)
 async function processCSS() {
-  // Write HTML to temp file, as PurgeCSS expects a file
+  // Purge unused CSS based on HTML content
   const tempHtmlPath = path.join(__dirname, 'assets', 'purge-tmp.html');
   fs.writeFileSync(tempHtmlPath, dom.serialize(), 'utf8');
   const purgeCSSResult = await new PurgeCSS().purge({
@@ -43,25 +40,51 @@ async function processCSS() {
   fs.unlinkSync(tempHtmlPath);
 
   const purgedCSS = purgeCSSResult[0] ? purgeCSSResult[0].css : css;
-  // PostCSS with Autoprefixer and cssnano
-  const result = await postcss([autoprefixer, cssnano]).process(purgedCSS, { from: undefined });
-  return result.css;
+
+  // Autoprefixer via PostCSS
+  const result = await postcss([autoprefixer]).process(purgedCSS, { from: undefined });
+
+  // Write to temp CSS file for esbuild input
+  const tempCssPath = path.join(ASSETS_DIR, 'style-tmp.css');
+  fs.writeFileSync(tempCssPath, result.css, 'utf8');
+
+  // Minify CSS using esbuild
+  await esbuild.build({
+    entryPoints: [tempCssPath],
+    outfile: OUT_CSS,
+    minify: true,
+    bundle: false,
+    write: true,
+    logLevel: 'silent'
+  });
+
+  fs.unlinkSync(tempCssPath);
 }
 
-// Minify JS
 async function processJS() {
-  const minified = await Terser.minify(js);
-  return minified.code || '';
+  // Write JS to temp file for esbuild input
+  const tempJsPath = path.join(ASSETS_DIR, 'script-tmp.js');
+  fs.writeFileSync(tempJsPath, js, 'utf8');
+
+  // Minify, bundle, and tree-shake JS using esbuild
+  await esbuild.build({
+    entryPoints: [tempJsPath],
+    outfile: OUT_JS,
+    minify: true,
+    bundle: true,           // Enable bundling (needed for tree shaking)
+    treeShaking: true,      // Optional, true by default with bundling
+    format: 'iife',         // Good for browser <script>
+    target: ['es2017'],     // Or lower for broader support
+    write: true,
+    logLevel: 'silent'
+  });
+
+  fs.unlinkSync(tempJsPath);
 }
 
 (async () => {
-  // Always await these async functions!
-  const cssFinal = await processCSS();
-  const jsFinal = await processJS();
-
-  // Write minified CSS & JS to assets
-  fs.writeFileSync(OUT_CSS, cssFinal, 'utf8');
-  fs.writeFileSync(OUT_JS, jsFinal, 'utf8');
+  await processCSS();
+  await processJS();
 
   // Remove old <style> and <script> tags from DOM
   if (styleTag) styleTag.remove();
@@ -78,7 +101,7 @@ async function processJS() {
   script.defer = true;
   document.body.appendChild(script);
 
-  // Minify HTML - htmlMinify is async in html-minifier-terser!
+  // Minify HTML
   const finalHtml = await htmlMinify(dom.serialize(), {
     collapseWhitespace: true,
     removeComments: true,
