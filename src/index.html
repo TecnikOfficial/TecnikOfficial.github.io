@@ -43,18 +43,12 @@
 }
 
 body, html {
-  height: auto;
+  height: 100%;
   font-family: Arial, sans-serif;
-  overflow: hidden;
+  overflow-y: auto; /* Enable scrolling when needed */
   cursor: url(https://play.vsthemes.org/t-cursors/12251/25a255ea88403b8c79e2bb1b03efd2a5.webp), auto;
 }
-/* Enable scroll only in mobile landscape */
-@media screen and (max-width: 1024px) and (orientation: landscape) {
-  html, body {
-    overflow-y: auto !important;
-    height: auto !important;
-  }
-}
+
 /* Scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;
@@ -106,7 +100,7 @@ a:hover {
 /* Video background */
 .video-background {
   position: relative;
-  height: 100vh;
+  min-height: 100vh; /* Minimum height to ensure content fits */
   overflow: hidden;
   background-color: #000;
 }
@@ -123,6 +117,9 @@ a:hover {
 }
 
 video {
+  position: fixed; /* Fixed position to keep video in view while scrolling */
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -158,14 +155,17 @@ video {
 
 /* Slider styles */
 .slider {
-  position: absolute;
-  top: 35%;
+  position: relative; /* Changed from absolute to relative for better scrolling */
+  margin-top: 10vh; /* Reduced from 35vh to 10vh to move content up */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   text-align: center;
   z-index: 2;
-  height: 400px;
+  min-height: 400px;
   pointer-events: auto;
+  width: 90%;
+  max-width: 900px; /* Reduced from 1200px to 900px for better desktop view */
+  padding-bottom: 100px;
 }
 
 /* Text styles */
@@ -262,9 +262,10 @@ video {
 .iframe-container {
   position: relative;
   width: 100%;
-  height: 55%;
-  padding-top: 56.25%;
+  height: 0;
   margin-top: 20px;
+  padding-top: 40%;
+  
 }
 
 iframe {
@@ -279,7 +280,7 @@ iframe {
 
 /* Widget container */
 .widget-container {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 10;
@@ -290,8 +291,8 @@ iframe {
 
 .widget-image {
   width: 100px;
-  height: auto; /* This ensures the aspect ratio is maintained */
-  object-fit: contain; /* This ensures the image is displayed correctly */
+  height: auto;
+  object-fit: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
   position: relative;
   z-index: 11;
@@ -331,7 +332,7 @@ iframe {
 
 /* Notification styles */
 .notification-container {
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 20px;
   z-index: 20;
@@ -518,7 +519,7 @@ th {
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  overflow: hidden;
+  overflow-y: auto;
   opacity: 0;
   visibility: hidden;
   transition: background-color 0.5s ease, backdrop-filter 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
@@ -545,7 +546,7 @@ th {
   box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
   max-height: 80vh;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
   transform: scale(0.8);
@@ -753,7 +754,7 @@ th {
     padding: 5px;
   }
   .slider {
-    top: 36%;
+    margin-top: 10vh;
     width: 95%;
   }
   .text.three-d {
@@ -763,7 +764,7 @@ th {
     font-size: 2rem;
   }
   .widget-container {
-    bottom: 130px;
+    bottom: 70px;
     right: 5px;
   }
   .widget-image {
@@ -782,7 +783,7 @@ th {
     gap: 10px;
   }
   .iframe-container {
-    height: 48%;
+    padding-top: 50%;
   }
   #slider-text {
     font-size: 2rem;
@@ -803,6 +804,25 @@ th {
   }
   .heart {
     font-size: 20px;
+  }
+}
+
+/* Added new media query for very short screens */
+@media only screen and (max-height: 600px) {
+  .slider {
+    margin-top: 10vh;
+    padding-bottom: 80px;
+  }
+  .iframe-container {
+    padding-top: 45%;
+  }
+  .connect-content, .futuristic-content, .support-content, .about-content {
+    max-height: 90vh;
+    margin: 10px auto;
+  }
+  .footer {
+    padding: 3px;
+    font-size: 0.9rem;
   }
 }
 
@@ -836,8 +856,7 @@ th {
     right: 5px;
   }
   .iframe-container {
-    height: 90%;
-    width: 100%;
+    padding-top: 40%;
   }
   .connect-grid, .support-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -880,9 +899,6 @@ th {
     margin-bottom: 12px;
   }
 }
-
-
-
 </style>         
     </head>     
     <body> 
@@ -1279,45 +1295,45 @@ th {
             </div>
             <div class="notification-container" onclick="openNotificationPanel()">
 					<img src="https://tecnik.pages.dev/assets/media/noti.webp" class="notification-bell" alt="Notification Bell" width="60" height="60" loading="lazy">
-				</div>           
-            <!-- Notification Panel Overlay -->             
-            <div id="notification-panel"> 
-                <div class="overlay-content"> 
+				</div>
+            <!-- Notification Panel Overlay -->
+            <div id="notification-panel">
+                <div class="overlay-content">
                     <p>• NEW! Interactive Resume Site: <a href="https://aquib-farhaan.vercel.app" target="_blank">Sample 1</a> , <a href="https://iftikar-ali-zaman.vercel.app" target="_blank">Sample 2</a> Contact now if u want yours</p>
-                    <br> 
-                    <p>• Are you subscribed to ▶️<a href="https://www.youtube.com/channel/UCXucwi4swKyTmCUB9RrFaQw?sub_confirmation=1" target="_blank">Tecnik Official</a>💻 and <a href="https://www.youtube.com/channel/UC35TPNUnNegZq4mBWvU0o7g?sub_confirmation=1" target="_blank">Syncking</a>🎵 ?</p> 
-                    <br> 
+                    <br>
+                    <p>• Are you subscribed to ▶️<a href="https://www.youtube.com/channel/UCXucwi4swKyTmCUB9RrFaQw?sub_confirmation=1" target="_blank">Tecnik Official</a>💻 and <a href="https://www.youtube.com/channel/UC35TPNUnNegZq4mBWvU0o7g?sub_confirmation=1" target="_blank">Syncking</a>🎵 ?</p>
+                    <br>
                     <p>• <a href="https://www.youtube-nocookie.com/embed/videoseries?list=PLzXDhbvRPJ1A33piKX-ss1zjNAVdqu4mM&loop=1&autoplay=1&modestbranding=1" target="_blank">CSGO Montage 😎</a></p>
-                    <br> 
-                    <p>• <a href="./oldtheme/1.0.html">Old Site 🐈 </a>• <a href="https://tecnikofficial.github.io/404">4🚫4</a></p> 
-                </div>                 
-            </div>             
+                    <br>
+                    <p>• <a href="./oldtheme/1.0.html">Old Site 🐈 </a>• <a href="https://tecnikofficial.github.io/404">4🚫4</a></p>
+                </div>
+            </div>
             <!-- Toast Notification -->
             <div id="toast" class="toast-notification"></div>
-            <!-- Footer Section -->             
-            <footer class="footer"> 
-                Made with 
-                <a href="https://youtu.be/71qssscQqH8?feature=shared" target="_blank">  
-                    <img src="https://tecnik.pages.dev/assets/media/heart.gif" alt="Heart" title="Listen💓" width="20" height="20" style="vertical-align: bottom; margin-left: 5px; margin-right: 5px;" loading="lazy">  
-                </a> 
+            <!-- Footer Section -->
+            <footer class="footer">
+                Made with
+                <a href="https://youtu.be/71qssscQqH8?feature=shared" target="_blank">
+                    <img src="https://tecnik.pages.dev/assets/media/heart.gif" alt="Heart" title="Listen💓" width="20" height="20" style="vertical-align: bottom; margin-left: 5px; margin-right: 5px;" loading="lazy">
+                </a>
                 using A.i | Source Code&nbsp;
-                <a href="https://github.com/TecnikOfficial/TecnikOfficial.github.io" target="_blank"> 
+                <a href="https://github.com/TecnikOfficial/TecnikOfficial.github.io" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 432 416">
                         <path fill="#fff" d="M213.5 0q88.5 0 151 62.5T427 213q0 70-41 125.5T281 416q-14 2-14-11v-58q0-27-15-40q44-5 70.5-27t26.5-77q0-34-22-58q11-26-2-57q-18-5-58 22q-26-7-54-7t-53 7q-18-12-32.5-17.5T107 88h-6q-12 31-2 57q-22 24-22 58q0 55 27 77t70 27q-11 10-13 29q-42 18-62-18q-12-20-33-22q-2 0-4.5.5t-5 3.5t8.5 9q14 7 23 31q1 2 2 4.5t6.5 9.5t13 10.5T130 371t30-2v36q0 13-14 11q-64-22-105-77.5T0 213q0-88 62.5-150.5T213.5 0z"/>
-                    </svg>  
-                </a> 
-            </footer>             
-        </div>         
+                    </svg>
+                </a>
+            </footer>
+        </div>
         <script>
 // Text options array
 const textOptions = [
   "COMPUTER ENTHUSIAST",
-  "GRAPHICS DESIGNER VFX",
-  "A.i TECH EXPLORER 0101",
+  "GRAPHICS DESIGNER ",
   "WEB DESIGN + DEVELOPER",
-  "PRIVACY FOCUSED MODE",
+  "A.i TECH EXPLORER ",
+  "PRIVACY FOCUSED",
   "DIGITAL MUSIC CREATOR",
-  "CASUAL GAMER GG + OG",
+  "CASUAL GAMER",
   "FREELANCE VIDEO EDITOR",
 ];
 
@@ -1392,7 +1408,7 @@ if (mainImage) {
     copyDiscord(); // Copy Discord username
     setTimeout(() => {
       openAboutOverlay(); // Open About overlay after a short delay
-    }, 1000);
+    }, 900);
   });
 }
 }
@@ -1877,8 +1893,8 @@ if ("serviceWorker" in navigator) {
       });
   });
 }
-</script>         
-        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>         
-    </body>     
+</script>
+        <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+    </body>
 </html>
 <!-- Credits https://github.com/TecnikOfficial/TecnikOfficial.github.io (please dont remove this from code its not visible on your live site) -->
