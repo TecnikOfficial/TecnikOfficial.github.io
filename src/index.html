@@ -353,7 +353,7 @@ iframe {
   opacity: 0.8;
 }
 #notification-panel {
-  position: absolute;
+  position: fixed;
   top: 55px;
   right: 0;
   width: 300px;
@@ -382,6 +382,8 @@ iframe {
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 2;
+  max-height: 350px; /* Set a max height */
+  overflow-y: auto; /* Make this scrollable */
 }
 /* Notification panel animation */
 #notification-panel {
