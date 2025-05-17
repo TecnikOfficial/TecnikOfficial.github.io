@@ -1383,6 +1383,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const textElement = document.getElementById("slider-text");
   textElement.textContent = "Thanks for Visiting!";
 
+
   // Add event listeners
   setupEventListeners();
 });
@@ -1605,7 +1606,7 @@ function fadeOutLoadingScreen() {
   setTimeout(() => {
     loadingScreen.style.display = "none";
     // Start displaying text after a short delay
-    setTimeout(startTextDisplay, 500);
+    setTimeout(startTextDisplay, 60);
   }, 3500);
 }
 
