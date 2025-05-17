@@ -48,7 +48,13 @@ body, html {
   overflow: hidden;
   cursor: url(https://play.vsthemes.org/t-cursors/12251/25a255ea88403b8c79e2bb1b03efd2a5.webp), auto;
 }
-
+/* Enable scroll only in mobile landscape */
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  html, body {
+    overflow: auto !important;
+	height: auto !important;
+  }
+}
 /* Scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;
